@@ -6,19 +6,18 @@
 #include <iostream>
 using namespace std;
 
-class Empresa{
+class Empresa:public Contacto{
     private:
         string nombre;
         string ruc;
         string descripcion;
-        Contacto contactoempresa;
-        Empleado listaempleados[100];
-        Proyecto listaproyectos[100];
         int numEmpleados;
         int numProyectos;
+        Empleado listaempleados[100];
+        Proyecto listaproyectos[100];
     public:
         Empresa();
-        Empresa(string, string, string, contacto, empleado, proyecto);
+        Empresa(string, string, string,int,int,string,string,string,string);
         void mostrarEmpresa();
         void contratarEmpleado();
         void despedirEmpleado();
