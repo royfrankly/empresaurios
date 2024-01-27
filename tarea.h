@@ -1,6 +1,5 @@
 #ifndef TAREA_H
 #define TAREA_H
-#include <string>
 #include <iostream>
 using namespace std;
 class Tarea{
