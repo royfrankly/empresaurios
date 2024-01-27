@@ -1,0 +1,91 @@
+@startuml
+skinparam ClassAttributeIconSize 0
+class Empresa {
+    -nombre: String
+    -ruc: String
+    -descripcion: String
+    -contactoEmpresa: Contacto
+    -listaEmpleados: Empleado[]
+    -listaProyectos: Proyecto[]
+
+    +Empresa()
+    +Empresa(nombre: String,ruc: String,descripcion: String,contactoEmpresa: Contacto ,listEmpleados: Empleado[],listaSucursales: String[])
+    +mostrarEmpresa(): void
+    +contratarEmpleado(): void
+    +despedirEmpleado(): void
+    +crearProyecto(): void
+    +agregarProyecto(): void 
+    
+}
+
+class Empleado {
+    -tipoEmpleado: String
+    -idEmpleado: int
+    -nombreEmpleado: String
+    -salarioEmpleado: float
+    -contactoEmpleado: Contacto
+
+
+    +Empleado()
+    +Empleado(prTipoEmpleado: String, prIdEmpleado: int, prNombreEmpleado: String, prSalarioEmpleado: float, prContactoEmpleado: Contacto)
+    +MostrarEmpleado(): void
+}
+class Contacto{
+    -direccion: String
+    -correoContacto: String
+    -telefonoContacto: String
+    -sitioWeb: String
+    
+    +Contacto()
+    +Contacto(prDireccion: String, prCorreoContacto: String, prTelefonoContacto: String, prSitioWeb: String);
+    +mostrarContacto(): void
+}  
+
+class Proyecto {
+    -nombre: String
+    -descripcion: String
+    -estado: String
+    -listaEquipo: Equipo[]
+    -listaTareas: Tarea[]
+    -fechaCreacion: String
+    -fechaFin: String
+
+    +Proyecto()
+    +Proyecto(prNombre: String, pr Descripcion: String, prEstado: String, prListaEquipo: Equipo[], prListaTareas: Tarea[], prFechaCreacion: String, prFechaFin: String)
+    +crearTarea(): void
+    +asignarEquipo(): void
+    +cambiarEstado(nuevoEstado: String): void
+}
+
+class Equipo {
+    -id: int
+    -nombre: String
+    -lider: Empleado
+    -listaMiembros: Empleado[]
+
+    +Equipo()
+    +Equipo(prId: int, prNombre: String, prLider: Empleado, prListaMiembros: Empleado[])
+    +agregarMiembro(empleado: Empleado): void
+    +removerMiembro(empleado: Empleado): void
+    +agregarLider( Lider: Empleado): void
+}
+Class Tarea {
+    -descripcionTarea: String
+    -estadoTarea: String
+
+    +Tarea()
+    +Tarea(prDescripcionTarea: String, prEstadoTarea: String)
+    +cambiarEstado(): void
+
+}
+Empresa "1"-- "1" Contacto
+Empleado "1"--"1" Contacto
+Empresa "1" o--"1..*"Empleado 
+Empleado "1..*"--"1..*" Equipo
+Proyecto "1" --"1" Equipo
+Proyecto "1"*--"*" Tarea
+Empresa "1" o-- Proyecto
+@enduml
+
+
+
