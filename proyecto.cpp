@@ -17,11 +17,4 @@ void Proyecto::crearTarea(){
     
 }
 
-void Proyecto::asignar equipo(){
-
-}
-void Proyecto::cambiarEstado(nuevoEstado string){
-
-}
-
                                                                
