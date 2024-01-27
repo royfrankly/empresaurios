@@ -21,7 +21,6 @@ class Empresa{
         void contratarEmpleado();
         void despedirEmpleado();
         void crearProyecto();
-        void crearProyecto();
         void agregarProyecto();
 };
 
