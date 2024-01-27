@@ -1,5 +1,5 @@
 #ifndef EMPLEADO_H
-#define EEMPLADO_H
+#define EMPLADO_H
 #include <iostream>
 #include "contacto.h"
 using namespace std;
