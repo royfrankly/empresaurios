@@ -19,15 +19,15 @@ class Empresa {
 }
 
 class Empleado {
-    -tipoEmpleado: String
-    -idEmpleado: int
-    -nombreEmpleado: String
-    -salarioEmpleado: float
-    -contactoEmpleado: Contacto
+    -tipo: String
+    -id: int
+    -nombre: String
+    -salario: float
+    -contacto: Contacto
 
 
     +Empleado()
-    +Empleado(prTipoEmpleado: String, prIdEmpleado: int, prNombreEmpleado: String, prSalarioEmpleado: float, prContactoEmpleado: Contacto)
+    +Empleado(prTipo: String, prId: int, prNombre: String, prSalario: float, prContacto: Contacto)
     +MostrarEmpleado(): void
 }
 class Contacto{
