@@ -19,6 +19,6 @@ class Contacto{
         void setTelefono(string);
         string getSitioWeb();
         void setSitioWeb(string);
-        virtual void mostrar()=0;
+        void mostrar();
 };
 #endif
