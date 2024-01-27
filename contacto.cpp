@@ -28,7 +28,7 @@ void Contacto::setCorreo(string email){
     correo = email;
 }
 string Contacto::getTelefono(){
-    return telefono
+    return telefono;
 }
 void Contacto::setTelefono(string tel){
     telefono = tel;
