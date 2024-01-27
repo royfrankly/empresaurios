@@ -13,3 +13,9 @@ string Tarea::getDescripcion(){
 void Tarea::setDescripcion(string nuevaDescripcion){
     descripcion=nuevaDescripcion;
 }
+string Tarea::getEstado(){
+    return estado;
+}
+void Tarea::setEstado(string nuevoEstado){
+    estado=nuevoEstado;
+}
