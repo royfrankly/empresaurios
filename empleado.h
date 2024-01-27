@@ -1,18 +1,18 @@
 #ifndef EMPLEADO_H
 #define EEMPLADO_H
 #include <iostream>
+#include "contacto.h"
 using namespace std;
 //clase empleado
-class Empleado{
+class Empleado:public Contacto{
     private:
         int id;
         string nombre;
         string tipo;
         float salario;
-        //Contacto contacto;
     public:
         Empleado();
-        Empleado(int, string, string, float);
+        Empleado(int, string, string, float, string, string);
         ~Empleado();
         int getId();
         void serId(int);
