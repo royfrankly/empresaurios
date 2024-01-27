@@ -7,22 +7,15 @@ using namespace std;
 class Proyecto:public Tarea{
     private:
         string nombre;
-        Tarea tarea;
         string fechaCreacion;
         string fechaFin;
+        Tarea tarea;
         Equipo listaEquipo[100];
         Tarea listaTarea[100];
     private:
-        Proyecto 
-}   
-
-
-
-    +Proyecto()
-    +Proyecto(prNombre: String, pr Descripcion: String, prEstado: String, prListaEquipo: Equipo[], prListaTareas: Tarea[], prFechaCreacion: String, prFechaFin: String)
-    +crearTarea(): void
-    +asignarEquipo(): void
-    +cambiarEstado(nuevoEstado: String): void
-}
-
+        Proyecto();
+        Proyecto(string ,string, string, Tarea, Equipo, Tarea);
+        ~Proyecto();
+        void crearTarea();
+};
 #endif
