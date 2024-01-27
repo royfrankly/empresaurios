@@ -46,5 +46,5 @@ void Empleado::mostrarEmpleado(){
     cout<<"Id: "<<id<<endl;
     cout<<"Tipo: "<<tipo<<endl;
     cout<<"Salario: "<<salario<<endl;
-    Contacto.mostrar();
+    //Contacto.mostrar();
 }
