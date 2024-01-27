@@ -12,7 +12,7 @@ class Empleado:public Contacto{
         float salario;
     public:
         Empleado();
-        Empleado(int, string, string, float, string, string);
+        Empleado(int, string, string, float, string, string,string,string);
         ~Empleado();
         int getId();
         void serId(int);
