@@ -50,7 +50,7 @@ void Empresa::crearProyecto(){
         cout<<"Suficientes proyectos"<<endl;
     }*/
 }
-void Empresa::crearProyecto(){
+void Empresa::agregarProyecto(){
     /*if (numProyectos<100){
         listaproyectos[numProyectos++] = proyecto;
         cout<<"Nuevo proyecto agregado."<<endl;
