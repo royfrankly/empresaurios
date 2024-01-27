@@ -9,12 +9,11 @@ class Proyecto:public Tarea{
         string nombre;
         string fechaCreacion;
         string fechaFin;
-        Tarea tarea;
         Equipo listaEquipo[100];
         Tarea listaTarea[100];
     private:
         Proyecto();
-        Proyecto(string ,string, string, Tarea, Equipo, Tarea);
+        Proyecto(string ,string, string, Equipo, Tarea);
         ~Proyecto();
         void crearTarea();
 };
