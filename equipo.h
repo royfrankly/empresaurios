@@ -2,6 +2,7 @@
 #define EQUIPO_H
 #include <iostream>
 #include <string>
+#include "empleado.h"
 using namespace std;
 //clase equipo
 class Equipo{
@@ -17,30 +18,4 @@ class Equipo{
         void removerMiembro(Empleado);
         void agregarLider(Empleado);
 };
-//constructores--------------------------------
-Equipo::Equipo(){
-    id=0;
-    nombre="";
-}
-Equipo::Equipo(int _id, string _nombre){
-    id=_id;
-    nombre=_nombre;
-    
-}
-//metodos--------------------------------
-void Equipo::agregarMiembro(Empleado){
-
-}
-void Equipo::removerMiembro(Empleado){
-
-}
-void Equipo::agregarLider(Empleado){
-    
-}
-
-
-
-
-
-
 #endif
