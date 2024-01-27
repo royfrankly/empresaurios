@@ -14,6 +14,8 @@ class Empresa{
         contacto contactoempresa;
         empleado listaempleados[100];
         proyecto listaproyectos[100];
+        int numEmpleados;
+        int numProyectos;
     public:
         Empresa();
         Empresa(string, string, string, contacto, empleado, proyecto);
