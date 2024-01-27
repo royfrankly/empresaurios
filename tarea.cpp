@@ -7,3 +7,9 @@ Tarea::Tarea(string _descripcion, string _estado){
     descripcion = _descripcion;
     estado = _estado;
 }
+string Tarea::getDescripcion(){
+    return descripcion;
+}
+void Tarea::setDescripcion(string nuevaDescripcion){
+    descripcion=nuevaDescripcion;
+}
