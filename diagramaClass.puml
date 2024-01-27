@@ -70,13 +70,11 @@ class Equipo {
     +agregarLider( Lider: Empleado): void
 }
 Class Tarea {
-    -descripcionTarea: String
-    -estadoTarea: String
-
+    -descripcion: String
+    -estado: String
     +Tarea()
-    +Tarea(prDescripcionTarea: String, prEstadoTarea: String)
+    +Tarea(prDescripcion: String, prEstado: String)
     +cambiarEstado(): void
-
 }
 Empresa "1"-- "1" Contacto
 Empleado "1"--"1" Contacto
