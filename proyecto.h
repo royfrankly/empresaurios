@@ -11,7 +11,7 @@ class Proyecto:public Tarea{
         string fechaFin;
         Equipo listaEquipo[100];
         Tarea listaTarea[100];
-    private:
+    public:
         Proyecto();
         Proyecto(string ,string, string, Equipo, Tarea, string,string);
         ~Proyecto();
