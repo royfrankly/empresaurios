@@ -1,7 +1,6 @@
 #ifndef EQUIPO_H
 #define EQUIPO_H
 #include <iostream>
-#include <string>
 #include "empleado.h"
 using namespace std;
 //clase equipo
