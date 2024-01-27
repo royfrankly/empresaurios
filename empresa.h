@@ -11,9 +11,9 @@ class Empresa{
         string nombre;
         string ruc;
         string descripcion;
-        contacto contactoempresa;
-        empleado listaempleados[100];
-        proyecto listaproyectos[100];
+        Contacto contactoempresa;
+        Empleado listaempleados[100];
+        Proyecto listaproyectos[100];
         int numEmpleados;
         int numProyectos;
     public:
