@@ -6,7 +6,7 @@ Empleado::Empleado(){
     tipo="";
     salario=0;
 }
-Empleado::Empleado(int _id, string _nombre, string _tipo, float _salario){
+Empleado::Empleado(int _id, string _nombre, string _tipo, float _salario, string _direccion, string _correo, string _telefono, string _sitioWeb):Contacto(_direccion, _correo, _telefono, _sitioWeb){
     id=_id;
     nombre=_nombre;
     tipo=_tipo;
@@ -46,4 +46,5 @@ void Empleado::mostrarEmpleado(){
     cout<<"Id: "<<id<<endl;
     cout<<"Tipo: "<<tipo<<endl;
     cout<<"Salario: "<<salario<<endl;
+    Contacto.mostrar();
 }
