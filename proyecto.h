@@ -13,7 +13,7 @@ class Proyecto:public Tarea{
         Tarea listaTarea[100];
     private:
         Proyecto();
-        Proyecto(string ,string, string, Equipo, Tarea);
+        Proyecto(string ,string, string, Equipo, Tarea, string,string);
         ~Proyecto();
         void crearTarea();
 };
