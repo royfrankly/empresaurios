@@ -11,11 +11,17 @@ Proyecto::Proyecto(string _nombre, string _fechaCreacion, string _fechaFin, Equi
 
 }
 Proyecto::~Proyecto(){
-
+ 
 }
 void Proyecto::crearTarea(){
     
 }
 
+void Proyecto::asignar equipo(){
+
+}
+void Proyecto::cambiarEstado(nuevoEstado string){
+
+}
 
                                                                
