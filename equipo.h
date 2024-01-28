@@ -8,11 +8,12 @@ class Equipo{
     private:
         int id;
         string nombre;
+        int numMiembros;
         Empleado listaMiembros[20];
         Empleado lider;
     public:
         Equipo();
-        Equipo(int, string);
+        Equipo(int, string,int);
         int getId();
         void setId(int);
         string getNombre();
