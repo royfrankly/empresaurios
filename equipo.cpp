@@ -44,7 +44,7 @@ void Equipo::agregarMiembro(Empleado empleMiembro){
     }
     else{
         cout<<"No se pueden contratar más empleados"<<endl;
-    
+    }
 }
 //void Equipo::removeMiembro(Empleado empleMiembro){
 //
