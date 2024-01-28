@@ -17,3 +17,7 @@ $compilar2 = {
 & $compilar1
 & $compilar2
 .\gestor.exe
+
+
+g++ -o main.exe contacto.cpp tarea.cpp empleado.cpp equipo.cpp proyecto.cpp empresa.cpp main.cpp
+g++ -o main.exe *.cpp
