@@ -41,6 +41,6 @@ void Equipo::agregarMiembro(Empleado empleMiembro){
 void Equipo::removerMiembro(){
     listaMiembros.pop_back();
 }
-/*void Equipo::agregarLider(Empleado empleMiembro){
+void Equipo::agregarLider(Empleado empleMiembro){
     lider = empleMiembro;
-}*/
+}
