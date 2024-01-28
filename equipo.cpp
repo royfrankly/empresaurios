@@ -49,6 +49,6 @@ void Equipo::agregarMiembro(Empleado empleMiembro){
 //void Equipo::removeMiembro(Empleado empleMiembro){
 //
 //}
-void Equipo::agregarLider(Empleado empleMiembro){
+/*void Equipo::agregarLider(Empleado empleMiembro){
     lider = empleMiembro;
-}
+}*/
