@@ -1,3 +1,5 @@
+se puede compilar con solo esta linea -> g++ -o main.exe *.cpp
+
 #definir scriptblock
 $compilar1 = {
     g++ -c contacto.cpp -o contacto.o
@@ -20,4 +22,3 @@ $compilar2 = {
 
 
 g++ -o main.exe contacto.cpp tarea.cpp empleado.cpp equipo.cpp proyecto.cpp empresa.cpp main.cpp
-g++ -o main.exe *.cpp
