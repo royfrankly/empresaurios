@@ -18,6 +18,8 @@ class Equipo{
         void setId(int);
         string getNombre();
         void setNombre(string);
+        int getNumMiembros();
+        void setNumMiembros(int);
         void agregarMiembro(Empleado);
         void removerMiembro(Empleado);
         void agregarLider(Empleado);
