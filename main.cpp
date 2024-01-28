@@ -7,8 +7,16 @@ using namespace std;
 #include "empleado.h"
 #include "equipo.h"
 #include "tarea.h"
-#include "empleado.h"
+#include "proyecto.h"
+#include "contacto.h"
+#include "empresa.h"
+
 int main(){
+    Equipo equipo1;
+    Tarea tarea1;
+    Proyecto proyecto1;
+    Contacto contacto1;
+    Empresa empresa1;
     //Empleados
     Empleado empleado1(1000,"royfrankl anthony","Programador",2000,"av. perdido","ry_rn@gmail.com","987654321","repo-royfrankly");
     Empleado empleado2 = {1001, "Ana María", "Diseñador", 2200.00, "Calle Creativa", "ana.maria@example.com", "876543210", "portfolio-ana"};
