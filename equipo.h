@@ -24,7 +24,7 @@ class Equipo{
         Empleado getLider();
         void setLider(Empleado);
         void agregarMiembro(Empleado);
-        void removerMiembro(Empleado);
+        void removerMiembro();
         void agregarLider(Empleado);
 };
 #endif

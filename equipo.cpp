@@ -36,19 +36,11 @@ void Equipo::setNumMiembros(int nuevoNumMiembros){
     numMiembros = nuevoNumMiembros;
 }
 void Equipo::agregarMiembro(Empleado empleMiembro){
-    if (numMiembros<100){
-        listaMiembros[numMiembros++] = empleMiembro;
-        
-        cout<<"Nuevo empleado contratado."<<endl;
-        
-    }
-    else{
-        cout<<"No se pueden contratar más empleados"<<endl;
-    }
+   listaMiembros.push_back(empleMiembro);
 }
-//void Equipo::removeMiembro(Empleado empleMiembro){
-//
-//}
+void Equipo::removerMiembro(){
+    listaMiembros.pop_back();
+}
 /*void Equipo::agregarLider(Empleado empleMiembro){
     lider = empleMiembro;
 }*/
