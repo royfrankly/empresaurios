@@ -1,6 +1,7 @@
 #ifndef EQUIPO_H
 #define EQUIPO_H
 #include <iostream>
+#include <vector>
 #include "empleado.h"
 using namespace std;
 //clase equipo
@@ -9,7 +10,7 @@ class Equipo{
         int id;
         string nombre;
         int numMiembros;
-        Empleado listaMiembros[20];
+        vector<Empleado> listaMiembros;
         Empleado lider;
     public:
         Equipo();
