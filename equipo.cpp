@@ -5,10 +5,10 @@ Equipo::Equipo(){
     nombre="";
     numMiembros=0;
 }
-Equipo::Equipo(int _id, string _nombre,int _numMiembros){
+Equipo::Equipo(int _id, string _nombre){
     id=_id;
     nombre=_nombre;
-    numMiembros=_numMiembros;
+    numMiembros=listaMiembros.size();
 }
 //metodos--------------------------------
 int Equipo::getId(){
