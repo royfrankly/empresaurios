@@ -14,7 +14,7 @@ class Equipo{
         Empleado lider;
     public:
         Equipo();
-        Equipo(int, string,int);
+        Equipo(int, string);
         int getId();
         void setId(int);
         string getNombre();
