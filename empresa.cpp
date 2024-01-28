@@ -23,39 +23,40 @@ void Empresa::mostrarEmpresa(){
     cout<<"Descripcion: "<<descripcion<<endl;
     mostrar();
 }
+/*
 void Empresa::contratarEmpleado(){
-    /*if (numEmpleados<100){
+    if (numEmpleados<100){
         listaEmpleados[numEmpleados++] = empleado;
         cout<<"Nuevo empleado contratado."<<endl;
     }
     else{
         cout<<"No se pueden contratar más empleados"<<endl;
-    }*/
+    }
 }
 void Empresa::despedirEmpleado(){
-    /*if (numEmpleados<100){
+    if (numEmpleados<100){
         cout<<"Empleado "<<listaEmpleados[numEmpleados-1].mostrarEmpleado()<<" despedido."<<endl;
         numEmpleados--;
     }
     else{
         cout<<"No se pueden despedir más empleados"<<endl;
-    }*/
+    }
 }
 void Empresa::crearProyecto(){
-    /*if (numProyectos<100){
+    if (numProyectos<100){
         listaproyectos[numProyectos++] = proyecto;
         cout<<"Nuevo proyecto creado."<<endl;
     }
     else{
         cout<<"Suficientes proyectos"<<endl;
-    }*/
+    }
 }
 void Empresa::agregarProyecto(){
-    /*if (numProyectos<100){
+    if (numProyectos<100){
         listaproyectos[numProyectos++] = proyecto;
         cout<<"Nuevo proyecto agregado."<<endl;
     }
     else{
         cout<<"Suficientes proyectos"<<endl;
-    }*/
-}
+    }
+}*/
