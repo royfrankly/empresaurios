@@ -3,7 +3,7 @@
 Equipo::Equipo(){
     id=0;
     nombre="";
-    numMiembros=0;
+    numMiembros=listaMiembros.size();
 }
 Equipo::Equipo(int _id, string _nombre){
     id=_id;
