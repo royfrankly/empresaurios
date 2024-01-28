@@ -1,0 +1,19 @@
+#definir scriptblock
+$compilar1 = {
+    g++ -c contacto.cpp -o contacto.o
+    g++ -c tarea.cpp -o tarea.o
+    g++ -c empleado.cpp -o empleado.o
+    g++ -c equipo.cpp -o equipo.o
+    g++ -c proyecto.cpp -o proyecto.o
+    g++ -c empresa.cpp -o empresa.o
+    g++ -c main.cpp -o main.o
+}
+$compilar2 = {
+    g++ contacto.o tarea.o empleado.o equipo.o proyecto.o empresa.o main.o -o gestor.exe
+}
+
+
+# Llamar al scriptblock
+& $compilar1
+& $compilar2
+.\gestor.exe
