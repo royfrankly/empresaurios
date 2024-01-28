@@ -3,14 +3,15 @@
 #include "tarea.h"
 #include "equipo.h"
 #include <iostream>
+#include <vector>
 using namespace std;
 class Proyecto:public Tarea{
     private:
         string nombre;
         string fechaCreacion;
         string fechaFin;
-        Equipo listaEquipo[100];
-        Tarea listaTarea[100];
+        vector<Equipo> listaEquipo;
+        vector<Tarea> listaTarea;
     public:
         Proyecto();
         Proyecto(string ,string, string, Equipo, Tarea, string,string);
