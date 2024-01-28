@@ -13,6 +13,8 @@ class Equipo{
     public:
         Equipo();
         Equipo(int, string);
+        int getId();
+        void setId(int);
         void agregarMiembro(Empleado);
         void removerMiembro(Empleado);
         void agregarLider(Empleado);
