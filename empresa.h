@@ -4,6 +4,7 @@
 #include "empleado.h"
 #include "proyecto.h"
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class Empresa:public Contacto{
@@ -13,8 +14,8 @@ class Empresa:public Contacto{
         string descripcion;
         int numEmpleados;
         int numProyectos;
-        Empleado listaempleados[100];
-        Proyecto listaproyectos[100];
+        vector<Empleado> listaempleados;
+        vector<Proyecto> listaproyectos;
     public:
         Empresa();
         Empresa(string, string, string,int,int,string,string,string,string);
