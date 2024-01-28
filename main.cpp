@@ -12,12 +12,15 @@ using namespace std;
 #include "empresa.h"
 
 int main(){
-    Equipo equipo1;
-    Tarea tarea1;
-    Proyecto proyecto1;
-    Contacto contacto1;
+    cout<<"ejecutando las tareas"<<endl;
+    
+    //Equipo equipo1;
+    //Tarea tarea1;
+    //Proyecto proyecto1;
+    //Contacto contacto1;
     Empresa empresa1;
     //Empleados
+    /*
     Empleado empleado1(1000,"royfrankl anthony","Programador",2000,"av. perdido","ry_rn@gmail.com","987654321","repo-royfrankly");
     Empleado empleado2 = {1001, "Ana María", "Diseñador", 2200.00, "Calle Creativa", "ana.maria@example.com", "876543210", "portfolio-ana"};
     Empleado empleado3 = {1002, "Carlos Pérez", "Analista", 2300.00, "Avenida Lógica", "carlos.perez@example.com", "765432109", "carlos-analiza"};
@@ -49,13 +52,6 @@ int main(){
     Empleado empleado29 = {1028, "Carlos Rodríguez", "Desarrollador", 2400.00, "Plaza del Código", "carlos.rodriguez@example.com", "543210987", "code-carlos"};
     Empleado empleado30 = {1029, "Ana López", "Gerente", 2600.00, "Avenida Estrategia", "ana.lopez@example.com", "432109876", "strategy-ana"};
     Empleado empleado31 = {1030, "Luis Martínez", "Programador", 2000.00, "Calle del Software", "luis.martinez@example.com", "987654321", "software-luis"};
-
-
-  
-
-
-
-
-
+    */
     return 0;
 }
