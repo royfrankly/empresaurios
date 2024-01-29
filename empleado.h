@@ -10,6 +10,7 @@ class Empleado:public Contacto{
         string nombre;
         string tipo;
         float salario;
+        vector<Tarea> listaTareas;
     public:
         Empleado();
         Empleado(int, string, string, float, string, string,string,string);
@@ -22,6 +23,8 @@ class Empleado:public Contacto{
         void setTipo(string);
         float getSalario();
         void setSalario(float);
+        const vector<Tarea>& getTareas();
+        void setTareas(const vector<Tarea>&);
         void mostrarEmpleado();
 };
 #endif
