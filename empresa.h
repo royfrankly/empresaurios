@@ -12,10 +12,8 @@ class Empresa:public Contacto{
         string nombre;
         string ruc;
         string descripcion;
-        int numEmpleados;
-        int numProyectos;
-        vector<Empleado> listaempleados;
-        vector<Proyecto> listaproyectos;
+        vector<Empleado> listaEmpleados;
+        vector<Proyecto> listaProyectos;
     public:
         Empresa();
         Empresa(string, string, string,string,string,string,string);
