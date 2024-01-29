@@ -27,6 +27,6 @@ class Equipo{
         void setListaMiembros(const vector<Empleado>& nuevaLista);
         void agregarMiembro(Empleado);
         void removerMiembro(int);
-        void agregarLider(Empleado);
+        
 };
 #endif
