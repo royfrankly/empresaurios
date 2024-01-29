@@ -5,17 +5,62 @@ Empresa::Empresa(){
     nombre = "";
     ruc = "";
     descripcion = "";
-    numEmpleados = 0;
-    numProyectos= 0;
+
 }
-Empresa::Empresa(string _nombre, string _ruc, string _descripcion, int _numEmpleados, int _numProyectos,string _direccion, string _correo, string _telefono, string  _sitioweb):Contacto(_direccion, _correo, _telefono, _sitioweb){
+Empresa::Empresa(string _nombre, string _ruc, string _descripcion,string _direccion, string _correo, string _telefono, string  _sitioweb):Contacto(_direccion, _correo, _telefono, _sitioweb){
     nombre = _nombre;
     ruc = _ruc;
     descripcion = _descripcion;
-    numEmpleados = _numEmpleados;
-    numProyectos = _numProyectos;
 }
 //metodos----------------------------------------------
+string Empresa::getNombre(){
+    return nombre;
+}
+void Empresa::setNombre(string nuevoNombre){
+    nombre = nuevoNombre;
+}
+string Empresa::getRuc(){
+    return ruc;
+}
+void Empresa::setRuc(string nuevoRuc){
+    ruc = nuevoRuc;
+}
+string Empresa::getDescripcion(){
+    return ruc;
+}
+void Empresa::setDescripcion(string nuevaDescripcion){
+    descripcion = nuevaDescripcion;
+}
+const vector<Empleado>& Empresa::getListaEmpleados(){
+    return listaEmpleados;
+}
+void Empresa::setListaEmpleados(const vector<Empleado>& nuevaLista){
+    listaEmpleados = nuevaLista;
+}
+void Empresa::agregarUnEmpleado(Empleado nuevoEmpleado){
+    listaEmpleados.push_back(nuevoEmpleado);
+}
+void Empresa::removerUnEmpleado(int indice){
+    if (indice >= 0 && indice < listaEmpleados.size()) {
+        listaEmpleados.erase(listaEmpleados.begin() + indice);
+    }
+}
+const vector<Proyecto>& Empresa::getListaProyectos(){
+    return listaProyectos;
+}
+void Empresa::setListaProyectos(const vector<Proyecto>& nuevaLista){
+    listaProyectos = nuevaLista;
+}
+void Empresa::agregarUnProyecto(Proyecto nuevoProyecto){
+    listaProyectos.push_back(nuevoProyecto);
+}
+void Empresa::removerUnProyecto(int indice){
+    if (indice >= 0 && indice < listaProyectos.size()) {
+        listaProyectos.erase(listaProyectos.begin() + indice);
+    }
+}
+
+
 void Empresa::mostrarEmpresa(){
     cout<<"Datos del empleado:"<<endl;
     cout<<"Nombre: "<<nombre<<endl;
