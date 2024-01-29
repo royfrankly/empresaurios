@@ -27,6 +27,8 @@ class Empleado:public Contacto{
         void setSalario(float);
         const vector<Tarea>& getTareas();
         void setTareas(const vector<Tarea>&);
+        void agregarTarea(Tarea);
+        void removerTarea(int);
         void mostrarEmpleado();
 };
 #endif
