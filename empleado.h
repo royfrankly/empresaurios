@@ -3,6 +3,7 @@
 #include <iostream>
 #include "contacto.h"
 #include "tarea.h"
+#include <vector>
 using namespace std;
 //clase empleado
 class Empleado:public Contacto{
