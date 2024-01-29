@@ -2,6 +2,7 @@
 #define EMPLEADO_H
 #include <iostream>
 #include "contacto.h"
+#include "tarea.h"
 using namespace std;
 //clase empleado
 class Empleado:public Contacto{
