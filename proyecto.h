@@ -10,12 +10,24 @@ class Proyecto:public Tarea{
         string nombre;
         string fechaCreacion;
         string fechaFin;
-        vector<Equipo> listaEquipo;
-        vector<Tarea> listaTarea;
+        Equipo miEquipo;
+        vector<Tarea> listaTareas;
     public:
         Proyecto();
         Proyecto(string ,string, string, Equipo, Tarea, string,string);
         ~Proyecto();
-        void crearTarea();
+        string getNombre();
+        void setNombre(string);
+        string getFechaCreacion();
+        void setFechaCreacion(string);
+        string getFechaFin();
+        void setFechaFin(string);
+        Equipo getEquipo();
+        void setEquipo(Equipo);
+        const vector<Tarea>& getListaTareas();
+        void setListaTareas(const vector<Tarea>& nuevaLista);
+        void agregarUnaTarea(Tarea);
+        void removerUnaTarea(int);
+        //void crearTarea();
 };
 #endif
