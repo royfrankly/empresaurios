@@ -26,14 +26,20 @@ void Equipo::setNombre(string nuevoNombre){
 int Equipo::getNumMiembros(){
     return numMiembros;
 }
+void Equipo::setNumMiembros(int nuevoNumMiembros){
+    numMiembros = nuevoNumMiembros;
+}
 Empleado Equipo::getLider(){
     return lider;
 }
 void Equipo::setLider(Empleado nuevoLider){
     lider=nuevoLider;
 }
-void Equipo::setNumMiembros(int nuevoNumMiembros){
-    numMiembros = nuevoNumMiembros;
+const vector<Empleado>& Equipo::getListaMiembros(){ 
+    return listaMiembros;
+}
+void Equipo::setListaMiembros(const vector<Empleado>& nuevaLista){
+    listaMiembros = nuevaLista;
 }
 void Equipo::agregarMiembro(Empleado empleMiembro){
    listaMiembros.push_back(empleMiembro);
