@@ -41,9 +41,9 @@ const vector<Empleado>& Equipo::getListaMiembros(){
 void Equipo::setListaMiembros(const vector<Empleado>& nuevaLista){
     listaMiembros = nuevaLista;
 }
-void Equipo::agregarMiembro(Empleado empleMiembro){
+void Equipo::agregarUnMiembro(Empleado empleMiembro){
    listaMiembros.push_back(empleMiembro);
 }
-void Equipo::removerMiembro(int posicion){
+void Equipo::removerUnMiembro(int posicion){
     listaMiembros.erase(listaMiembros.begin()+posicion-1);
 }
