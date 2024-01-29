@@ -47,6 +47,3 @@ void Equipo::agregarMiembro(Empleado empleMiembro){
 void Equipo::removerMiembro(int posicion){
     listaMiembros.erase(listaMiembros.begin()+posicion-1);
 }
-void Equipo::agregarLider(Empleado empleMiembro){
-    lider = empleMiembro;
-}
