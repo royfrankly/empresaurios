@@ -40,6 +40,12 @@ float Empleado::getSalario(){
 void Empleado::setSalario(float nSalario){
     salario=nSalario;
 }
+const vector<Tarea>& Empleado::getTareas(){
+    return listaTareas;
+}
+void Empleado::setTareas(const vector<Tarea>& nuevaListaTareas){
+    listaTareas = nuevaListaTareas;
+}
 void Empleado::mostrarEmpleado(){
     cout<<"Datos del empleado:"<<endl;
     cout<<"Nombre: "<<nombre<<endl;    
