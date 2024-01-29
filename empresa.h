@@ -18,7 +18,21 @@ class Empresa:public Contacto{
         vector<Proyecto> listaproyectos;
     public:
         Empresa();
-        Empresa(string, string, string,int,int,string,string,string,string);
+        Empresa(string, string, string,string,string,string,string);
+        string getNombre();
+        void setNombre(string );
+        string getRuc();
+        void setRuc(string );
+        string getDescripcion();
+        void setDescripcion(string );
+        const vector<Empleado>& getListaEmpleados();
+        void setListaEmpleados(const vector<Empleado>& nuevaLista);
+        void agregarUnEmpleado(Empleado);
+        void removerUnEmpleado(int);
+        const vector<Proyecto>& getListaProyectos();
+        void setListaProyectos(const vector<Proyecto>& nuevaLista);
+        void agregarUnProyecto(Proyecto);
+        void removerUnProyecto(int);
         void mostrarEmpresa();
         void contratarEmpleado();
         void despedirEmpleado();
