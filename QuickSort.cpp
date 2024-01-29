@@ -1,7 +1,7 @@
 #include "QuickSort.h"
 template <class T>
-void QuickSort<T> :: Ordena(T *A, int n){
-	int izq=1, der=n, pos=izq, cen=1;
+void QuickSort<T> :: Reduce(T *A, int I, int n){
+	int izq=I, der=n, pos=izq, cen=1;
 	while(cen==1){
 		cen=0;
 		while(A[pos]<=A[der] and pos != der){
