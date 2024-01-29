@@ -38,8 +38,8 @@ void Equipo::setNumMiembros(int nuevoNumMiembros){
 void Equipo::agregarMiembro(Empleado empleMiembro){
    listaMiembros.push_back(empleMiembro);
 }
-void Equipo::removerMiembro(){
-    listaMiembros.pop_back();
+void Equipo::removerMiembro(int posicion){
+    listaMiembros.erase(listaMiembros.begin()+posicion-1);
 }
 void Equipo::agregarLider(Empleado empleMiembro){
     lider = empleMiembro;
