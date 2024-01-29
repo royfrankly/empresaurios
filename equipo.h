@@ -23,8 +23,10 @@ class Equipo{
         void setNumMiembros(int);
         Empleado getLider();
         void setLider(Empleado);
+        Empleado getListaMiembros();
+        void setListaMiembros(Empleado);
         void agregarMiembro(Empleado);
-        void removerMiembro();
+        void removerMiembro(int);
         void agregarLider(Empleado);
 };
 #endif
