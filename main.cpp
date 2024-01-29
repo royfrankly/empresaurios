@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-
+#include <vector>
 
 using namespace std;
 
@@ -14,14 +14,17 @@ using namespace std;
 int main(){
     cout<<"ejecutando las tareas"<<endl;
     
-    //Equipo equipo1;
-    //Tarea tarea1;
-    //Proyecto proyecto1;
-    //Contacto contacto1;
+    Equipo equipo1;
+    Tarea tarea1;
+    Proyecto proyecto1;
+    Contacto contacto1;
     Empresa empresa1;
-    //Empleados
-    /*
+    vector<Empleado> vectorEmp;
+    vector<Empleado> otroVector;
+    cout<<"llego a la parte 1"<<endl;
     Empleado empleado1(1000,"royfrankl anthony","Programador",2000,"av. perdido","ry_rn@gmail.com","987654321","repo-royfrankly");
+    
+    
     Empleado empleado2 = {1001, "Ana María", "Diseñador", 2200.00, "Calle Creativa", "ana.maria@example.com", "876543210", "portfolio-ana"};
     Empleado empleado3 = {1002, "Carlos Pérez", "Analista", 2300.00, "Avenida Lógica", "carlos.perez@example.com", "765432109", "carlos-analiza"};
     Empleado empleado4 = {1003, "Laura García", "Tester", 2100.00, "Calle Pruebas", "laura.garcia@example.com", "654321098", "testing-laura"};
@@ -41,6 +44,7 @@ int main(){
     Empleado empleado18 = {1017, "Luis García", "Gerente", 2600.00, "Avenida Estrategia", "luis.garcia@example.com", "432109876", "strategy-luis"};
     Empleado empleado19 = {1018, "Elena Rodríguez", "Programador", 2000.00, "Calle del Software", "elena.rodriguez@example.com", "987654321", "software-elena"};
     Empleado empleado20 = {1019, "Juan Torres", "Diseñador", 2200.00, "Avenida Creativa", "juan.torres@example.com", "876543210", "design-juan"};
+    /*
     Empleado empleado21 = {1020, "Marta Pérez", "Analista", 2300.00, "Calle Lógica", "marta.perez@example.com", "765432109", "analyst-marta"};
     Empleado empleado22 = {1021, "Carlos Sánchez", "Tester", 2100.00, "Avenida Pruebas", "carlos.sanchez@example.com", "654321098", "testing-carlos"};
     Empleado empleado23 = {1022, "Sofía Martínez", "Desarrollador", 2400.00, "Plaza del Código", "sofia.martinez@example.com", "543210987", "code-sofia"};
@@ -53,5 +57,52 @@ int main(){
     Empleado empleado30 = {1029, "Ana López", "Gerente", 2600.00, "Avenida Estrategia", "ana.lopez@example.com", "432109876", "strategy-ana"};
     Empleado empleado31 = {1030, "Luis Martínez", "Programador", 2000.00, "Calle del Software", "luis.martinez@example.com", "987654321", "software-luis"};
     */
+   cout<<"llego a la parte 2"<<endl;
+    //equipo1.agregarMiembro(empleado1);
+    equipo1.agregarMiembro(empleado2);
+    equipo1.agregarMiembro(empleado3);
+    equipo1.agregarMiembro(empleado4);
+    equipo1.agregarMiembro(empleado5);
+    equipo1.agregarMiembro(empleado6);
+    equipo1.agregarMiembro(empleado7);
+    equipo1.agregarMiembro(empleado8);
+    equipo1.agregarMiembro(empleado9);
+    otroVector.push_back(empleado11);
+    otroVector.push_back(empleado12);
+    otroVector.push_back(empleado13);
+    otroVector.push_back(empleado14);
+    otroVector.push_back(empleado15);
+    otroVector.push_back(empleado16);
+    otroVector.push_back(empleado17);
+    otroVector.push_back(empleado18);
+    otroVector.push_back(empleado19);
+    equipo1.setLider(empleado20);
+    equipo1.agregarMiembro(empleado1);
+    equipo1.removerMiembro(5);
+    vectorEmp = equipo1.getListaMiembros();
+    cout<<equipo1.getNumMiembros();
+    for(int i=0; i<vectorEmp.size(); i++){
+        vectorEmp[i].mostrarEmpleado();
+        cout<<endl;
+    }
+    cout <<"###########se cambia a otro vector###########";
+    equipo1.setListaMiembros(otroVector);
+    vectorEmp = equipo1.getListaMiembros();
+    for(auto f:vectorEmp){
+        f.mostrarEmpleado();cout<<endl;
+    }
+
+
+
+
+
+
+
+
+
+
+    equipo1.getLider().mostrarEmpleado();
+    cout<<"El programa finalizo";
+    
     return 0;
 }
