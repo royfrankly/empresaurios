@@ -69,3 +69,17 @@ Empleado& Empleado::operator<=(Empleado& otroEmpleado) {
 Empleado& Empleado::operator>=(Empleado& otroEmpleado) {
     return (this->id >= otroEmpleado.id) ? *this : otroEmpleado;
 }
+ostream& operator<<(ostream& os, const Empleado& empleado) {
+    os << "ID: " << empleado.id << "\n";
+    os << "Nombre: " << empleado.nombre << "\n";
+    os << "Tipo: " << empleado.tipo << "\n";
+    os << "Salario: " << empleado.salario << "\n";
+
+    const vector<Tarea>& tareas = empleado.listaTareas;
+    os << "Tareas:\n";
+    for (const Tarea& tarea : tareas) {
+        os << "\t" << tarea << "\n";
+    }
+
+    return os;
+}
