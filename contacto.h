@@ -21,8 +21,8 @@ class Contacto{
         void setSitioWeb(string);
         void mostrarContacto();
         void crearContacto();
-        bool operator <(Contacto&);
-        bool operator >(Contacto&);
+        bool operator <(Tarea&);
+        bool operator >(Tarea&);
         friend ostream& operator<<(ostream&, const Contacto& );
         friend istream& operator>>(istream&, Contacto& );
 

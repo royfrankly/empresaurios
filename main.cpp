@@ -15,6 +15,14 @@ using namespace std;
 #include "metodosOrdenacion.h"
 #include "menu.h"
 int main(){
+    Tarea tarea1("Realizar informe", "Terminado");
+    Tarea tarea2("Revisar correcciones", "Pendiente");
+    if(tarea1<tarea2){
+        cout<<"salio esto"<<endl;
+    }else{
+        cout<<"salio otro"<<endl;
+    }
+    /*
     menu miMenu,menuEmpleados,menuProyectos;
     Empresa miempresa;
     miMenu.agregar("Ver datos de la empresa", '1');
@@ -28,11 +36,11 @@ int main(){
     menuProyectos.agregar("Crear proyectos", '1');
     menuProyectos.agregar("Eliminar proyectos", '2');
     menuProyectos.agregar("Modificar proyectos", '3');
-    menuProyectos.agregar("Salir", '0');
+    menuProyectos.agregar("Salir", '0');*/
     /*miMenu.agregar("Contratar empleado", '4');
     miMenu.agregar("Despedir empleado", '5');
     miMenu.agregar("Crear proyecto", '4');*/
-    char opcionElegida;
+    /*char opcionElegida;
 
     do {
         miMenu.ver();
@@ -96,5 +104,6 @@ int main(){
     } while(opcionElegida != '0');  // Terminar el bucle cuando se presione '0'
     
     cout<<"El programa finalizo";
+    */
     return 0;
 }

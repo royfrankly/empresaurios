@@ -23,6 +23,18 @@ void Tarea::mostrar(){
     cout<<"descripcion:"<<endl<<descripcion<<endl;
     cout<<"estado:"<<endl<<estado<<endl;
 }
+bool Tarea::operator<(Tarea& otraTarea) {
+    if(estado < otraTarea.estado)
+        return true;
+    else
+        return false;
+}
+bool Tarea::operator>(Tarea& otraTarea) {
+    if(estado > otraTarea.estado)
+        return true;
+    else
+        return false;
+}
 ostream& operator<<(ostream& os, const Tarea& tarea) {
     os << tarea.estado << " - " << tarea.descripcion;
     return os;

@@ -31,6 +31,8 @@ class Empresa:public Contacto{
         void setListaProyectos(const vector<Proyecto>& nuevaLista);
         void agregarUnProyecto(Proyecto);
         void removerUnProyecto(int);
+        friend ostream& operator<<(ostream& os, const Empresa& );
+        friend istream& operator>>(istream& is, Empleado& );
         void mostrarEmpresa();
         void contratarEmpleado();
         void despedirEmpleado();
