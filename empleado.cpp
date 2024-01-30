@@ -62,10 +62,12 @@ void Empleado::mostrarEmpleado(){
     cout<<"Salario: "<<salario<<endl;
     mostrar();
 }
+//en los operator < y > se debe tener muy en cuenta 
+//el primer elemento de acuerdo a ese se compara
+// en este caso es el id (identificador del objeto actual)
 bool Empleado::operator<(Empleado& otroEmpleado) {
     return id < otroEmpleado.id;
 }
-
 bool Empleado::operator>(Empleado& otroEmpleado) {
     return id > otroEmpleado.id;
 }
