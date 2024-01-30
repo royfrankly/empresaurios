@@ -30,7 +30,8 @@ class Proyecto:public Tarea{
         void removerUnaTarea(int);
         bool operator<(const Proyecto&) const;
         bool operator>(const Proyecto&) const;
-
+        friend istream& operator>>(istream&, Proyecto&);
+        friend ostream& operator<<(ostream&, const Proyecto&);
         //void crearTarea();
 };
 #endif
