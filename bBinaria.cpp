@@ -3,9 +3,9 @@ using namespace std;
 
 template <class T>
 void busqBinaria(T *A, int n, T d){
-    int izq=1, der=n, cen=0, pos;
+    int izq=1, der=n, cen=0, pos, m;
     while(izq =< der && cen=0){
-        int m = (izq+der)/2;
+        m = (izq+der)/2;
         if(A[m]==d){
             cen=1;
         }
