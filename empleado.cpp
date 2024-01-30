@@ -46,11 +46,13 @@ const vector<Tarea>& Empleado::getTareas(){
 void Empleado::setTareas(const vector<Tarea>& nuevaListaTareas){
     listaTareas = nuevaListaTareas;
 }
-void Empleado::agregarTarea(Tarea empleTarea){
-   listaTareas.push_back(empleTarea);
+void Empleado::agregarUnaTarea(Tarea nuevoTarea){
+    listaTareas.push_back(nuevoTarea);
 }
-void Empleado::removerTarea(int posicion){
-    listaTareas.erase(listaTareas.begin()+posicion-1);
+void Empleado::removerUnaTarea(int indice){
+    if (indice >= 0 && indice < listaTareas.size()) {
+        listaTareas.erase(listaTareas.begin() + indice);
+    }
 }
 void Empleado::mostrarEmpleado(){
     cout<<"Datos del empleado:"<<endl;
