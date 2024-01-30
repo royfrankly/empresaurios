@@ -40,12 +40,13 @@ bool Tarea::operator>(Tarea& otraTarea) {
         return false;
 }
 ostream& operator<<(ostream& os, const Tarea& tarea) { 
+    cout<<left;
     os << setw(11)<<tarea.estado <<setw(50)<< tarea.descripcion;
     return os;
 }
 istream& operator>>(istream& is, Tarea& tarea) {
-    getline(is, tarea.descripcion);
     getline(is, tarea.estado);
+    getline(is, tarea.descripcion);
     return is;
 }
 //crea o guarda las tareas en el archivo
