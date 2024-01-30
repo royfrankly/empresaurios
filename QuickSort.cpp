@@ -14,7 +14,7 @@ void QuickSort<T> :: Reduce(T *A, int I, int n){
 				izq++;
 			}
 			if(pos!=izq){
-				this->Intercambia(A;pos;izq);
+				this->Intercambia(A,pos,izq);
 				pos=izq;
 				cen=1;
 			}
