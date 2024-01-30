@@ -28,6 +28,9 @@ class Proyecto:public Tarea{
         void setListaTareas(const vector<Tarea>& nuevaLista);
         void agregarUnaTarea(Tarea);
         void removerUnaTarea(int);
+        bool operator<(const Proyecto&) const;
+        bool operator>(const Proyecto&) const;
+
         //void crearTarea();
 };
 #endif
