@@ -76,12 +76,26 @@ ostream& operator<<(ostream& os, const Empleado& empleado) {
     os << "Nombre: " << empleado.nombre << "\n";
     os << "Tipo: " << empleado.tipo << "\n";
     os << "Salario: " << empleado.salario << "\n";
-
+    os << static_cast<const Contacto&>(empleado);
     const vector<Tarea>& tareas = empleado.listaTareas;
     os << "Tareas:\n";
     for (const Tarea& tarea : tareas) {
         os << "\t" << tarea << "\n";
     }
-
     return os;
+}
+istream& operator>>(istream& is, Empleado& empleado) {
+    // Ingresar datos para la clase base Contacto
+    is >> dynamic_cast<Contacto&>(empleado);
+    // Ingresar datos adicionales específicos de Empleado
+    cout << "Ingrese el ID del empleado: ";
+    is >> empleado.id;
+    cout << "Ingrese el nombre del empleado: ";
+    is.ignore();  // Ignorar el salto de línea pendiente
+    getline(is, empleado.nombre);
+    cout << "Ingrese el tipo del empleado: ";
+    getline(is, empleado.tipo);
+    cout << "Ingrese el salario del empleado: ";
+    is >> empleado.salario;
+    return is;
 }
