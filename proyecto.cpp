@@ -49,7 +49,15 @@ void Proyecto::agregarUnaTarea(Tarea nuevaTarea){
 void Proyecto::removerUnaTarea(int indice){
     if (indice >= 0 && indice < listaTareas.size()) {
         listaTareas.erase(listaTareas.begin() + indice);
-    }}
+    }
+}
+bool Proyecto::operator<(const Proyecto& otroProyecto) const {
+    return nombre < otroProyecto.nombre;
+}
+
+bool Proyecto::operator>(const Proyecto& otroProyecto) const {
+    return nombre > otroProyecto.nombre;
+}
 //void Proyecto::crearTarea(){
 
 //}                                                       
