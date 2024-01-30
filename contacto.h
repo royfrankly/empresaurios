@@ -20,5 +20,8 @@ class Contacto{
         string getSitioWeb();
         void setSitioWeb(string);
         void mostrar();
+        friend ostream& operator<<(ostream&, const Contacto& );
+        friend istream& operator>>(istream&, Contacto& );
+
 };
 #endif
