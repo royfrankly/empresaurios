@@ -16,25 +16,25 @@ Empleado::Empleado(int _id, string _nombre, string _tipo, float _salario, string
 Empleado::~Empleado(){
     
 }
-int Empleado::getId(){
+int Empleado::getId() const{
     return id;
 }
 void Empleado::serId(int nuevoId){
     id=nuevoId;
 }
-string Empleado::getNombre(){
+string Empleado::getNombre() const{
     return nombre;
 }
 void Empleado::setNombre(string nuevoNombre){
     nombre=nuevoNombre;
 }
-string Empleado::getTipo(){
+string Empleado::getTipo() const{
     return tipo;
 }
 void Empleado::setTipo(string nTipo){
     tipo=nTipo;
 }
-float Empleado::getSalario(){
+float Empleado::getSalario() const{
     return salario;
 }
 void Empleado::setSalario(float nSalario){
@@ -56,13 +56,13 @@ void Empleado::removerUnaTarea(int indice){
 }
 void Empleado::mostrarEmpleado(){
     cout<<"Datos del empleado:"<<endl;
-    cout<<"Nombre: "<<nombre<<endl;    
+    cout<<"Nombre: "<<nombre<<endl;
     cout<<"Id: "<<id<<endl;
     cout<<"Tipo: "<<tipo<<endl;
     cout<<"Salario: "<<salario<<endl;
     mostrar();
 }
-//en los operator < y > se debe tener muy en cuenta 
+//en los operator < y > se debe tener muy en cuenta
 //el primer elemento de acuerdo a ese se compara
 // en este caso es el id (identificador del objeto actual)
 bool Empleado::operator<(Empleado& otroEmpleado) {
