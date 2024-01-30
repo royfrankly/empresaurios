@@ -23,3 +23,7 @@ void Tarea::mostrar(){
     cout<<"descripcion:"<<endl<<descripcion<<endl;
     cout<<"estado:"<<endl<<estado<<endl;
 }
+ostream& operator<<(ostream& os, const Tarea& tarea) {
+    os << tarea.estado << " - " << tarea.descripcion;
+    return os;
+}
