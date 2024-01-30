@@ -39,14 +39,12 @@ bool Tarea::operator>(Tarea& otraTarea) {
     else
         return false;
 }
-ostream& operator<<(ostream& os, const Tarea& tarea) {
-    os << tarea.estado << " - " << tarea.descripcion;
+ostream& operator<<(ostream& os, const Tarea& tarea) { 
+    os << setw(11)<<tarea.estado <<setw(50)<< tarea.descripcion;
     return os;
 }
 istream& operator>>(istream& is, Tarea& tarea) {
-    cout << "Ingrese la descripción de la tarea: ";
     getline(is, tarea.descripcion);
-    cout << "Ingrese el estado de la tarea: ";
     getline(is, tarea.estado);
     return is;
 }
