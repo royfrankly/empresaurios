@@ -54,9 +54,29 @@ void Proyecto::removerUnaTarea(int indice){
 bool Proyecto::operator<(const Proyecto& otroProyecto) const {
     return nombre < otroProyecto.nombre;
 }
-
 bool Proyecto::operator>(const Proyecto& otroProyecto) const {
     return nombre > otroProyecto.nombre;
+}
+istream& operator>>(istream& is, Proyecto& proyecto) {
+    // Ingresar datos para la clase base Tarea
+    is >> dynamic_cast<Tarea&>(proyecto);
+    // Ingresar datos adicionales específicos de Proyecto
+    cout << "Ingrese el nombre del proyecto: ";
+    getline(is, proyecto.nombre);
+    cout << "Ingrese la fecha de creación del proyecto: ";
+    getline(is, proyecto.fechaCreacion);
+    cout << "Ingrese la fecha de finalización del proyecto: ";
+    getline(is, proyecto.fechaFin);
+    return is;
+}
+ostream& operator<<(ostream& os, const Proyecto& proyecto) {
+    // Mostrar datos de la clase base Tarea
+    os << dynamic_cast<const Tarea&>(proyecto);
+    // Mostrar datos adicionales específicos de Proyecto
+    os << "Nombre del proyecto: " << proyecto.nombre << "\n";
+    os << "Fecha de creación del proyecto: " << proyecto.fechaCreacion << "\n";
+    os << "Fecha de finalización del proyecto: " << proyecto.fechaFin << "\n";
+    return os;
 }
 //void Proyecto::crearTarea(){
 
