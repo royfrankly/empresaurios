@@ -60,7 +60,7 @@ void Empleado::mostrarEmpleado(){
     cout<<"Id: "<<id<<endl;
     cout<<"Tipo: "<<tipo<<endl;
     cout<<"Salario: "<<salario<<endl;
-    mostrar();
+    mostrarContacto();
 }
 //en los operator < y > se debe tener muy en cuenta
 //el primer elemento de acuerdo a ese se compara
