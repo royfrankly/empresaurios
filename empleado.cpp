@@ -66,10 +66,16 @@ void Empleado::mostrarEmpleado(){
 //el primer elemento de acuerdo a ese se compara
 // en este caso es el id (identificador del objeto actual)
 bool Empleado::operator<(Empleado& otroEmpleado) {
-    return id < otroEmpleado.id;
+    if(id < otroEmpleado.id)
+        return true;
+    else
+        return false;
 }
 bool Empleado::operator>(Empleado& otroEmpleado) {
-    return id > otroEmpleado.id;
+    if(id > otroEmpleado.id)
+        return true;
+    else
+        return false;
 }
 ostream& operator<<(ostream& os, const Empleado& empleado) {
     os << "ID: " << empleado.id << "\n";
