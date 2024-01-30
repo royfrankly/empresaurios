@@ -1,4 +1,7 @@
 #include "tarea.h"
+#include <iostream>
+#include <fstream>
+#include <sstream>
 Tarea::Tarea(){
     descripcion = "";
     estado = "";
@@ -45,4 +48,15 @@ istream& operator>>(istream& is, Tarea& tarea) {
     cout << "Ingrese el estado de la tarea: ";
     getline(is, tarea.estado);
     return is;
+}
+void Tarea::guardarEnArchivo() {
+    string nombreArchivo = descripcion + ".txt";
+    ofstream archivoSalida(nombreArchivo);
+    if (archivoSalida.is_open()) {
+        archivoSalida << *this;
+        archivoSalida.close();
+        cout << "Tarea almacenada en el archivo: " << nombreArchivo << endl;
+    } else {
+        cout << "No se pudo abrir el archivo para escritura." << endl;
+    }
 }
