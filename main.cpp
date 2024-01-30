@@ -15,13 +15,9 @@ using namespace std;
 #include "metodosOrdenacion.h"
 #include "menu.h"
 int main(){
-    Tarea tarea1("Realizar informe", "Terminado");
-    Tarea tarea2("Revisar correcciones", "Pendiente");
-    if(tarea1<tarea2){
-        cout<<"salio esto"<<endl;
-    }else{
-        cout<<"salio otro"<<endl;
-    }
+    Tarea tarea1("Realizar informe", "terminado");
+    Tarea tarea2("Revisar correcciones", "pendiente");
+    tarea1.guardarEnArchivo();
     /*
     menu miMenu,menuEmpleados,menuProyectos;
     Empresa miempresa;
