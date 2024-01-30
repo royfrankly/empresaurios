@@ -62,12 +62,12 @@ void Empleado::mostrarEmpleado(){
     cout<<"Salario: "<<salario<<endl;
     mostrar();
 }
-Empleado& Empleado::operator<=(Empleado& otroEmpleado) {
-    return (this->id <= otroEmpleado.id) ? *this : otroEmpleado;
+bool Empleado::operator<(Empleado& otroEmpleado) {
+    return id < otroEmpleado.id;
 }
 
-Empleado& Empleado::operator>=(Empleado& otroEmpleado) {
-    return (this->id >= otroEmpleado.id) ? *this : otroEmpleado;
+bool Empleado::operator>(Empleado& otroEmpleado) {
+    return id > otroEmpleado.id;
 }
 ostream& operator<<(ostream& os, const Empleado& empleado) {
     os << "ID: " << empleado.id << "\n";
