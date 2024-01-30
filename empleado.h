@@ -1,6 +1,7 @@
 #ifndef EMPLEADO_H
 #define EMPLEADO_H
 #include <iostream>
+
 #include "contacto.h"
 #include "tarea.h"
 #include <vector>
@@ -32,8 +33,9 @@ class Empleado:public Contacto{
         void mostrarEmpleado();
         Empleado& operator <=(Empleado&);
         Empleado& operator >=(Empleado&);
-        
+        friend ostream& operator<<(ostream&, const Empleado& );
 };
+
 #endif
 
 
