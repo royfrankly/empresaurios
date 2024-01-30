@@ -18,13 +18,13 @@ class Empleado:public Contacto{
         Empleado();
         Empleado(int, string, string, float, string, string,string,string);
         ~Empleado();
-        int getId();
+        int getId() const;
         void serId(int);
-        string getNombre();
+        string getNombre() const;
         void setNombre(string);
-        string getTipo();
+        string getTipo() const;
         void setTipo(string);
-        float getSalario();
+        float getSalario() const;
         void setSalario(float);
         const vector<Tarea>& getTareas();
         void setTareas(const vector<Tarea>&);

@@ -63,8 +63,6 @@ int main(){
         system("pause");
 
     } while(opcionElegida != '0');  // Terminar el bucle cuando se presione '0'
-
-    return 0;
     
     Equipo equipo1;
     Tarea tarea1;
