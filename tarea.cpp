@@ -50,7 +50,7 @@ istream& operator>>(istream& is, Tarea& tarea) {
     return is;
 }
 void Tarea::guardarEnArchivo() {
-    string carpeta = "tu/ruta/de/carpeta/";
+    string carpeta = "tareas/";
     string nombreArchivo = carpeta + descripcion + ".txt";
     ofstream archivoSalida(nombreArchivo);
     if (archivoSalida.is_open()) {
