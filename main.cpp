@@ -10,7 +10,7 @@ using namespace std;
 #include "proyecto.h"
 #include "contacto.h"
 #include "empresa.h"
-
+#include "metodosOrdenacion.h"
 int main(){
     cout<<"ejecutando las tareas"<<endl;
     
@@ -59,24 +59,24 @@ int main(){
     */
    cout<<"llego a la parte 2"<<endl;
     //equipo1.agregarMiembro(empleado1);
-    equipo1.agregarUnMiembro(empleado2);
-    equipo1.agregarUnMiembro(empleado3);
-    equipo1.agregarUnMiembro(empleado4);
-    equipo1.agregarUnMiembro(empleado5);
-    equipo1.agregarUnMiembro(empleado6);
-    equipo1.agregarUnMiembro(empleado7);
-    equipo1.agregarUnMiembro(empleado8);
-    equipo1.agregarUnMiembro(empleado9);
-    otroVector.push_back(empleado11);
-    otroVector.push_back(empleado12);
+    equipo1.agregarUnMiembro(empleado20);
+    equipo1.agregarUnMiembro(empleado19);
+    equipo1.agregarUnMiembro(empleado18);
+    equipo1.agregarUnMiembro(empleado17);
+    equipo1.agregarUnMiembro(empleado16);
+    equipo1.agregarUnMiembro(empleado15);
+    equipo1.agregarUnMiembro(empleado14);
+    equipo1.agregarUnMiembro(empleado15);
     otroVector.push_back(empleado13);
-    otroVector.push_back(empleado14);
-    otroVector.push_back(empleado15);
-    otroVector.push_back(empleado16);
-    otroVector.push_back(empleado17);
-    otroVector.push_back(empleado18);
-    otroVector.push_back(empleado19);
-    equipo1.setLider(empleado20);
+    otroVector.push_back(empleado12);
+    otroVector.push_back(empleado11);
+    otroVector.push_back(empleado10);
+    otroVector.push_back(empleado9);
+    otroVector.push_back(empleado8);
+    otroVector.push_back(empleado7);
+    otroVector.push_back(empleado6);
+    otroVector.push_back(empleado5);
+    equipo1.setLider(empleado4);
     equipo1.agregarUnMiembro(empleado1);
     equipo1.removerUnMiembro(5);
     vectorEmp = equipo1.getListaMiembros();
@@ -92,16 +92,52 @@ int main(){
         f.mostrarEmpleado();cout<<endl;
     }
 
+    cout<<endl<<"########################"<<endl;
+    
+    if(empleado11>empleado10){
+        cout<<empleado10;
+    }
+    
+    cout<<endl<<"########################"<<endl;
 
-
-
-
-
-
-
-
-
+    cout<<endl<<"########################"<<endl;
+    if(empleado10 < empleado11){
+        cout<<empleado11;
+    }
+    cout<<endl<<"########################"<<endl;
+  
     equipo1.getLider().mostrarEmpleado();
+    cout<<endl<<"#########ORDENAMIENTO###############"<<endl;
+    const int tamano = 5;
+    Empleado empleados[tamano] = {
+        Empleado(3, "Carlos", "Tipo1", 3000.0, "Dir1", "correo1", "123456", "www1"),
+        Empleado(1, "Ana", "Tipo2", 2500.0, "Dir2", "correo2", "789012", "www2"),
+        Empleado(5, "Eva", "Tipo3", 3500.0, "Dir3", "correo3", "345678", "www3"),
+        Empleado(2, "David", "Tipo1", 3200.0, "Dir4", "correo4", "901234", "www4"),
+        Empleado(4, "Beatriz", "Tipo2", 2800.0, "Dir5", "correo5", "567890", "www5")
+    };
+
+    // Crear una instancia de MetodosOrdenacion para la clase Empleado
+    MetodosOrdenacion<Empleado> ordenadorEmpleados;
+
+    // Imprimir empleados antes de ordenar
+    cout << "Empleados antes de ordenar:\n";
+    for (int i = 0; i < tamano; ++i) {
+        empleados[i].mostrarEmpleado();
+        cout << endl;
+    }
+
+    // Ordenar empleados por el ID
+    ordenadorEmpleados.seleccion(empleados, tamano);
+
+    // Imprimir empleados después de ordenar
+    cout << "\nEmpleados después de ordenar por ID:\n";
+    for (int i = 0; i < tamano; ++i) {
+        empleados[i].mostrarEmpleado();
+        cout << endl;
+    }
+
+
     cout<<"El programa finalizo";
     
     return 0;
