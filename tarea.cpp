@@ -49,9 +49,9 @@ istream& operator>>(istream& is, Tarea& tarea) {
     getline(is, tarea.estado);
     return is;
 }
-void Tarea::guardarEnArchivo() {
-    string carpeta = "tareas/";
-    string nombreArchivo = carpeta + descripcion + ".txt";
+void Tarea::guardarEnArchivo(string codigo) {
+    string carpeta = "tareas/tarea";
+    string nombreArchivo = carpeta + codigo + ".txt";
     ofstream archivoSalida(nombreArchivo);
     if (archivoSalida.is_open()) {
         archivoSalida << *this;
