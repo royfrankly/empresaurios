@@ -8,7 +8,7 @@ void QuickSort<T> :: Reduce(T *A, int I, int n){
 			der--;
 		}
 		if(pos != der){
-			this->Intercambia(A;pos;der);
+			this->Intercambia(A,pos,der);
 			pos = der;
 			while(A[pos]>= A[izq] and pos != izq){
 				izq++;
