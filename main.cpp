@@ -3,6 +3,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <string.h>
 using namespace std;
 
 #include "empleado.h"
@@ -200,59 +201,32 @@ int main(){
         cout << endl;
     }
     cout<<endl<<"#########ARCHIVOS###############"<<endl;
-     // Mostrar la lista de empleados en la consola
-    cout << "Lista de Empleados de la Empresa:\n";
-    const vector<Empleado>& listaEmpleados = empresa1.getListaEmpleados();
-    for (const Empleado& empleado : listaEmpleados) {
-        cout << "ID: " << empleado.getId() << ", Nombre: " << empleado.getNombre() << ", Tipo: " << empleado.getTipo() << ", Salario: " << empleado.getSalario() << "\n";
-    }
-
-    // Escribir la lista de empleados en un archivo de texto
     ofstream archivoEmpleados("ListaEmpleados.txt");
+
+// Verificar si el archivo se abrió correctamente
     if (archivoEmpleados.is_open()) {
-        for (const Empleado& empleado : listaEmpleados) {
-            archivoEmpleados << "ID: " << empleado.getId() << ", Nombre: " << empleado.getNombre() << ", Tipo: " << empleado.getTipo() << ", Salario: " << empleado.getSalario() << "\n";
-        }
+        // Escribir cada empleado en el archivo
+        archivoEmpleados << empleado1 << empleado2 << empleado3 << empleado4 << empleado5;
+        // Cerrar el archivo después de escribir
         archivoEmpleados.close();
-        cout << "Lista de empleados escrita en ListaEmpleados.txt\n";
     } else {
-        cout << "ERROR: No se pudo abrir el archivo ListaEmpleados.txt\n";
+        cout << "Error al abrir el archivo para escribir." << endl;
     }
     cout<<endl<<"###################leer archivo##########################"<<endl;
-    vector<Empleado> listaEmpleados;
+    /*// Abrir el archivo para lectura
     ifstream archivoEmpleados("ListaEmpleados.txt");
-
+    // Verificar si el archivo se abrió correctamente
     if (archivoEmpleados.is_open()) {
-        string linea;
-
-        // Leer cada línea del archivo
-        while (getline(archivoEmpleados, linea)) {
-            istringstream ss(linea);
-            
-            // Variables temporales para almacenar la información del empleado
-            int id;
-            string nombre, tipo;
-            float salario;
-
-            // Leer los valores desde el stringstream
-            if (ss >> id >> nombre >> tipo >> salario) {
-                // Crear un nuevo objeto Empleado con la información leída y agregarlo al vector
-                Empleado empleado(id, nombre, tipo, salario, "", "", "", "");
-                listaEmpleados.push_back(empleado);
-            }
+        // Leer y mostrar cada empleado desde el archivo
+        Empleado empleado;
+        while (archivoEmpleados >> empleado) {
+            cout << empleado << endl;
         }
-
-        // Cerrar el archivo después de la lectura
+        // Cerrar el archivo después de leer
         archivoEmpleados.close();
-
-        // Mostrar la lista de empleados leída del archivo
-        for (const Empleado& empleado : listaEmpleados) {
-            cout << "ID: " << empleado.getId() << ", Nombre: " << empleado.getNombre() << ", Tipo: " << empleado.getTipo() << ", Salario: " << empleado.getSalario() << "\n";
-        }
     } else {
-        cout << "ERROR: No se pudo abrir el archivo ListaEmpleados.txt\n";
-    }
+        cout << "Error al abrir el archivo para leer." << endl;
+    }*/
     cout<<"El programa finalizo";
-    
     return 0;
 }
