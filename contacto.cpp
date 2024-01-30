@@ -45,3 +45,22 @@ void Contacto::mostrar(){
     cout<<"Telefono: "<<telefono<<endl;
     cout<<"Sitio web: "<<sitioWeb<<endl;
 }
+ostream& operator<<(ostream& os, const Contacto& contacto) {
+    os << "Dirección: " << contacto.direccion << "\n";
+    os << "Correo: " << contacto.correo << "\n";
+    os << "Teléfono: " << contacto.telefono << "\n";
+    os << "Sitio web: " << contacto.sitioWeb << "\n";
+    return os;
+}
+istream& operator>>(istream& is, Contacto& contacto) {
+    cout << "Ingrese la dirección: ";
+    is.ignore();  // Ignorar el salto de línea pendiente
+    getline(is, contacto.direccion);
+    cout << "Ingrese el correo: ";
+    getline(is, contacto.correo);
+    cout << "Ingrese el teléfono: ";
+    getline(is, contacto.telefono);
+    cout << "Ingrese el sitio web: ";
+    getline(is, contacto.sitioWeb);
+    return is;
+}
