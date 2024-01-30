@@ -46,9 +46,10 @@ void Proyecto::setListaTareas(const vector<Tarea>& nuevaLista){
 void Proyecto::agregarUnaTarea(Tarea nuevaTarea){
     listaTareas.push_back(nuevaTarea);
 }
-void Proyecto::removerUnaTarea(int posicion){
-    listaTareas.erase(listaTareas.begin()+posicion-1);
-}
+void Proyecto::removerUnaTarea(int indice){
+    if (indice >= 0 && indice < listaTareas.size()) {
+        listaTareas.erase(listaTareas.begin() + indice);
+    }}
 //void Proyecto::crearTarea(){
 
 //}                                                       
