@@ -23,5 +23,6 @@ class Tarea{
         friend ostream& operator<<(ostream& , const Tarea& );
         friend istream& operator>>(istream&, Tarea&);
         void guardarEnArchivo(string );
+        void Tarea::leerElArchivo(string );
 };
 #endif
