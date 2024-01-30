@@ -43,9 +43,9 @@ void menu::ver(void){
 	int i;
 	cout<<"\nMenu..";
 	for(i=0; i<totopciones;i++)
-	  cout<<"\n "<<opciones[i].tecla<<" ."<<
+	    cout<<"\n "<<opciones[i].tecla<<" ."<<
 	    opciones[i].texto;
-	cout<<"\n\n\tPresione tecla de la opcion que desea..";
+		cout<<"\n\n\tPresione tecla de la opcion que desea..";
 }
 
 char menu::capturar(void){
@@ -57,9 +57,9 @@ char menu::capturar(void){
 		elegida=getch(); //captura tecla presionada por usuario
 		//compara tecla con el campo tecla de c/opcion del menu
 		for(c=0;c<totopciones;c++)
-		  if(elegida==opciones[c].tecla){
-		  	system("cls");
-		  	return(elegida);
-		  }
+		    if(elegida==opciones[c].tecla){
+		  		system("cls");
+		  		return(elegida);
+		}
 	}while(1);
 }
