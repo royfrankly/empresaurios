@@ -22,5 +22,6 @@ class Tarea{
         bool operator >(Tarea&);
         friend ostream& operator<<(ostream& , const Tarea& );
         friend istream& operator>>(istream&, Tarea&);
+        void guardarEnArchivo();
 };
 #endif
