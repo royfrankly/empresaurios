@@ -12,8 +12,52 @@ using namespace std;
 #include "empresa.h"
 
 int main(){
+    int opc;
     cout<<"ejecutando las tareas"<<endl;
+    cout<<"Menu:"<<endl;
+    cout<<"Ingrese lo que desee visualizar:";
+    cout<<"\t1. Ver el Nombre de la empresa"<<endl;
+    cout<<"\t2. Ver el Ruc de la empresa"<<endl;
+    cout<<"\t3. Ver una descripción de la empresa"<<endl;
+    cout<<"\t4. Ver la lista de empleados de la empresa"<<endl;
+    cout<<"\t5. Agregue un empleado a la lista de empleados"<<endl;
+    cout<<"\t6. Remueva un empleado de la lista de empleados"<<endl;
+    cout<<"\t7. Ver la lista de proyectos de la empresa"<<endl;
+    cout<<"\t8. Cree un proyecto de la empresa"<<endl;
+    cout<<"\tCualquier otro numero para cerrar el programa"<<endl;
+    cin>>opc;
+    do{
+    switch (opc)
+    {
+        case 1:
+        /* funcion para ver el nombre */
+        break;
+        case 2:
+        /* funcion para ver el ruc */
+        break;
+        case 3:
+        /* funcion para ver la descripción */
+        break;
+        case 4:
+        /* funcion para ver los empleados */
+        break;
+        case 5:
+        /* funcion para agregar empleados */
+        break;
+        case 6:
+        /* funcion para remover empleados */
+        break;
+        case 7:
+        /* funcion para ver la lista proyectos */
+        break;
+        case 8:
+        /* funcion para crear un proyecto */
+        break;
     
+    default:
+        break;
+    }
+    }while(opc<1 or opc>8);
     Equipo equipo1;
     Tarea tarea1;
     Proyecto proyecto1;
@@ -57,7 +101,7 @@ int main(){
     Empleado empleado30 = {1029, "Ana López", "Gerente", 2600.00, "Avenida Estrategia", "ana.lopez@example.com", "432109876", "strategy-ana"};
     Empleado empleado31 = {1030, "Luis Martínez", "Programador", 2000.00, "Calle del Software", "luis.martinez@example.com", "987654321", "software-luis"};
     */
-   cout<<"llego a la parte 2"<<endl;
+    cout<<"llego a la parte 2"<<endl;
     //equipo1.agregarMiembro(empleado1);
     equipo1.agregarMiembro(empleado2);
     equipo1.agregarMiembro(empleado3);
