@@ -59,14 +59,14 @@ int main(){
     */
    cout<<"llego a la parte 2"<<endl;
     //equipo1.agregarMiembro(empleado1);
-    equipo1.agregarMiembro(empleado2);
-    equipo1.agregarMiembro(empleado3);
-    equipo1.agregarMiembro(empleado4);
-    equipo1.agregarMiembro(empleado5);
-    equipo1.agregarMiembro(empleado6);
-    equipo1.agregarMiembro(empleado7);
-    equipo1.agregarMiembro(empleado8);
-    equipo1.agregarMiembro(empleado9);
+    equipo1.agregarUnMiembro(empleado2);
+    equipo1.agregarUnMiembro(empleado3);
+    equipo1.agregarUnMiembro(empleado4);
+    equipo1.agregarUnMiembro(empleado5);
+    equipo1.agregarUnMiembro(empleado6);
+    equipo1.agregarUnMiembro(empleado7);
+    equipo1.agregarUnMiembro(empleado8);
+    equipo1.agregarUnMiembro(empleado9);
     otroVector.push_back(empleado11);
     otroVector.push_back(empleado12);
     otroVector.push_back(empleado13);
@@ -77,8 +77,8 @@ int main(){
     otroVector.push_back(empleado18);
     otroVector.push_back(empleado19);
     equipo1.setLider(empleado20);
-    equipo1.agregarMiembro(empleado1);
-    equipo1.removerMiembro(5);
+    equipo1.agregarUnMiembro(empleado1);
+    equipo1.removerUnMiembro(5);
     vectorEmp = equipo1.getListaMiembros();
     cout<<equipo1.getNumMiembros();
     for(int i=0; i<vectorEmp.size(); i++){
