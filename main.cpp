@@ -23,9 +23,11 @@ int main(){
     miMenu.agregar("Salir", '0');
     menuEmpleados.agregar("Despedir empleados", '1');
     menuEmpleados.agregar("Contratar empleados", '2');
+    menuEmpleados.agregar("Modificar informacion de empleado", '3');
     menuEmpleados.agregar("Salir", '0');
     menuProyectos.agregar("Crear proyectos", '1');
     menuProyectos.agregar("Eliminar proyectos", '2');
+    menuProyectos.agregar("Modificar proyectos", '3');
     menuProyectos.agregar("Salir", '0');
     /*miMenu.agregar("Contratar empleado", '4');
     miMenu.agregar("Despedir empleado", '5');
@@ -56,6 +58,9 @@ int main(){
                     case '2':
                         cout << "Has seleccionado la opcion contratar empleados." << endl;
                         break;
+                    case '3':
+                        cout << "Has seleccionado la opcion modificar empleado. " << endl;
+                        break;
                     }
                     system("pause");
                 }while(opcE != '0');
@@ -74,6 +79,9 @@ int main(){
                         break;
                     case '2':
                         cout << "Has seleccionado la opcion eliminar proyectos." << endl;
+                        break;
+                    case '3':
+                        cout << "Has seleccionado la opcion modificar proyecto." << endl;
                         break;
                     }
                     system("pause");
