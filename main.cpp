@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <fstream>
+#include <sstream>
 using namespace std;
 
 #include "empleado.h"
@@ -44,7 +45,7 @@ int main(){
     Empleado empleado18 = {1017, "Luis García", "Gerente", 2600.00, "Avenida Estrategia", "luis.garcia@example.com", "432109876", "strategy-luis"};
     Empleado empleado19 = {1018, "Elena Rodríguez", "Programador", 2000.00, "Calle del Software", "elena.rodriguez@example.com", "987654321", "software-elena"};
     Empleado empleado20 = {1019, "Juan Torres", "Diseñador", 2200.00, "Avenida Creativa", "juan.torres@example.com", "876543210", "design-juan"};
-    /*
+    
     Empleado empleado21 = {1020, "Marta Pérez", "Analista", 2300.00, "Calle Lógica", "marta.perez@example.com", "765432109", "analyst-marta"};
     Empleado empleado22 = {1021, "Carlos Sánchez", "Tester", 2100.00, "Avenida Pruebas", "carlos.sanchez@example.com", "654321098", "testing-carlos"};
     Empleado empleado23 = {1022, "Sofía Martínez", "Desarrollador", 2400.00, "Plaza del Código", "sofia.martinez@example.com", "543210987", "code-sofia"};
@@ -56,26 +57,39 @@ int main(){
     Empleado empleado29 = {1028, "Carlos Rodríguez", "Desarrollador", 2400.00, "Plaza del Código", "carlos.rodriguez@example.com", "543210987", "code-carlos"};
     Empleado empleado30 = {1029, "Ana López", "Gerente", 2600.00, "Avenida Estrategia", "ana.lopez@example.com", "432109876", "strategy-ana"};
     Empleado empleado31 = {1030, "Luis Martínez", "Programador", 2000.00, "Calle del Software", "luis.martinez@example.com", "987654321", "software-luis"};
-    */
+    empresa1.agregarUnEmpleado(empleado31);
+    empresa1.agregarUnEmpleado(empleado30);
+    empresa1.agregarUnEmpleado(empleado29);
+    empresa1.agregarUnEmpleado(empleado28);
+    empresa1.agregarUnEmpleado(empleado27);
+    empresa1.agregarUnEmpleado(empleado26);
+    empresa1.agregarUnEmpleado(empleado25);
+    empresa1.agregarUnEmpleado(empleado24);
+    empresa1.agregarUnEmpleado(empleado23);
+    empresa1.agregarUnEmpleado(empleado22);
+    empresa1.agregarUnEmpleado(empleado21);
+    empresa1.agregarUnEmpleado(empleado20);
+    empresa1.agregarUnEmpleado(empleado19);
+    empresa1.agregarUnEmpleado(empleado18);
+    empresa1.agregarUnEmpleado(empleado17);
+    empresa1.agregarUnEmpleado(empleado16);
+    empresa1.agregarUnEmpleado(empleado15);
+    empresa1.agregarUnEmpleado(empleado14);
+    empresa1.agregarUnEmpleado(empleado13);
+    empresa1.agregarUnEmpleado(empleado12);
+    empresa1.agregarUnEmpleado(empleado11);
+    empresa1.agregarUnEmpleado(empleado10);
+    empresa1.agregarUnEmpleado(empleado9);
+    empresa1.agregarUnEmpleado(empleado8);
+    empresa1.agregarUnEmpleado(empleado7);
+    empresa1.agregarUnEmpleado(empleado6);
+    empresa1.agregarUnEmpleado(empleado5);
+    empresa1.agregarUnEmpleado(empleado4);
+    empresa1.agregarUnEmpleado(empleado3);
+    empresa1.agregarUnEmpleado(empleado2);
+    empresa1.agregarUnEmpleado(empleado1);
    cout<<"llego a la parte 2"<<endl;
     //equipo1.agregarMiembro(empleado1);
-    equipo1.agregarUnMiembro(empleado20);
-    equipo1.agregarUnMiembro(empleado19);
-    equipo1.agregarUnMiembro(empleado18);
-    equipo1.agregarUnMiembro(empleado17);
-    equipo1.agregarUnMiembro(empleado16);
-    equipo1.agregarUnMiembro(empleado15);
-    equipo1.agregarUnMiembro(empleado14);
-    equipo1.agregarUnMiembro(empleado15);
-    otroVector.push_back(empleado13);
-    otroVector.push_back(empleado12);
-    otroVector.push_back(empleado11);
-    otroVector.push_back(empleado10);
-    otroVector.push_back(empleado9);
-    otroVector.push_back(empleado8);
-    otroVector.push_back(empleado7);
-    otroVector.push_back(empleado6);
-    otroVector.push_back(empleado5);
     equipo1.setLider(empleado4);
     equipo1.agregarUnMiembro(empleado1);
     equipo1.removerUnMiembro(5);
@@ -136,8 +150,59 @@ int main(){
         empleados[i].mostrarEmpleado();
         cout << endl;
     }
+    cout<<endl<<"#########ARCHIVOS###############"<<endl;
+     // Mostrar la lista de empleados en la consola
+    cout << "Lista de Empleados de la Empresa:\n";
+    const vector<Empleado>& listaEmpleados = empresa1.getListaEmpleados();
+    for (const Empleado& empleado : listaEmpleados) {
+        cout << "ID: " << empleado.getId() << ", Nombre: " << empleado.getNombre() << ", Tipo: " << empleado.getTipo() << ", Salario: " << empleado.getSalario() << "\n";
+    }
 
+    // Escribir la lista de empleados en un archivo de texto
+    ofstream archivoEmpleados("ListaEmpleados.txt");
+    if (archivoEmpleados.is_open()) {
+        for (const Empleado& empleado : listaEmpleados) {
+            archivoEmpleados << "ID: " << empleado.getId() << ", Nombre: " << empleado.getNombre() << ", Tipo: " << empleado.getTipo() << ", Salario: " << empleado.getSalario() << "\n";
+        }
+        archivoEmpleados.close();
+        cout << "Lista de empleados escrita en ListaEmpleados.txt\n";
+    } else {
+        cout << "ERROR: No se pudo abrir el archivo ListaEmpleados.txt\n";
+    }
+    cout<<endl<<"###################leer archivo##########################"<<endl;
+    vector<Empleado> listaEmpleados;
+    ifstream archivoEmpleados("ListaEmpleados.txt");
 
+    if (archivoEmpleados.is_open()) {
+        string linea;
+
+        // Leer cada línea del archivo
+        while (getline(archivoEmpleados, linea)) {
+            istringstream ss(linea);
+            
+            // Variables temporales para almacenar la información del empleado
+            int id;
+            string nombre, tipo;
+            float salario;
+
+            // Leer los valores desde el stringstream
+            if (ss >> id >> nombre >> tipo >> salario) {
+                // Crear un nuevo objeto Empleado con la información leída y agregarlo al vector
+                Empleado empleado(id, nombre, tipo, salario, "", "", "", "");
+                listaEmpleados.push_back(empleado);
+            }
+        }
+
+        // Cerrar el archivo después de la lectura
+        archivoEmpleados.close();
+
+        // Mostrar la lista de empleados leída del archivo
+        for (const Empleado& empleado : listaEmpleados) {
+            cout << "ID: " << empleado.getId() << ", Nombre: " << empleado.getNombre() << ", Tipo: " << empleado.getTipo() << ", Salario: " << empleado.getSalario() << "\n";
+        }
+    } else {
+        cout << "ERROR: No se pudo abrir el archivo ListaEmpleados.txt\n";
+    }
     cout<<"El programa finalizo";
     
     return 0;
