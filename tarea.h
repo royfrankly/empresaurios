@@ -14,5 +14,6 @@ class Tarea{
         string getEstado();
         void setEstado(string);
         void mostrar();
+        friend ostream& operator<<(ostream& , const Tarea& );
 };
 #endif
