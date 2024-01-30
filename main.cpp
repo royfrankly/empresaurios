@@ -15,11 +15,18 @@ using namespace std;
 #include "metodosOrdenacion.h"
 #include "menu.h"
 int main(){
-    menu miMenu;
+    menu miMenu,menuEmpleados,menuProyectos;
     Empresa miempresa;
     miMenu.agregar("Ver datos de la empresa", '1');
     miMenu.agregar("Ver lista de empleados", '2');
     miMenu.agregar("Ver lista de proyectos", '3');
+    miMenu.agregar("Salir", '0');
+    menuEmpleados.agregar("Despedir empleados", '1');
+    menuEmpleados.agregar("Contratar empleados", '2');
+    menuEmpleados.agregar("Salir", '0');
+    menuProyectos.agregar("Crear proyectos", '1');
+    menuProyectos.agregar("Eliminar proyectos", '2');
+    menuProyectos.agregar("Salir", '0');
     /*miMenu.agregar("Contratar empleado", '4');
     miMenu.agregar("Despedir empleado", '5');
     miMenu.agregar("Crear proyecto", '4');*/
@@ -31,27 +38,48 @@ int main(){
 
         switch(opcionElegida) {
             case '1':
-                cout << "Has seleccionado la Opción 1." << endl;
+                cout << "Has seleccionado la opcion ver empresa." << endl;
                 miempresa.mostrarEmpresa();
                 break;
             case '2':
-                cout << "Has seleccionado la Opción 2." << endl;
+                cout << "Has seleccionado la opcion ver lista de empleados." << endl;
                 
+                char opcE;
+                do{
+                    menuEmpleados.ver();
+                    opcE = menuEmpleados.capturar();
+                    switch (opcE)
+                    {
+                    case '1':
+                        cout << "Has seleccionado la opcion despedir empleados." << endl;
+                        break;
+                    case '2':
+                        cout << "Has seleccionado la opcion contratar empleados." << endl;
+                        break;
+                    }
+                    system("pause");
+                }while(opcE != '0');
                 break;
             case '3':
-                cout << "Has seleccionado la Opción 3." << endl;
+                cout << "Has seleccionado la opcion ver lista de proyectos." << endl;
+                
+                char opcP;
+                do{
+                    menuProyectos.ver();
+                    opcP = menuProyectos.capturar();
+                    switch (opcP)
+                    {
+                    case '1':
+                        cout << "Has seleccionado la opcion crear proyectos." << endl;
+                        break;
+                    case '2':
+                        cout << "Has seleccionado la opcion eliminar proyectos." << endl;
+                        break;
+                    }
+                    system("pause");
+                }while(opcP != '0');
                 break;
-            case '4':
-                cout << "Has seleccionado la Opción 4." << endl;
-                break;
-            case '5':
-                // Realizar acciones para la Opción 5
-                cout << "Has seleccionado la Opción 5." << endl;
-                break;
-            case '6':
-                // Realizar acciones para la Opción 6
-                cout << "Has seleccionado la Opción 6." << endl;
-                break;
+            
         }
 
         // Pausa para que el usuario vea el resultado
