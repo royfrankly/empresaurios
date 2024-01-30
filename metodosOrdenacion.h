@@ -4,7 +4,6 @@ public:
     void burbuja(T *A, int n);
     void insercion(T *A, int n);
     void seleccion(T *A, int n);
-
 private:
     void intercambia(T *A, int i, int j) {
         T temp = A[i];
@@ -12,7 +11,6 @@ private:
         A[j] = temp;
     }
 };
-
 template <class T>
 void MetodosOrdenacion<T>::burbuja(T *A, int n) {
     for (int i = 1; i <= n - 1; i++)
@@ -20,7 +18,6 @@ void MetodosOrdenacion<T>::burbuja(T *A, int n) {
             if (A[j] > A[j + 1])
                 intercambia(A, j, j + 1);
 }
-
 template <class T>
 void MetodosOrdenacion<T>::insercion(T *A, int n) {
     for (int i = 1; i < n; i++) {
