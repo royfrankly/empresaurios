@@ -41,9 +41,11 @@ const vector<Empleado>& Equipo::getListaMiembros(){
 void Equipo::setListaMiembros(const vector<Empleado>& nuevaLista){
     listaMiembros = nuevaLista;
 }
-void Equipo::agregarUnMiembro(Empleado empleMiembro){
-   listaMiembros.push_back(empleMiembro);
+void Equipo::agregarUnMiembro(Empleado nuevoMiembro){
+    listaMiembros.push_back(nuevoMiembro);
 }
-void Equipo::removerUnMiembro(int posicion){
-    listaMiembros.erase(listaMiembros.begin()+posicion-1);
+void Equipo::removerUnMiembro(int indice){
+    if (indice >= 0 && indice < listaMiembros.size()) {
+        listaMiembros.erase(listaMiembros.begin() + indice);
+    }
 }
