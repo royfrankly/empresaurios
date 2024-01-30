@@ -30,6 +30,9 @@ class Empleado:public Contacto{
         void agregarUnaTarea(Tarea);
         void removerUnaTarea(int);
         void mostrarEmpleado();
+        Empleado& operator <=(Empleado&);
+        Empleado& operator >=(Empleado&);
+        
 };
 #endif
 
