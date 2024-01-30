@@ -12,8 +12,59 @@ using namespace std;
 #include "contacto.h"
 #include "empresa.h"
 #include "metodosOrdenacion.h"
+#include "menu.h"
 int main(){
     cout<<"ejecutando las tareas"<<endl;
+    menu miMenu;
+    miMenu.agregar("Ver datos de la empresa", '1');
+    miMenu.agregar("Ver lista de empleados", '2');
+    miMenu.agregar("Ver lista de proyectos", '3');
+    miMenu.agregar("Contratar empleado", '4');
+    miMenu.agregar("Despedir empleado", '5');
+    miMenu.agregar("Crear proyecto", '6');
+    char opcionElegida;
+
+    do {
+        // Mostrar el menú
+        miMenu.ver();
+
+        // Capturar la tecla elegida por el usuario
+        opcionElegida = miMenu.capturar();
+
+        // Realizar acciones según la opción elegida
+        switch(opcionElegida) {
+            case '1':
+                // Realizar acciones para la Opción 1
+                cout << "Has seleccionado la Opción 1." << endl;
+                break;
+            case '2':
+                // Realizar acciones para la Opción 2
+                cout << "Has seleccionado la Opción 2." << endl;
+                break;
+            case '3':
+                // Realizar acciones para la Opción 3
+                cout << "Has seleccionado la Opción 3." << endl;
+                break;
+            case '4':
+                // Realizar acciones para la Opción 4
+                cout << "Has seleccionado la Opción 4." << endl;
+                break;
+            case '5':
+                // Realizar acciones para la Opción 5
+                cout << "Has seleccionado la Opción 5." << endl;
+                break;
+            case '6':
+                // Realizar acciones para la Opción 6
+                cout << "Has seleccionado la Opción 6." << endl;
+                break;
+        }
+
+        // Pausa para que el usuario vea el resultado
+        system("pause");
+
+    } while(opcionElegida != '0');  // Terminar el bucle cuando se presione '0'
+
+    return 0;
     
     Equipo equipo1;
     Tarea tarea1;

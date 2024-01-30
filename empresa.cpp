@@ -62,7 +62,7 @@ void Empresa::removerUnProyecto(int indice){
 
 
 void Empresa::mostrarEmpresa(){
-    cout<<"Datos del empleado:"<<endl;
+    cout<<"Datos del empresa:"<<endl;
     cout<<"Nombre: "<<nombre<<endl;
     cout<<"Ruc: "<<ruc<<endl;
     cout<<"Descripcion: "<<descripcion<<endl;
