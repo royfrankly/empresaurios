@@ -52,10 +52,16 @@ void Proyecto::removerUnaTarea(int indice){
     }
 }
 bool Proyecto::operator<(const Proyecto& otroProyecto) const {
-    return nombre < otroProyecto.nombre;
+    if(nombre < otroProyecto.nombre)
+        return true;
+    else
+        return false;
 }
 bool Proyecto::operator>(const Proyecto& otroProyecto) const {
-    return nombre > otroProyecto.nombre;
+    if(nombre > otroProyecto.nombre)
+        return true;
+    else
+        return false;
 }
 istream& operator>>(istream& is, Proyecto& proyecto) {
     // Ingresar datos para la clase base Tarea
