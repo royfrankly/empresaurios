@@ -39,28 +39,26 @@ string Contacto::getSitioWeb(){
 void Contacto::setSitioWeb(string web){
     sitioWeb = web;
 }
-void Contacto::mostrar(){
+void Contacto::mostrarContacto(){
     cout<<"Direccion: "<<direccion<<endl;
     cout<<"Correo: "<<correo<<endl;
     cout<<"Telefono: "<<telefono<<endl;
     cout<<"Sitio web: "<<sitioWeb<<endl;
 }
+void Contacto::crearContacto(){
+    
+}
 ostream& operator<<(ostream& os, const Contacto& contacto) {
-    os << "Dirección: " << contacto.direccion << "\n";
-    os << "Correo: " << contacto.correo << "\n";
-    os << "Teléfono: " << contacto.telefono << "\n";
-    os << "Sitio web: " << contacto.sitioWeb << "\n";
+    os <<"("<< contacto.direccion << ") ";
+    os <<"("<< contacto.correo <<") ";
+    os <<"("<< contacto.telefono <<") ";
+    os<<"("<< contacto.sitioWeb <<") ";
     return os;
 }
 istream& operator>>(istream& is, Contacto& contacto) {
-    cout << "Ingrese la dirección: ";
-    is.ignore();  // Ignorar el salto de línea pendiente
-    getline(is, contacto.direccion);
-    cout << "Ingrese el correo: ";
-    getline(is, contacto.correo);
-    cout << "Ingrese el teléfono: ";
-    getline(is, contacto.telefono);
-    cout << "Ingrese el sitio web: ";
-    getline(is, contacto.sitioWeb);
+    cout<<"(";is.ignore();getline(is, contacto.direccion);cout<<") ";
+    cout<<"(";getline(is, contacto.correo);cout<<") "; 
+    cout << "(";getline(is, contacto.telefono);cout<<") ";
+    cout << "(";getline(is, contacto.sitioWeb);cout<<") ";
     return is;
 }

@@ -19,7 +19,8 @@ class Contacto{
         void setTelefono(string);
         string getSitioWeb();
         void setSitioWeb(string);
-        void mostrar();
+        void mostrarContacto();
+        void crearContacto();
         friend ostream& operator<<(ostream&, const Contacto& );
         friend istream& operator>>(istream&, Contacto& );
 
