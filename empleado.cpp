@@ -135,7 +135,7 @@ void Empleado::guardarEnArchivoEmpleados() {
         archivoSalida<<"ID: "<<getId()<<endl;
         archivoSalida << *this<<endl;
         archivoSalida.close();
-        cout << "Tarea almacenada en el archivo: " << nombreArchivo << endl;
+        cout << "Tarea almacena da en el archivo: " << nombreArchivo << endl;
     } else {
         cout << "No se pudo abrir el archivo para escritura." << endl;
     }
