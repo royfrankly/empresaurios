@@ -41,7 +41,7 @@ bool Tarea::operator>(Tarea& otraTarea) {
 }
 ostream& operator<<(ostream& os, const Tarea& tarea) { 
     cout<<left;
-    os << setw(11)<<tarea.estado <<setw(50)<< tarea.descripcion;
+    os << setw(11)<<tarea.estado <<left<<" "<< tarea.descripcion;
     return os;
 }
 istream& operator>>(istream& is, Tarea& tarea) {
