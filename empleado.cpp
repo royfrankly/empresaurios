@@ -84,7 +84,7 @@ ostream& operator<<(ostream& os, const Empleado& empleado) {
     os << "(" << empleado.nombre << ")";
     os << "(" << empleado.tipo << ")";
     os << "(" << empleado.salario << ")";
-    //os << static_cast<const Contacto&>(empleado);
+    os << static_cast<const Contacto&>(empleado);
     //const vector<Tarea>& tareas = empleado.listaTareas;
     //os << "Tareas:\n";
     //for (const Tarea& tarea : tareas) {
