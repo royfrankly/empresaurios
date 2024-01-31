@@ -1,7 +1,6 @@
 #ifndef EMPLEADO_H
 #define EMPLEADO_H
 #include <iostream>
-
 #include "contacto.h"
 #include "tarea.h"
 #include <vector>
@@ -15,9 +14,11 @@ class Empleado:public Contacto{
         float salario;
         vector<Tarea> listaTareas;
     public:
+    //-------------------constructores---------------------------
         Empleado();
         Empleado(int, string, string, float, string, string,string,string);
         ~Empleado();
+    //-------------------geters y seters---------------------------
         int getId() const;
         void serId(int);
         string getNombre() const;
@@ -28,6 +29,7 @@ class Empleado:public Contacto{
         void setSalario(float);
         const vector<Tarea>& getTareas();
         void setTareas(const vector<Tarea>&);
+    //-------------------otros y la sobrecarga---------------------------
         void agregarUnaTarea(Tarea);
         void removerUnaTarea(int);
         void mostrarEmpleado();
@@ -36,7 +38,6 @@ class Empleado:public Contacto{
         friend ostream& operator<<(ostream&, const Empleado& );
         friend istream& operator>>(istream&, Empleado& );
 };
-
 #endif
 
 
