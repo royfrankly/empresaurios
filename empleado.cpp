@@ -128,8 +128,7 @@ void Empleado::guardarEmpleado() {
 }
 void Empleado::guardarEnArchivoListaEmpleados() {
     string carpeta = "empleados/listaEmpleados";
-    string codigo = to_string(getId());
-    string nombreArchivo = carpeta+ codigo + ".txt";
+    string nombreArchivo = carpeta+ ".txt";
     ofstream archivoSalida(nombreArchivo, ios::app);
     if (archivoSalida.is_open()) {
         archivoSalida << *this<<endl;
