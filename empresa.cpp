@@ -91,15 +91,15 @@ istream& operator>>(istream& is, Empresa& empresa) {
     
     return is;
 }
-
+*/
 void Empresa::mostrarEmpresa(){
     cout<<"Datos del empresa:"<<endl;
     cout<<"Nombre: "<<nombre<<endl;
     cout<<"Ruc: "<<ruc<<endl;
     cout<<"Descripcion: "<<descripcion<<endl;
-    mostrar();
+    mostrarContacto();
 }
-
+/*
 void Empresa::contratarEmpleado(){
     if (numEmpleados<100){
         listaEmpleados[numEmpleados++] = empleado;
