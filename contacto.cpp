@@ -1,6 +1,6 @@
 #include "contacto.h"
 
-//constructores----------------------------------------
+//-------------------constructores----------------------------
 Contacto::Contacto(){
     direccion = "";
     correo = "";
@@ -14,7 +14,7 @@ Contacto::Contacto(string _direccion, string _correo, string _telefono, string  
     sitioWeb = _sitioweb;
 }
 
-//metodos----------------------------------------------
+//-----------------------geters y seters---------------------------------
 string Contacto::getDireccion(){
     return direccion;
 }
@@ -39,14 +39,12 @@ string Contacto::getSitioWeb(){
 void Contacto::setSitioWeb(string web){
     sitioWeb = web;
 }
+//-----------otros y sobrecargas----------------------------------------------------
 void Contacto::mostrarContacto(){
     cout<<"Direccion: "<<direccion<<endl;
     cout<<"Correo: "<<correo<<endl;
     cout<<"Telefono: "<<telefono<<endl;
     cout<<"Sitio web: "<<sitioWeb<<endl;
-}
-void Contacto::crearContacto(){
-    
 }
 ostream& operator<<(ostream& os, const Contacto& contacto) {
     os <<"("<< contacto.direccion << ") ";
