@@ -105,6 +105,7 @@ istream& operator>>(istream& is, Empleado& empleado) {
     cout << "Ingrese el salario del empleado: ";
     is >> empleado.salario;
     // Ingresar datos para la clase base Contacto
+    is.ignore();
     is >> dynamic_cast<Contacto&>(empleado);
     return is;
 }
