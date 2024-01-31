@@ -16,7 +16,7 @@ class Tarea{
         string getEstado();
         void setEstado(string);
     //------------mostrar---------------------------------------------------
-        void mostrar();
+        void mostrarTarea();
     //------------sobrecargas----------------------------------------------------
         bool operator <(Tarea&);
         bool operator >(Tarea&);
