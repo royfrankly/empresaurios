@@ -15,8 +15,10 @@ class Empresa:public Contacto{
         vector<Empleado> listaEmpleados;
         vector<Proyecto> listaProyectos;
     public:
+    //-------------------constructores---------------------------
         Empresa();
         Empresa(string, string, string,string,string,string,string);
+    //-------------------geters y seters---------------------------
         string getNombre();
         void setNombre(string );
         string getRuc();
@@ -29,6 +31,7 @@ class Empresa:public Contacto{
         void removerUnEmpleado(int);
         const vector<Proyecto>& getListaProyectos();
         void setListaProyectos(const vector<Proyecto>& nuevaLista);
+    //-------------------otros y sobrecargas---------------------------        
         void agregarUnProyecto(Proyecto);
         void removerUnProyecto(int);
         friend ostream& operator<<(ostream& os, const Empresa& );
@@ -39,5 +42,4 @@ class Empresa:public Contacto{
         void crearProyecto();
         void agregarProyecto();
 };
-
 #endif
