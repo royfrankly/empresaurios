@@ -45,7 +45,9 @@ ostream& operator<<(ostream& os, const Tarea& tarea) {
     return os;
 }
 istream& operator>>(istream& is, Tarea& tarea) {
+    cout<<"Estado:";
     getline(is, tarea.estado);
+    cout<<"Descripcion:";
     getline(is, tarea.descripcion);
     return is;
 }
