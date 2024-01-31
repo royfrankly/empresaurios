@@ -54,9 +54,9 @@ ostream& operator<<(ostream& os, const Contacto& contacto) {
     return os;
 }
 istream& operator>>(istream& is, Contacto& contacto) {
-    cout<<"(";is.ignore();getline(is, contacto.direccion);cout<<") ";
-    cout<<"(";getline(is, contacto.correo);cout<<") "; 
-    cout << "(";getline(is, contacto.telefono);cout<<") ";
-    cout << "(";getline(is, contacto.sitioWeb);cout<<") ";
+    cout<<"Direccion: ";getline(is, contacto.direccion);
+    cout<<"Correo: ";getline(is, contacto.correo); 
+    cout<<"Telefono: ";getline(is, contacto.telefono);
+    cout<<"Sitio Web: ";getline(is, contacto.sitioWeb);
     return is;
 }
