@@ -23,7 +23,7 @@ string Tarea::getEstado(){
 void Tarea::setEstado(string nuevoEstado){
     estado=nuevoEstado;
 }
-void Tarea::mostrar(){
+void Tarea::mostrarTarea(){
     cout<<"descripcion:"<<endl<<descripcion<<endl;
     cout<<"estado:"<<endl<<estado<<endl;
 }
