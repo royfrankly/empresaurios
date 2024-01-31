@@ -93,8 +93,7 @@ ostream& operator<<(ostream& os, const Empleado& empleado) {
     return os;
 }
 istream& operator>>(istream& is, Empleado& empleado) {
-    // Ingresar datos para la clase base Contacto
-    //is >> dynamic_cast<Contacto&>(empleado);
+    
     // Ingresar datos adicionales específicos de Empleado
     cout << "Ingrese el ID del empleado: ";
     is >> empleado.id;
@@ -105,5 +104,7 @@ istream& operator>>(istream& is, Empleado& empleado) {
     getline(is, empleado.tipo);
     cout << "Ingrese el salario del empleado: ";
     is >> empleado.salario;
+    // Ingresar datos para la clase base Contacto
+    is >> dynamic_cast<Contacto&>(empleado);
     return is;
 }
