@@ -17,7 +17,7 @@ class Proyecto{
     public:
     //--------------------constructores y destructores-------------------
         Proyecto();
-        Proyecto(string ,string, string, Equipo, string);
+        Proyecto::Proyecto(string _nombre, string _estado, string _descripcion, string _fechaCreacion, string _fechaFin, Equipo _miEquipo,const vector<Tarea>& _listaTareas);
         ~Proyecto();
     //---------------------geters y seters-------------------------------------------
         string getNombre();
