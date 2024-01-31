@@ -22,7 +22,7 @@ class Tarea{
         bool operator >(Tarea&);
         friend ostream& operator<<(ostream& , const Tarea& );
         friend istream& operator>>(istream&, Tarea&);
-        void guardarEnArchivo(string );
+        void guardarEnArchivoTareas(string );
         void leerElArchivo(string );
 };
 #endif
