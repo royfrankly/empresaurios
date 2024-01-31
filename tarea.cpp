@@ -7,9 +7,9 @@ Tarea::Tarea(){
     descripcion = "";
     estado = "";
 }
-Tarea::Tarea(string _descripcion, string _estado){
-    descripcion = _descripcion;
+Tarea::Tarea(string _estado,string _descripcion ){
     estado = _estado;
+    descripcion = _descripcion;
 }
 string Tarea::getDescripcion(){
     return descripcion;
