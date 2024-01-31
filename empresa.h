@@ -41,6 +41,8 @@ class Empresa:public Contacto{
         void despedirEmpleado();
         void crearProyecto();
         void agregarProyecto();
-        void guardarEmpleados();
+        void guardarEmpleado(Empleado);
+        //cuando se inicie el programa cargara los empelados
+        void cargarEmpleados();
 };
 #endif
