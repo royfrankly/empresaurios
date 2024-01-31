@@ -1,18 +1,26 @@
 #include "proyecto.h"
 #include "tarea.h"
+//--------------------constructores y destructores-------------------
 Proyecto::Proyecto(){
+    nombre = "";
+    estado = "";
+    descripcion = "";
     fechaCreacion = "";
     fechaFin = "";
 }
-Proyecto::Proyecto(string _nombre, string _fechaCreacion, string _fechaFin, Equipo lEquipo, Tarea lTarea, string _descripcion, string _estado):Tarea( _descripcion, _estado){
+Proyecto::Proyecto(string _nombre, string _estado, string _descripcion, string _fechaCreacion, string _fechaFin, Equipo _miEquipo,const vector<Tarea>& _listaTareas){
     nombre = _nombre;
+    estado = _estado;
+    descripcion = _descripcion;
     fechaCreacion = _fechaCreacion;
     fechaFin = _fechaFin;
-
+    miEquipo = _miEquipo;
+    listaTareas = _listaTareas;
 }
 Proyecto::~Proyecto(){
 
 }
+//---------------------geters y seters-------------------------------------------
 string Proyecto::getNombre(){
     return nombre;
 }
@@ -43,6 +51,7 @@ const vector<Tarea>& Proyecto::getListaTareas(){
 void Proyecto::setListaTareas(const vector<Tarea>& nuevaLista){
     listaTareas = nuevaLista;
 }
+//--------------------sobrecargas y otros--------------------------------------------
 void Proyecto::agregarUnaTarea(Tarea nuevaTarea){
     listaTareas.push_back(nuevaTarea);
 }
@@ -63,7 +72,7 @@ bool Proyecto::operator>(const Proyecto& otroProyecto) const {
     else
         return false;
 }
-istream& operator>>(istream& is, Proyecto& proyecto) {
+/*istream& operator>>(istream& is, Proyecto& proyecto) {
     // Ingresar datos para la clase base Tarea
     is >> dynamic_cast<Tarea&>(proyecto);
     // Ingresar datos adicionales específicos de Proyecto
@@ -83,7 +92,8 @@ ostream& operator<<(ostream& os, const Proyecto& proyecto) {
     os << "Fecha de creación del proyecto: " << proyecto.fechaCreacion << "\n";
     os << "Fecha de finalización del proyecto: " << proyecto.fechaFin << "\n";
     return os;
-}
+}*/
+
 //void Proyecto::crearTarea(){
 
 //}                                                       
