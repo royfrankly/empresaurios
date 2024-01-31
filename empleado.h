@@ -37,7 +37,7 @@ class Empleado:public Contacto{
         bool operator >(Empleado&);
         friend ostream& operator<<(ostream&, const Empleado& );
         friend istream& operator>>(istream&, Empleado& );
-        void guardarEnArchivoEmpleados(string);
+        void guardarEnArchivoEmpleados();
 };
 #endif
 
