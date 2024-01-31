@@ -19,7 +19,7 @@ struct menu{ //Definir una opcion del menu, indicando la tecla
 	public:
 		//Prototipos de metodos
 		menu();  //constructor
-		void agregar(char descrip[], char tec);
+		void agregar(const char* descrip, char tec);
 		void ver(void);
 		char capturar(void);	
 }; 
@@ -29,7 +29,7 @@ menu::menu(){ //constructor
 	totopciones=0;
 }
 	
-void menu::agregar(char descrip[], char tec){
+void menu::agregar(const char* descrip, char tec){
 	//Adiciona un titulo para el menu a presentar a usuario, 
 	//asi como la tecla que debera elegir para esta opcion
 	strcpy(opciones[totopciones].texto,descrip);
