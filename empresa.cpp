@@ -61,8 +61,9 @@ void Empresa::removerUnProyecto(int indice){
         listaProyectos.erase(listaProyectos.begin() + indice);
     }
 }
-void Empresa::guardarEmpleados() {
-    
+void Empresa::guardarEmpleado(Empleado empleado) {
+    agregarUnEmpleado(empleado);
+    empleado.guardarEnArchivoListaEmpleados();
 }
 /*
 ostream& operator<<(ostream& os, const Empresa& empresa) {
