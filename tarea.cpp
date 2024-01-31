@@ -52,7 +52,7 @@ istream& operator>>(istream& is, Tarea& tarea) {
     return is;
 }
 //crea o guarda las tareas en el archivo
-void Tarea::guardarEnArchivo(string codigo) {
+void Tarea::guardarEnArchivoTareas(string codigo) {
     string carpeta = "tareas/tarea";
     string nombreArchivo = carpeta + codigo + ".txt";
     ofstream archivoSalida(nombreArchivo, ios::app);
