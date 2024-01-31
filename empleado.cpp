@@ -84,10 +84,10 @@ bool Empleado::operator>(Empleado& otroEmpleado) {
         return false;
 }
 ostream& operator<<(ostream& os, const Empleado& empleado) {
-    os << "(" << empleado.id << ")";
-    os << "(" << empleado.nombre << ")";
-    os << "(" << empleado.tipo << ")";
-    os << "(" << empleado.salario << ")";
+    os << "(" << empleado.id << ") ";
+    os << "(" << empleado.nombre << ") ";
+    os << "(" << empleado.tipo << ") ";
+    os << "(" << empleado.salario << ") ";
     os << static_cast<const Contacto&>(empleado);
     //const vector<Tarea>& tareas = empleado.listaTareas;
     //os << "Tareas:\n";
@@ -114,7 +114,7 @@ istream& operator>>(istream& is, Empleado& empleado) {
     return is;
 }
 void Empleado::guardarEnArchivoEmpleados() {
-    string carpeta = "empleados/tarea";
+    string carpeta = "empleados/empleado";
     string codigo = to_string(getId());
     string nombreArchivo = carpeta+ codigo + ".txt";
     ofstream archivoSalida(nombreArchivo, ios::app);
