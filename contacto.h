@@ -9,8 +9,10 @@ class Contacto{
         string telefono;
         string sitioWeb;
     public:
+    //-------------------constructores---------------------------
         Contacto();
         Contacto(string, string, string, string);
+    //-----------geters y seters----------------------------------------------------
         string getDireccion();
         void setDireccion(string);
         string getCorreo();
@@ -19,12 +21,9 @@ class Contacto{
         void setTelefono(string);
         string getSitioWeb();
         void setSitioWeb(string);
+    //-----------otros y sobrecargas----------------------------------------------------
         void mostrarContacto();
-        void crearContacto();
-        bool operator <(Contacto&);
-        bool operator >(Contacto&);
         friend ostream& operator<<(ostream&, const Contacto& );
         friend istream& operator>>(istream&, Contacto& );
-
 };
 #endif
