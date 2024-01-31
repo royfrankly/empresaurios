@@ -113,12 +113,26 @@ istream& operator>>(istream& is, Empleado& empleado) {
     is >> dynamic_cast<Contacto&>(empleado);
     return is;
 }
+void Empleado::guardarEmpleado() {
+    string carpeta = "empleados/empleado";
+    string codigo = to_string(getId());
+    string nombreArchivo = carpeta+ codigo + ".txt";
+    ofstream archivoSalida(nombreArchivo, ios::app);
+    if (archivoSalida.is_open()) {
+        archivoSalida << *this<<endl;
+        archivoSalida.close();
+        cout << "Tarea almacenada en el archivo: " << nombreArchivo << endl;
+    } else {
+        cout << "No se pudo abrir el archivo para escritura." << endl;
+    }
+}
 void Empleado::guardarEnArchivoEmpleados() {
     string carpeta = "empleados/empleado";
     string codigo = to_string(getId());
     string nombreArchivo = carpeta+ codigo + ".txt";
     ofstream archivoSalida(nombreArchivo, ios::app);
     if (archivoSalida.is_open()) {
+        archivoSalida<<"ID: "<<getId()<<endl;
         archivoSalida << *this<<endl;
         archivoSalida.close();
         cout << "Tarea almacenada en el archivo: " << nombreArchivo << endl;
