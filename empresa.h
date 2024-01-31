@@ -41,5 +41,6 @@ class Empresa:public Contacto{
         void despedirEmpleado();
         void crearProyecto();
         void agregarProyecto();
+        void guardarEmpleados();
 };
 #endif

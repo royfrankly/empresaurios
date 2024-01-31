@@ -1,5 +1,7 @@
 #include "empresa.h"
-
+#include <iostream>
+#include <fstream>
+#include <sstream>
 //constructores----------------------------------------
 Empresa::Empresa(){
     nombre = "";
@@ -58,6 +60,9 @@ void Empresa::removerUnProyecto(int indice){
     if (indice >= 0 && indice < listaProyectos.size()) {
         listaProyectos.erase(listaProyectos.begin() + indice);
     }
+}
+void Empresa::guardarEmpleados() {
+    
 }
 /*
 ostream& operator<<(ostream& os, const Empresa& empresa) {

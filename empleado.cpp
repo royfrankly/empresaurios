@@ -126,13 +126,12 @@ void Empleado::guardarEmpleado() {
         cout << "No se pudo abrir el archivo para escritura." << endl;
     }
 }
-void Empleado::guardarEnArchivoEmpleados() {
-    string carpeta = "empleados/empleado";
+void Empleado::guardarEnArchivoListaEmpleados() {
+    string carpeta = "empleados/listaEmpleados";
     string codigo = to_string(getId());
     string nombreArchivo = carpeta+ codigo + ".txt";
     ofstream archivoSalida(nombreArchivo, ios::app);
     if (archivoSalida.is_open()) {
-        archivoSalida<<"ID: "<<getId()<<endl;
         archivoSalida << *this<<endl;
         archivoSalida.close();
         cout << "Tarea almacena da en el archivo: " << nombreArchivo << endl;

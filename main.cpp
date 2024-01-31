@@ -15,10 +15,8 @@ using namespace std;
 #include "metodosOrdenacion.h"
 #include "menu.h"
 int main(){
-    Tarea tarea1("Realizar informe", "terminado");
-    Tarea tarea2("Revisar correcciones", "pendiente");
-    tarea1.guardarEnArchivo();
-    /*
+    
+    
     menu miMenu,menuEmpleados,menuProyectos;
     Empresa miempresa;
     miMenu.agregar("Ver datos de la empresa", '1');
@@ -32,11 +30,25 @@ int main(){
     menuProyectos.agregar("Crear proyectos", '1');
     menuProyectos.agregar("Eliminar proyectos", '2');
     menuProyectos.agregar("Modificar proyectos", '3');
-    menuProyectos.agregar("Salir", '0');*/
-    /*miMenu.agregar("Contratar empleado", '4');
+    menuProyectos.agregar("Salir", '0');
+
+
+    Empleado empleado1(1, "Juan", "Desarrollador", 50000.0, "Dirección1", "Correo1", "Telefono1", "SitioWeb1");
+    Empleado empleado2(2, "Maria", "Diseñador", 45000.0, "Dirección2", "Correo2", "Telefono2", "SitioWeb2");
+    Empleado empleado3(3, "Pedro", "Tester", 48000.0, "Dirección3", "Correo3", "Telefono3", "SitioWeb3");
+    Empleado empleado4(4, "Ana", "Gerente", 60000.0, "Dirección4", "Correo4", "Telefono4", "SitioWeb4");
+    Empleado empleado5(5, "Carlos", "Analista", 55000.0, "Dirección5", "Correo5", "Telefono5", "SitioWeb5");
+    empleado1.guardarEnArchivoEmpleados();
+    empleado2.guardarEnArchivoEmpleados();
+    empleado3.guardarEnArchivoEmpleados();
+    empleado4.guardarEnArchivoEmpleados();
+    empleado5.guardarEnArchivoEmpleados();
+    /*
+    miMenu.agregar("Contratar empleado", '4');
     miMenu.agregar("Despedir empleado", '5');
-    miMenu.agregar("Crear proyecto", '4');*/
-    /*char opcionElegida;
+    miMenu.agregar("Crear proyecto", '4');
+    */
+    char opcionElegida;
 
     do {
         miMenu.ver();
@@ -45,7 +57,7 @@ int main(){
         switch(opcionElegida) {
             case '1':
                 cout << "Has seleccionado la opcion ver empresa." << endl;
-                miempresa.mostrarEmpresa();
+                miempresa.mostrarEmpresa();system("pause");
                 break;
             case '2':
                 cout << "Has seleccionado la opcion ver lista de empleados." << endl;
@@ -95,11 +107,11 @@ int main(){
         }
 
         // Pausa para que el usuario vea el resultado
-        system("pause");
+        
 
     } while(opcionElegida != '0');  // Terminar el bucle cuando se presione '0'
     
     cout<<"El programa finalizo";
-    */
+    
     return 0;
 }
