@@ -98,7 +98,7 @@ ostream& operator<<(ostream& os, const Empleado& empleado) {
 }
 istream& operator>>(istream& is, Empleado& empleado) {
     
-    // Ingresar datos adicionales específicos de Empleado
+    // Ingresar datcout adicionales específicos de Empleado
     cout << "Ingrese el ID del empleado: ";
     is >> empleado.id;
     cout << "Ingrese el nombre del empleado: ";

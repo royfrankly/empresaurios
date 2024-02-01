@@ -16,7 +16,17 @@ using namespace std;
 #include "metodosOrdenacion.h"
 #include "menu.h"
 int main(){
-    ifstream archivo;
+    Empresa miempresa;
+    miempresa.leerEmplead
+    cout << "Digite el el numero en el que se encuentra el empleado: "<<endl;
+    cin>>aux;
+    miempresa.removerUnEmpleado(aux);
+    vector<Empleado> m;
+    m= miempresa.getListaEmpleados();
+    for(int i=0; i<m.size(); i++){
+        cout<<m[i]<<endl;
+    }
+    /*ifstream archivo;
     archivo.open("empleados/listaEmpleados.txt");
     if(archivo.is_open()){
         cout<<"\tLISTA DE EMPLEADOS\n\n";
@@ -28,9 +38,9 @@ int main(){
 
     }else{  
         cout<<"ERROR EL ARCHIVO NO SE PUEDE ABRIR"<<endl;
-    }
+    }*/
     //################################################
-    menu miMenu,menuEmpleados,menuProyectos;
+    /*menu miMenu,menuEmpleados,menuProyectos;
     Empresa miempresa;
     miMenu.agregar("Ver datos de la empresa", '1');
     miMenu.agregar("Ver lista de empleados", '2');
@@ -44,11 +54,13 @@ int main(){
     menuProyectos.agregar("Eliminar proyectos", '2');
     menuProyectos.agregar("Modificar proyectos", '3');
     menuProyectos.agregar("Salir", '0');
+    int aux;*/
     /*
     miMenu.agregar("Contratar empleado", '4');
     miMenu.agregar("Despedir empleado", '5');
     miMenu.agregar("Crear proyecto", '4');
     */
+   /*
     char opcionElegida;
 
     do {
@@ -62,7 +74,7 @@ int main(){
                 break;
             case '2':
                 cout << "Has seleccionado la opcion ver lista de empleados." << endl;
-                
+                    miempresa.leerEmpleados();
                 char opcE;
                 do{
                     menuEmpleados.ver();
@@ -70,13 +82,19 @@ int main(){
                     switch (opcE)
                     {
                     case '1':
+                        
                         cout << "Has seleccionado la opcion despedir empleados." << endl;
+                        
+                        
                         break;
                     case '2':
                         cout << "Has seleccionado la opcion contratar empleados." << endl;
+                        
                         break;
                     case '3':
                         cout << "Has seleccionado la opcion modificar empleado. " << endl;
+                        cout << "Digite el el numero del empleado que desea modificar: "<<endl;
+
                         break;
                     }
                     system("pause");
@@ -84,7 +102,6 @@ int main(){
                 break;
             case '3':
                 cout << "Has seleccionado la opcion ver lista de proyectos." << endl;
-                
                 char opcP;
                 do{
                     menuProyectos.ver();
@@ -113,6 +130,6 @@ int main(){
     } while(opcionElegida != '0');  // Terminar el bucle cuando se presione '0'
     
     cout<<"El programa finalizo";
-    
+    */
     return 0;
 }

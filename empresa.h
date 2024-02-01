@@ -44,5 +44,6 @@ class Empresa:public Contacto{
         void guardarEmpleado(Empleado);
         //cuando se inicie el programa cargara los empelados
         void cargarEmpleados();
+        void leerEmpleados();
 };
 #endif

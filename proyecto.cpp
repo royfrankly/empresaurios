@@ -72,12 +72,13 @@ bool Proyecto::operator>(const Proyecto& otroProyecto) const {
     else
         return false;
 }
-/*istream& operator>>(istream& is, Proyecto& proyecto) {
-    // Ingresar datos para la clase base Tarea
-    is >> dynamic_cast<Tarea&>(proyecto);
-    // Ingresar datos adicionales específicos de Proyecto
+istream& operator>>(istream& is, Proyecto& proyecto) {
     cout << "Ingrese el nombre del proyecto: ";
     getline(is, proyecto.nombre);
+    cout << "Ingrese el estado del proyecto: ";
+    getline(is, proyecto.estado);
+    cout << "Ingrese la descripción del proyecto: ";
+    getline(is, proyecto.descripcion);
     cout << "Ingrese la fecha de creación del proyecto: ";
     getline(is, proyecto.fechaCreacion);
     cout << "Ingrese la fecha de finalización del proyecto: ";
@@ -85,14 +86,13 @@ bool Proyecto::operator>(const Proyecto& otroProyecto) const {
     return is;
 }
 ostream& operator<<(ostream& os, const Proyecto& proyecto) {
-    // Mostrar datos de la clase base Tarea
-    os << dynamic_cast<const Tarea&>(proyecto);
-    // Mostrar datos adicionales específicos de Proyecto
-    os << "Nombre del proyecto: " << proyecto.nombre << "\n";
-    os << "Fecha de creación del proyecto: " << proyecto.fechaCreacion << "\n";
-    os << "Fecha de finalización del proyecto: " << proyecto.fechaFin << "\n";
+    os << "Nombre: " << proyecto.nombre << "\n";
+    os << "Estado: " << proyecto.estado << "\n";
+    os << "Descripción: " << proyecto.descripcion << "\n";
+    os << "Fecha de Creación: " << proyecto.fechaCreacion << "\n";
+    os << "Fecha de Finalización: " << proyecto.fechaFin << "\n";
     return os;
-}*/
+}
 
 //void Proyecto::crearTarea(){
 

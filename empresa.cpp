@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+
 //constructores----------------------------------------
 Empresa::Empresa(){
     nombre = "";
@@ -44,7 +45,11 @@ void Empresa::agregarUnEmpleado(Empleado nuevoEmpleado){
 }
 void Empresa::removerUnEmpleado(int indice){
     if (indice >= 0 && indice < listaEmpleados.size()) {
-        listaEmpleados.erase(listaEmpleados.begin() + indice);
+    // Utiliza erase para eliminar el empleado en la posición indicada
+    listaEmpleados.erase(listaEmpleados.begin() + indice);
+    cout << "Empleado eliminado correctamente." << endl;
+    } else {
+        cout << "Índice de empleado no válido." << endl;
     }
 }
 const vector<Proyecto>& Empresa::getListaProyectos(){
@@ -64,6 +69,24 @@ void Empresa::removerUnProyecto(int indice){
 void Empresa::guardarEmpleado(Empleado empleado) {
     agregarUnEmpleado(empleado);
     empleado.guardarEnArchivoListaEmpleados();
+}
+void Empresa::leerEmpleados(){
+    ifstream leerEmpleados;
+    char Xd;
+    string nombreArchivo =  "empleados/listaEmpleados.txt";
+    leerEmpleados.open(nombreArchivo);
+    if(leerEmpleados.is_open()){
+        while (!leerEmpleados.eof()){
+            leerEmpleados.get(Xd);
+            if(Xd == '('  || Xd == ')'){
+                Xd=' '; 
+            }
+            cout<<Xd;
+        }
+        leerEmpleados.close();
+    }else{
+        cout<<"El archivo no se peude abrir"<<endl;
+    }
 }
 /*
 ostream& operator<<(ostream& os, const Empresa& empresa) {
