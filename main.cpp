@@ -4,6 +4,7 @@
 #include <fstream>
 #include <sstream>
 #include <string.h>
+#include <iomanip>
 using namespace std;
 
 #include "empleado.h"
@@ -15,8 +16,20 @@ using namespace std;
 #include "metodosOrdenacion.h"
 #include "menu.h"
 int main(){
-    
-    
+    ifstream archivo;
+    archivo.open("empleados/listaEmpleados.txt");
+    if(archivo.is_open()){
+        cout<<"\tLISTA DE EMPLEADOS\n\n";
+        cout<<left;
+        cout<<setw(5)<<"=ID=|"<<setw(40)<<"|================NO================|"<<setw(20);
+        cout<<"|==========Tipo=========|"<<setw(11)<<"Sueldo(S/.)";
+        cout<<setw(50)<<"|===================DIRECCION====================|"<<setw(30)<<"|=========CORREO========|";
+        cout<<setw(12)<<"|=TELEFONO=|"<<setw(40)<<"|==============SITIO WEB==============|";
+
+    }else{  
+        cout<<"ERROR EL ARCHIVO NO SE PUEDE ABRIR"<<endl;
+    }
+    //################################################
     menu miMenu,menuEmpleados,menuProyectos;
     Empresa miempresa;
     miMenu.agregar("Ver datos de la empresa", '1');
@@ -31,18 +44,6 @@ int main(){
     menuProyectos.agregar("Eliminar proyectos", '2');
     menuProyectos.agregar("Modificar proyectos", '3');
     menuProyectos.agregar("Salir", '0');
-
-
-    Empleado empleado1(1, "Juan", "Desarrollador", 50000.0, "Dirección1", "Correo1", "Telefono1", "SitioWeb1");
-    Empleado empleado2(2, "Maria", "Diseñador", 45000.0, "Dirección2", "Correo2", "Telefono2", "SitioWeb2");
-    Empleado empleado3(3, "Pedro", "Tester", 48000.0, "Dirección3", "Correo3", "Telefono3", "SitioWeb3");
-    Empleado empleado4(4, "Ana", "Gerente", 60000.0, "Dirección4", "Correo4", "Telefono4", "SitioWeb4");
-    Empleado empleado5(5, "Carlos", "Analista", 55000.0, "Dirección5", "Correo5", "Telefono5", "SitioWeb5");
-    empleado1.guardarEnArchivoEmpleados();
-    empleado2.guardarEnArchivoEmpleados();
-    empleado3.guardarEnArchivoEmpleados();
-    empleado4.guardarEnArchivoEmpleados();
-    empleado5.guardarEnArchivoEmpleados();
     /*
     miMenu.agregar("Contratar empleado", '4');
     miMenu.agregar("Despedir empleado", '5');

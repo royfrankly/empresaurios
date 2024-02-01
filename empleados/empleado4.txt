@@ -1,2 +1,1 @@
-ID: 4
 (4) (Ana) (Gerente) (60000) (Dirección4) (Correo4) (Telefono4) (SitioWeb4) 
