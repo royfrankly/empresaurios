@@ -34,16 +34,31 @@ class Empresa {
 }
 
 class Empleado {
-    -tipo: String
-    -id: int
-    -nombre: String
-    -salario: float
-    -contacto: Contacto
-
-
-    +Empleado()
-    +Empleado(prTipo: String, prId: int, prNombre: String, prSalario: float, prContacto: Contacto)
-    +MostrarEmpleado(): void
+  - id: int
+  - nombre: string
+  - tipo: string
+  - salario: float
+  - listaTareas: vector<Tarea>
+  + Empleado()
+  + Empleado(int, string, string, float, string, string, string, string)
+  + ~Empleado()
+  + getId(): int
+  + serId(int): void
+  + getNombre(): string
+  + setNombre(string): void
+  + getTipo(): string
+  + setTipo(string): void
+  + getSalario(): float
+  + setSalario(float): void
+  + getTareas(): const vector<Tarea>&
+  + setTareas(const vector<Tarea>&): void
+  + agregarUnaTarea(Tarea): void
+  + removerUnaTarea(int): void
+  + mostrarEmpleado(): void
+  + operator <(Empleado&): bool
+  + operator >(Empleado&): bool
+  + guardarEmpleado(): void
+  + guardarEnArchivoListaEmpleados(): void
 }
 class Contacto{
     -direccion: String
