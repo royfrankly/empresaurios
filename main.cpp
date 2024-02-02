@@ -106,7 +106,8 @@ int main(){
                             break;
                         case '2':
                             cout << "Has seleccionado la opcion eliminar proyectos." << endl;
-                            
+                            cout<<"Digite pocision del proyecto a eliminar: "<<endl;
+                            cin>>indice;
                             miempresa.removerUnProyecto(indice);
                             miempresa.actualizarListaProyectos();
                             miempresa.mostrarProyectos();
