@@ -10,12 +10,27 @@ class Empresa {
 
     +Empresa()
     +Empresa(nombre: String,ruc: String,descripcion: String,contactoEmpresa: Contacto ,listEmpleados: Empleado[],listaSucursales: String[])
-    +mostrarEmpresa(): void
-    +contratarEmpleado(): void
-    +despedirEmpleado(): void
-    +crearProyecto(): void
-    +agregarProyecto(): void 
-    
+    + getNombre(): string
+    + setNombre(string): void
+    + getRuc(): string
+    + setRuc(string): void
+    + getDescripcion(): string
+    + setDescripcion(string): void
+    + getListaEmpleados(): const vector<Empleado>&
+    + setListaEmpleados(const vector<Empleado>&): void
+    + agregarUnEmpleado(Empleado): void
+    + removerUnEmpleado(int): void
+    + getListaProyectos(): const vector<Proyecto>&
+    + setListaProyectos(const vector<Proyecto>&): void
+    + agregarUnProyecto(Proyecto): void
+    + removerUnProyecto(int): void
+    + mostrarEmpresa(): void
+    + contratarEmpleado(): void
+    + despedirEmpleado(): void
+    + crearProyecto(): void
+    + agregarProyecto(): void
+    + guardarEmpleado(Empleado): void
+    + cargarEmpleados(): void
 }
 
 class Empleado {
