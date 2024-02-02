@@ -42,12 +42,14 @@ int main(){
             case '1':
                 cout << "Has seleccionado la opcion ver empresa." << endl;
                 miempresa.leerEmpresa();
+                
                 miempresa.mostrarEmpresa();
                 
                 break;
             case '2':
                 cout << "Has seleccionado la opcion ver lista de empleados." << endl;
-                    //miempresa.leerEmpleados();
+                    miempresa.leerEmpleados();
+                    miempresa.mostrarEmpleados();
                 char opcE;
                 do{
                     menuEmpleados.ver();
@@ -57,19 +59,25 @@ int main(){
                     case '1':
                         
                         cout << "Has seleccionado la opcion despedir empleados." << endl;
-                        //cin>>indice;
-                        //miempresa.removerUnEmpleado(indice);
-                        //lempleados=miempresa.getListaEmpleados();
-                        //for(int i=0;i<lempleados.size();i++){
-                        //    miempresa.guardarEmpleado(lempleados[i]);
-                        //}
-                        //miempresa.leerEmpleados();
+                        cout<<"Digite la posicion del empleado a despedir: "<<endl;
+                        cin>>indice;
+                        miempresa.removerUnEmpleado(indice);
+                        miempresa.actualizarListaEmpleados();
+                        miempresa.mostrarEmpleados();
+                        
+                        miempresa.leerEmpleados();
                         
                         break;
                     case '2':
                         cout << "Has seleccionado la opcion contratar empleados." << endl;
-                        //cin>>nuevoEmpleado;
-                        //miempresa.guardarEmpleado(nuevoEmpleado);
+                        
+                        miempresa.guardarEmpleado(nuevoEmpleado);
+                        
+                        miempresa.mostrarEmpleados();
+                        for(int i=0;i<lempleados.size();i++){
+                            miempresa.guardarEmpleado(lempleados[i]);
+                        }
+                        miempresa.leerEmpleados();
                         break;
                     case '3':
                         cout << "Has seleccionado la opcion modificar empleado. " << endl;
