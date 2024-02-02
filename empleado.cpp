@@ -133,7 +133,6 @@ void Empleado::guardarEnArchivoListaEmpleados() {
     if (archivoSalida.is_open()) {
         archivoSalida << *this<<endl;
         archivoSalida.close();
-        cout << "Tarea almacena da en el archivo: " << nombreArchivo << endl;
     } else {
         cout << "No se pudo abrir el archivo para escritura." << endl;
     }

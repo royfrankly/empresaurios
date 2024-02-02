@@ -33,6 +33,9 @@ int main(){
     Proyecto nuevoProyecto;
     Empleado nuevoEmpleado;
     vector<Empleado> lempleados;
+    miempresa.leerEmpleados();
+    miempresa.leerProyectos();
+    miempresa.leerEmpresa();
     do {
         miMenu.ver();
         opcionElegida = miMenu.capturar();
@@ -40,18 +43,17 @@ int main(){
         switch(opcionElegida) {
             case '1':
                 cout << "Has seleccionado la opcion ver empresa." << endl;
-                miempresa.leerEmpresa();
+                
                 
                 miempresa.mostrarEmpresa();
                 
                 break;
             case '2':
                 cout << "Has seleccionado la opcion ver lista de empleados." << endl;
-                if(cen==0){
-                    miempresa.leerEmpleados();
-                    cen=1;
-                }
+                    //limpia la lista txt y luego la llena con los datos del vector
                     miempresa.actualizarListaEmpleados();
+
+                    //solo muestra a los empleados almacenados en el vector
                     miempresa.mostrarEmpleados();
                 char opcE;
                 do{
@@ -83,10 +85,7 @@ int main(){
                 break;
             case '3':
                 cout << "Has seleccionado la opcion ver lista de proyectos." << endl;
-                if(cen1==0){
-                    miempresa.leerProyectos();
-                    cen1=1;
-                }
+                
                     miempresa.actualizarListaProyectos();
                     miempresa.mostrarProyectos();
                 char opcP;
@@ -97,18 +96,19 @@ int main(){
                     {
                         case '1':
                             cout << "Has seleccionado la opcion crear proyectos." << endl;
-                            cout<<"Digite la posicion del empleado a despedir: "<<endl;
-                            cin>>indice;
-                            miempresa.removerUnProyecto(indice);
-                            miempresa.actualizarListaProyectos();
-                            miempresa.mostrarProyectos();
-                            break;
-                        case '2':
-                            cout << "Has seleccionado la opcion eliminar proyectos." << endl;
                             cin>>nuevoProyecto;
                             miempresa.agregarUnProyecto(nuevoProyecto);
                             nuevoProyecto.guardarEnArchivoListaProyectos();
                             //miempresa.actualizarListaEmpleados();
+                            miempresa.mostrarProyectos();
+
+                            
+                            break;
+                        case '2':
+                            cout << "Has seleccionado la opcion eliminar proyectos." << endl;
+                            
+                            miempresa.removerUnProyecto(indice);
+                            miempresa.actualizarListaProyectos();
                             miempresa.mostrarProyectos();
                             break;
                         

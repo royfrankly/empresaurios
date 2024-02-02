@@ -76,60 +76,7 @@ void Empresa::guardarEmpleado(Empleado empleado) {
     empleado.guardarEnArchivoListaEmpleados();
 }
 //empleados
-void Empresa::obtenerEmpleados() {
-    string aux[10];
-    bool cen = true;
-    int id, i = 0;
-    string nombre, tipo, direccion, correo, telefono, sitioWeb;
-    float salario;
-    ifstream obtenerEmpleados;
-    Empleado emp;
-    obtenerEmpleados.open("empresa/listaEmpleados.txt");
-    if (obtenerEmpleados.is_open()) {
-        cout << "se abre dir" << endl;
-        while (!obtenerEmpleados.eof()) {
-            // Leer una línea del archivo
-            string linea;
-            getline(obtenerEmpleados, linea);
 
-            // Verificar si la línea no está vacía
-            if (!linea.empty()) {
-                // Utilizar stringstream para dividir la línea en tokens
-                istringstream ss(linea);
-                string token;
-                int index = 0;
-
-                // Leer cada token y almacenarlo en el array aux
-                while (ss >> token) {
-                    // Eliminar los paréntesis de cada token
-                    if (token[0] == '(') {
-                        token = token.substr(1, token.size() - 1);
-                    }
-                    for (char &c : token) {
-                        if (c == '(' || c == ')') {
-                            // Crear un nuevo string sin paréntesis
-                            token = token.substr(0, token.size() - 1);
-                        }
-                    }
-                    aux[index++] = token;
-                }
-            }
-            
-            emp.setId(stoi(aux[0]));
-            emp.setNombre(aux[1]);
-            emp.setTipo(aux[2]);
-            emp.setSalario(stof(aux[3]));
-            emp.setDireccion(aux[4]);
-            emp.setCorreo(aux[5]);
-            emp.setTelefono(aux[6]);
-            emp.setSitioWeb(aux[7]);
-            agregarUnEmpleado(emp);
-        }
-    } else {
-        cout << "ERROR EL ARCHIVO NO SE PUEDE ABRIR" << endl;
-    }
-    obtenerEmpleados.close();
-}
 void Empresa::leerEmpleados() {
     ifstream archivo;
     string linea;
@@ -368,6 +315,7 @@ void Empresa::actualizarListaProyectos(){
     archivo.close();
     for(int i=0; i<listaProyectos.size(); i++){
         listaProyectos[i].guardarEnArchivoListaProyectos();
+        
     }
     
 }

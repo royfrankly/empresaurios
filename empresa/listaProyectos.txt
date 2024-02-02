@@ -27,5 +27,3 @@
 (475) (Roberto Díaz) (Programador) (63000) (Av. Programación) 
 (178) (Laura Gómez) (Ingeniera) (74000) (Calle Innovación) 
 (981) (Carlos Ramírez) (Desarrollador) (66000) (Calle Código) 
-() () () () () 
-() (0) (0) (2) (0) 
