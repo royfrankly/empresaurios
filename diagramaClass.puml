@@ -143,8 +143,8 @@ Class Tarea {
     + guardarEnArchivoTareas(nombreArchivo: string): void
     + leerElArchivo(nombreArchivo: string): void
 }
-Empresa "1"-- "1" Contacto
-Empleado "1"--"1" Contacto
+Contacto "1"<|-- "1" Empresa
+Contacto "1"<|--"1" Empleado
 Empresa "1" o--"1..*"Empleado 
 Empleado "1..*"--"1..*" Equipo
 Proyecto "1" --"1" Equipo
