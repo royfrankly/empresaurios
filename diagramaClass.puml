@@ -81,19 +81,32 @@ class Contacto{
 }  
 
 class Proyecto {
-    -nombre: String
-    -descripcion: String
-    -estado: String
-    -listaEquipo: Equipo[]
-    -listaTareas: Tarea[]
-    -fechaCreacion: String
-    -fechaFin: String
-
-    +Proyecto()
-    +Proyecto(prNombre: String, pr Descripcion: String, prEstado: String, prListaEquipo: Equipo[], prListaTareas: Tarea[], prFechaCreacion: String, prFechaFin: String)
-    +crearTarea(): void
-    +asignarEquipo(): void
-    +cambiarEstado(nuevoEstado: String): void
+  - nombre: string
+  - estado: string
+  - descripcion: string
+  - fechaCreacion: string
+  - fechaFin: string
+  - miEquipo: Equipo
+  - listaTareas: vector<Tarea>
+  + Proyecto()
+  + Proyecto(string, string, string, string, string, Equipo, const vector<Tarea>&)
+  + ~Proyecto()
+  + getNombre(): string
+  + setNombre(string): void
+  + getFechaCreacion(): string
+  + setFechaCreacion(string): void
+  + getFechaFin(): string
+  + setFechaFin(string): void
+  + getEquipo(): Equipo
+  + setEquipo(Equipo): void
+  + getListaTareas(): const vector<Tarea>&
+  + setListaTareas(const vector<Tarea>& nuevaLista): void
+  + agregarUnaTarea(Tarea): void
+  + removerUnaTarea(int): void
+  + operator<(const Proyecto&) const: bool
+  + operator>(const Proyecto&) const: bool
+  + operator>>(istream&, Proyecto&): void
+  + operator<<(ostream&, const Proyecto&): void
 }
 
 class Equipo {
