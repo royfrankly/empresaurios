@@ -1,88 +1,158 @@
 @startuml
 skinparam ClassAttributeIconSize 0
 class Empresa {
-    -nombre: String
-    -ruc: String
-    -descripcion: String
-    -contactoEmpresa: Contacto
-    -listaEmpleados: Empleado[]
-    -listaProyectos: Proyecto[]
+    - nombre: String
+    - ruc: String
+    - descripcion: String
+    - contactoEmpresa: Contacto
+    - listaEmpleados: Empleado[]
+    - listaProyectos: Proyecto[]
 
     +Empresa()
     +Empresa(nombre: String,ruc: String,descripcion: String,contactoEmpresa: Contacto ,listEmpleados: Empleado[],listaSucursales: String[])
-    +mostrarEmpresa(): void
-    +contratarEmpleado(): void
-    +despedirEmpleado(): void
-    +crearProyecto(): void
-    +agregarProyecto(): void 
-    
+    + getNombre(): string
+    + setNombre(string): void
+    + getRuc(): string
+    + setRuc(string): void
+    + getDescripcion(): string
+    + setDescripcion(string): void
+    + getListaEmpleados(): const vector<Empleado>&
+    + setListaEmpleados(const vector<Empleado>&): void
+    + agregarUnEmpleado(Empleado): void
+    + removerUnEmpleado(int): void
+    + getListaProyectos(): const vector<Proyecto>&
+    + setListaProyectos(const vector<Proyecto>&): void
+    + agregarUnProyecto(Proyecto): void
+    + removerUnProyecto(int): void
+    + mostrarEmpresa(): void
+    + contratarEmpleado(): void
+    + despedirEmpleado(): void
+    + crearProyecto(): void
+    + agregarProyecto(): void
+    + guardarEmpleado(Empleado): void
+    + cargarEmpleados(): void
 }
 
 class Empleado {
-    -tipo: String
-    -id: int
-    -nombre: String
-    -salario: float
-    -contacto: Contacto
-
-
-    +Empleado()
-    +Empleado(prTipo: String, prId: int, prNombre: String, prSalario: float, prContacto: Contacto)
-    +MostrarEmpleado(): void
+    - id: int
+    - nombre: string
+    - tipo: string   
+    - salario: float
+    - listaTareas: vector<Tarea>
+    + Empleado()
+    + Empleado(int, string, string, float, string, string, string, string)
+    + ~Empleado()
+    + getId(): int
+    + serId(int): void
+    + getNombre(): string
+    + setNombre(string): void
+    + getTipo(): string
+    + setTipo(string): void
+    + getSalario(): float
+    + setSalario(float): void
+    + getTareas(): const vector<Tarea>&
+    + setTareas(const vector<Tarea>&): void
+    + agregarUnaTarea(Tarea): void
+    + removerUnaTarea(int): void
+    + mostrarEmpleado(): void
+    + operator <(Empleado&): bool
+    + operator >(Empleado&): bool
+    + guardarEmpleado(): void
+    + guardarEnArchivoListaEmpleados(): void
 }
 class Contacto{
-    -direccion: String
-    -correoContacto: String
-    -telefonoContacto: String
-    -sitioWeb: String
-    
-    +Contacto()
-    +Contacto(prDireccion: String, prCorreoContacto: String, prTelefonoContacto: String, prSitioWeb: String);
-    +mostrarContacto(): void
+    - direccion: string
+    - correo: string
+    - telefono: string
+    - sitioWeb: string
+    + Contacto()
+    + Contacto(string, string, string, string)
+    + getDireccion(): string
+    + setDireccion(string): void
+    + getCorreo(): string
+    + setCorreo(string): void
+    + getTelefono(): string
+    + setTelefono(string): void
+    + getSitioWeb(): string
+    + setSitioWeb(string): void
+    + mostrarContacto(): void
+    + operator<<(ostream&, const Contacto&): void
+    + operator>>(istream&, Contacto&): void
 }  
 
 class Proyecto {
-    -nombre: String
-    -descripcion: String
-    -estado: String
-    -listaEquipo: Equipo[]
-    -listaTareas: Tarea[]
-    -fechaCreacion: String
-    -fechaFin: String
-
-    +Proyecto()
-    +Proyecto(prNombre: String, pr Descripcion: String, prEstado: String, prListaEquipo: Equipo[], prListaTareas: Tarea[], prFechaCreacion: String, prFechaFin: String)
-    +crearTarea(): void
-    +asignarEquipo(): void
-    +cambiarEstado(nuevoEstado: String): void
+    - nombre: string
+    - estado: string
+    - descripcion: string
+    - fechaCreacion: string
+    - fechaFin: string
+    - miEquipo: Equipo
+    - listaTareas: vector<Tarea>
+    + Proyecto()
+    + Proyecto(string, string, string, string, string, Equipo, const vector<Tarea>&)
+    + ~Proyecto()
+    + getNombre(): string
+    + setNombre(string): void
+    + getFechaCreacion(): string
+    + setFechaCreacion(string): void
+    + getFechaFin(): string
+    + setFechaFin(string): void
+    + getEquipo(): Equipo
+    + setEquipo(Equipo): void
+    + getListaTareas(): const vector<Tarea>&
+    + setListaTareas(const vector<Tarea>& nuevaLista): void
+    + agregarUnaTarea(Tarea): void
+    + removerUnaTarea(int): void
+    + operator<(const Proyecto&) const: bool
+    + operator>(const Proyecto&) const: bool
+    + operator>>(istream&, Proyecto&): void
+    + operator<<(ostream&, const Proyecto&): void
 }
 
 class Equipo {
-    -id: int
-    -nombre: String
-    -lider: Empleado
-    -listaMiembros: Empleado[]
-
-    +Equipo()
-    +Equipo(prId: int, prNombre: String, prLider: Empleado, prListaMiembros: Empleado[])
-    +agregarMiembro(empleado: Empleado): void
-    +removerMiembro(empleado: Empleado): void
-    +agregarLider( Lider: Empleado): void
+    - descripcion: string
+    - estado: string
+    + Tarea()
+    + Tarea(descripcion: string, estado: string)
+    + getDescripcion(): string
+    + setDescripcion(descripcion: string): void
+    + getEstado(): string
+    + setEstado(estado: string): void
+    + mostrarTarea(): void
+    + operator <(otraTarea: Tarea&): bool
+    + operator >(otraTarea: Tarea&): bool
+    + {friend} <<friend>> ostream& operator<<(os: ostream&, tarea: const Tarea&)
+    + {friend} <<friend>> istream& operator>>(is: istream&, tarea: Tarea&)
+    + guardarEnArchivoTareas(nombreArchivo: string): void
+    + leerElArchivo(nombreArchivo: string): void
 }
 Class Tarea {
-    -descripcion: String
-    -estado: String
-    +Tarea()
-    +Tarea(prDescripcion: String, prEstado: String)
-    +cambiarEstado(): void
+    - descripcion: string
+    - estado: string
+    + Tarea()
+    + Tarea(descripcion: string, estado: string)
+    + getDescripcion(): string
+    + setDescripcion(descripcion: string): void
+    + getEstado(): string
+    + setEstado(estado: string): void
+    + mostrarTarea(): void
+    + operator <(otraTarea: Tarea&): bool
+    + operator >(otraTarea: Tarea&): bool
+    + {friend} <<friend>> ostream& operator<<(os: ostream&, tarea: const Tarea&)
+    + {friend} <<friend>> istream& operator>>(is: istream&, tarea: Tarea&)
+    + guardarEnArchivoTareas(nombreArchivo: string): void
+    + leerElArchivo(nombreArchivo: string): void
 }
-Empresa "1"-- "1" Contacto
-Empleado "1"--"1" Contacto
-Empresa "1" o--"1..*"Empleado 
-Empleado "1..*"--"1..*" Equipo
-Proyecto "1" --"1" Equipo
+Contacto "1"<|-- "1" Empresa
+Contacto "1"<|--"1" Empleado
+Empresa "1" *--"1..*"Empleado
+Empresa "1" o--"1..*"Empleado
+Empleado "1..*"-->"1..*" Equipo
+Proyecto "1" <--"1" Equipo
 Proyecto "1"*--"*" Tarea
 Empresa "1" o-- Proyecto
+Tarea --  Empleado
+
 @enduml
 
 
