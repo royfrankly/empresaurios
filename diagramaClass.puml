@@ -61,14 +61,23 @@ class Empleado {
   + guardarEnArchivoListaEmpleados(): void
 }
 class Contacto{
-    -direccion: String
-    -correoContacto: String
-    -telefonoContacto: String
-    -sitioWeb: String
-    
-    +Contacto()
-    +Contacto(prDireccion: String, prCorreoContacto: String, prTelefonoContacto: String, prSitioWeb: String);
-    +mostrarContacto(): void
+  - direccion: string
+  - correo: string
+  - telefono: string
+  - sitioWeb: string
+  + Contacto()
+  + Contacto(string, string, string, string)
+  + getDireccion(): string
+  + setDireccion(string): void
+  + getCorreo(): string
+  + setCorreo(string): void
+  + getTelefono(): string
+  + setTelefono(string): void
+  + getSitioWeb(): string
+  + setSitioWeb(string): void
+  + mostrarContacto(): void
+  + operator<<(ostream&, const Contacto&): void
+  + operator>>(istream&, Contacto&): void
 }  
 
 class Proyecto {
