@@ -72,6 +72,18 @@ bool Proyecto::operator>(const Proyecto& otroProyecto) const {
     else
         return false;
 }
+void Proyecto::guardarEnArchivoListaProyectos() {
+    string carpeta = "empresa/listaProyectos";
+    string nombreArchivo = carpeta+ ".txt";
+    ofstream archivoSalida(nombreArchivo, ios::app);
+    if (archivoSalida.is_open()) {
+        archivoSalida << *this<<endl;
+        archivoSalida.close();
+        cout << "Tarea almacena da en el archivo: " << nombreArchivo << endl;
+    } else {
+        cout << "No se pudo abrir el archivo para escritura." << endl;
+    }
+}
 /*istream& operator>>(istream& is, Proyecto& proyecto) {
     // Ingresar datos para la clase base Tarea
     is >> dynamic_cast<Tarea&>(proyecto);
