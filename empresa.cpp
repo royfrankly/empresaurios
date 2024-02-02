@@ -75,66 +75,7 @@ void Empresa::guardarEmpleado(Empleado empleado) {
     agregarUnEmpleado(empleado);
     empleado.guardarEnArchivoListaEmpleados();
 }
-
-/*
-void Empresa::obtenerProyecto() {
-    string aux[10];
-    bool cen = true;
-    int i = 0;
-    string nombre, estado, descripcion, fechaCreacion;
-    Equipo miequipo;
-    
-    ifstream obtenerProyecto;
-    Proyecto proy;
-    obtenerProyecto.open("proyectos/listaProyectos.txt");
-    if (obtenerProyecto.is_open()) {
-        cout << "se abre dir" << endl;
-        while (!obtenerProyecto.eof()) {
-            // Leer una línea del archivo
-            string linea;
-            getline(obtenerProyecto, linea);
-
-            // Verificar si la línea no está vacía
-            if (!linea.empty()) {
-                // Utilizar stringstream para dividir la línea en tokens
-                istringstream ss(linea);
-                string token;
-                int index = 0;
-
-                // Leer cada token y almacenarlo en el array aux
-                while (ss >> token) {
-                    // Eliminar los paréntesis de cada token
-                    if (token[0] == '(') {
-                        token = token.substr(1, token.size() - 1);
-                    }
-                    for (char &c : token) {
-                        if (c == '(' || c == ')') {
-                            // Crear un nuevo string sin paréntesis
-                            token = token.substr(0, token.size() - 1);
-                        }
-                    }
-                    aux[index++] = token;
-                }
-            }
-            Tarea tarea(aux[6]);
-            vector<Tarea> listaTareas;
-            listaTareas.push_back(tarea);
-            
-            proy.setNombre(aux[0]);
-            proy.setEstado(aux[1]);
-            proy.setDescripcion(aux[2]);
-            proy.setFechaCreacion(aux[3]);
-            proy.setFechaFin(aux[4]);
-            proy.setEquipo(aux[5]);
-            proy.setListaTareas(aux[6]);
-            agregarUnProyecto(proy);
-        }
-    } else {
-        cout << "ERROR EL ARCHIVO NO SE PUEDE ABRIR" << endl;
-    }
-    obtenerProyecto.close();
-}
-*/
+//empleados
 void Empresa::obtenerEmpleados() {
     string aux[10];
     bool cen = true;
@@ -265,6 +206,9 @@ void Empresa::actualizarListaEmpleados(){
     ofstream archivo;
     archivo.open("empresa/listaEmpleados.txt", ios::trunc);
     archivo.close();
+    for(int i=0; i<listaEmpleados.size(); i++){
+        listaEmpleados[i].guardarEnArchivoListaEmpleados();
+    }
     
 }
 void Empresa::mostrarEmpleados(){
@@ -354,6 +298,92 @@ void Empresa::mostrarEmpresa() {
     //for (const Proyecto& proyecto : listaProyectos) {
     //    cout << "Nombre: " << proyecto.getNombre() << " - Estado: " << proyecto.getEstado() << " - Descripción: " << proyecto.getDescripcion() << endl;
     //}
+}
+//proyectos
+void Empresa::leerProyectos() {
+    ifstream archivo;
+    string linea;
+    Proyecto proy;
+    archivo.open("empresa/listaProyectos.txt");
+    char aux;
+    
+    if (archivo.is_open()) {
+        cout << "Se abre el archivo correctamente." << endl;
+
+        // Variables para almacenar los datos
+        string nombre, estado, descripcion, fechaCreacion, fechaFin;
+
+        // Iterar sobre todas las líneas del archivo
+        while (getline(archivo, linea)) {
+            // Procesar la línea y extraer datos entre paréntesis
+            size_t posInicio = 0;
+            size_t posFin = 0;
+            
+            while ((posInicio = linea.find('(', posFin)) != string::npos) {
+                posFin = linea.find(')', posInicio);
+                if (posFin != string::npos) {
+                    string contenido = linea.substr(posInicio + 1, posFin - posInicio - 1);
+
+                    // Almacenar el contenido en las variables correspondientes
+                    if (nombre.empty()) {
+                        nombre = contenido;
+                    } else if (estado.empty()) {
+                        estado = contenido;
+                    } else if (descripcion.empty()) {
+                        descripcion = contenido;
+                    } else if (fechaCreacion.empty()) {
+                        fechaCreacion = contenido;
+                    } else if (fechaFin.empty()) {
+                        fechaFin = contenido;
+                    }
+                }
+            }
+
+            proy.setNombre(nombre);
+            proy.setEstado(estado);
+            proy.setDescripcion(descripcion);
+            proy.setFechaCreacion(fechaCreacion);
+            proy.setFechaFin(fechaFin);
+
+            agregarUnProyecto(proy);
+            
+            // Limpiar variables para el próximo empleado
+            nombre.clear();
+            estado.clear();
+            descripcion.clear();
+            fechaCreacion.clear();
+            fechaFin.clear();
+        }
+
+    } else {
+        cout << "ERROR: No se pudo abrir el archivo." << endl;
+    }
+
+    archivo.close();
+}
+
+void Empresa::actualizarListaProyectos(){
+    ofstream archivo;
+    archivo.open("empresa/listaProyectos.txt", ios::trunc);
+    archivo.close();
+    for(int i=0; i<listaProyectos.size(); i++){
+        listaProyectos[i].guardarEnArchivoListaProyectos();
+    }
+    
+}
+void Empresa::mostrarProyectos(){
+    vector<Empleado> lempleados;
+    cout<<"############LISTA DE PROYECTOS###############"<<endl;
+    for(int i=0; i<listaProyectos.size(); i++){
+        cout<<i+1<<" ";
+
+        cout<<listaProyectos[i].getNombre()<<" ";
+        cout<<listaProyectos[i].getEstado()<<" ";
+        cout<<listaProyectos[i].getDescripcion()<<" ";
+        cout<<listaProyectos[i].getFechaCreacion()<<" ";
+        cout<<listaProyectos[i].getFechaFin()<<" ";        
+        cout<<endl;
+    }
 }
 
 /*

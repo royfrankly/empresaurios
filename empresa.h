@@ -46,6 +46,8 @@ class Empresa:public Contacto{
         void obtenerEmpleados();
         void obtenerProyecto();
         void actualizarListaEmpleados();
-
+        void leerProyectos();
+        void actualizarListaProyectos();
+        void mostrarProyectos();
 };
 #endif

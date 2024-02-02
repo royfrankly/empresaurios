@@ -1,5 +1,9 @@
 #include "proyecto.h"
 #include "tarea.h"
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <iomanip>
 //--------------------constructores y destructores-------------------
 Proyecto::Proyecto(){
     nombre = "";
@@ -14,8 +18,7 @@ Proyecto::Proyecto(string _nombre, string _estado, string _descripcion, string _
     descripcion = _descripcion;
     fechaCreacion = _fechaCreacion;
     fechaFin = _fechaFin;
-    miEquipo = _miEquipo;
-    listaTareas = _listaTareas;
+
 }
 Proyecto::~Proyecto(){
 
@@ -72,6 +75,7 @@ void Proyecto::removerUnaTarea(int indice){
         listaTareas.erase(listaTareas.begin() + indice);
     }
 }
+
 bool Proyecto::operator<(const Proyecto& otroProyecto) const {
     if(nombre < otroProyecto.nombre)
         return true;
@@ -105,7 +109,18 @@ ostream& operator<<(ostream& os, const Proyecto& proyecto) {
     os << "Fecha de Finalización: " << proyecto.fechaFin << "\n";
     return os;
 }
-
+void Proyecto::guardarEnArchivoListaProyectos() {
+    string carpeta = "empresa/listaProyectos";
+    string nombreArchivo = carpeta+ ".txt";
+    ofstream archivoSalida(nombreArchivo, ios::app);
+    if (archivoSalida.is_open()) {
+        archivoSalida << *this<<endl;
+        archivoSalida.close();
+        cout << "Tarea almacena da en el archivo: " << nombreArchivo << endl;
+    } else {
+        cout << "No se pudo abrir el archivo para escritura." << endl;
+    }
+}
 //void Proyecto::crearTarea(){
 
 //}                                                       

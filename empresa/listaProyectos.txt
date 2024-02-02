@@ -1,0 +1,60 @@
+Nombre: Proyecto1
+Estado: pendiente
+Descripción: Desarrollo de una aplicación móvil
+Fecha de Creación: 2022-01-15
+Fecha de Finalización: 2022-05-30
+
+Nombre: Proyecto2
+Estado: terminado
+Descripción: Diseño de interfaz de usuario
+Fecha de Creación: 2022-02-01
+Fecha de Finalización: 2022-04-15
+
+Nombre: Proyecto3
+Estado: pendiente
+Descripción: Implementación de sistema de gestión
+Fecha de Creación: 2022-03-10
+Fecha de Finalización: 2022-06-20
+
+Nombre: Proyecto4
+Estado: Pendiente
+Descripción: Investigación de nuevas tecnologías
+Fecha de Creación: 2022-04-05
+Fecha de Finalización: 2022-07-10
+
+Nombre: Proyecto5
+Estado: terminado
+Descripción: Desarrollo de módulo de seguridad
+Fecha de Creación: 2022-02-20
+Fecha de Finalización: 2022-06-01
+
+Nombre: Proyecto6
+Estado: pendiente
+Descripción: Optimización de base de datos
+Fecha de Creación: 2022-03-25
+Fecha de Finalización: 2022-08-15
+
+Nombre: Proyecto7
+Estado: Pendiente
+Descripción: Pruebas de rendimiento del sistema
+Fecha de Creación: 2022-05-12
+Fecha de Finalización: 2022-09-30
+
+Nombre: Proyecto8
+Estado: terminado
+Descripción: Desarrollo de plataforma web
+Fecha de Creación: 2022-01-30
+Fecha de Finalización: 2022-07-05
+
+Nombre: Proyecto9
+Estado: pendiente
+Descripción: Despliegue de sistema en la nube
+Fecha de Creación: 2022-04-18
+Fecha de Finalización: 2022-10-10
+
+Nombre: Proyecto10
+Estado: Pendiente
+Descripción: Evaluación de impacto ambiental
+Fecha de Creación: 2022-06-05
+Fecha de Finalización: 2022-11-20
+

@@ -35,12 +35,14 @@ class Proyecto{
         const vector<Tarea>& getListaTareas();
         void setListaTareas(const vector<Tarea>& nuevaLista);
     //--------------------sobrecargas y otros--------------------------------------------
+    
         void agregarUnaTarea(Tarea);
         void removerUnaTarea(int);
         bool operator<(const Proyecto&) const;
         bool operator>(const Proyecto&) const;
         friend istream& operator>>(istream&, Proyecto&);
         friend ostream& operator<<(ostream&, const Proyecto&);
+        void guardarEnArchivoListaProyectos();
         //void crearTarea();
 };
 #endif
