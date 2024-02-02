@@ -36,6 +36,7 @@ class Empresa:public Contacto{
         void removerUnProyecto(int);
         friend ostream& operator<<(ostream& os, const Empresa& );
         friend istream& operator>>(istream& is, Empleado& );
+        void mostrarEmpleados();
         void mostrarEmpresa();
         void guardarEmpleado(Empleado);
         //cuando se inicie el programa cargara los empelados
@@ -44,6 +45,7 @@ class Empresa:public Contacto{
         void leerEmpresa();
         void obtenerEmpleados();
         void obtenerProyecto();
+        void actualizarListaEmpleados();
 
 };
 #endif

@@ -4,6 +4,7 @@
 #include <sstream>
 #include <string.h>
 #include <string>
+#include <cstring>
 using namespace std;
 //constructores----------------------------------------
 Empresa::Empresa(){
@@ -49,7 +50,7 @@ void Empresa::agregarUnEmpleado(Empleado nuevoEmpleado){
 void Empresa::removerUnEmpleado(int indice){
     if (indice >= 0 && indice < listaEmpleados.size()) {
     // Utiliza erase para eliminar el empleado en la posición indicada
-    listaEmpleados.erase(listaEmpleados.begin() + indice);
+    listaEmpleados.erase(listaEmpleados.begin() + indice-1);
     cout << "Empleado eliminado correctamente." << endl;
     } else {
         cout << "Índice de empleado no válido." << endl;
@@ -67,68 +68,14 @@ void Empresa::agregarUnProyecto(Proyecto nuevoProyecto){
 }
 void Empresa::removerUnProyecto(int indice){
     if (indice >= 0 && indice < listaProyectos.size()) {
-        listaProyectos.erase(listaProyectos.begin() + indice);
+        listaProyectos.erase(listaProyectos.begin() + indice-1);
     }
 }
 void Empresa::guardarEmpleado(Empleado empleado) {
     agregarUnEmpleado(empleado);
     empleado.guardarEnArchivoListaEmpleados();
 }
-void Empresa::leerEmpleados(){
-    string aux[10];
-    bool cen = true;
-    int id, i = 0;
-    string nombre, tipo, direccion, correo, telefono, sitioWeb;
-    float salario;
-    ifstream obtenerEmpleados;
-    Empleado emp;
-    obtenerEmpleados.open("proyectos/listaProyectos.txt");
-    if (obtenerEmpleados.is_open()) {
-        cout << "se abre dir" << endl;
-        while (!obtenerEmpleados.eof()) {
-            // Leer una línea del archivo
-            string linea;
-            getline(obtenerEmpleados, linea);
-            cout<<"pasaporcaa"<<endl;
-            // Verificar si la línea no está vacía
-            if (!linea.empty()) {
-                // Utilizar stringstream para dividir la línea en tokens
-                istringstream ss(linea);
-                string token;
-                int index = 0;
-                cout<<"pasa22222"<<endl;
-                // Leer cada token y almacenarlo en el array aux
-                while (ss >> token) {
-                    // Eliminar los paréntesis de cada token
-                    if (token[0] == '(') {
-                        token = token.substr(1, token.size() - 1);
-                    }
-                    for (char &c : token) {
-                        if (c == '(' || c == ')') {
-                            // Crear un nuevo string sin paréntesis
-                            token = token.substr(0, token.size() - 1);
-                        }
-                    }
-                    aux[index++] = token;
-                }
-            }
-            id=stoi(aux[0]);
-            emp.setId(id);
-            emp.setNombre(aux[1]);
-            emp.setTipo(aux[2]);
-            emp.setSalario(stof(aux[3]));
-            emp.setDireccion(aux[4]);
-            emp.setCorreo(aux[5]);
-            emp.setTelefono(aux[6]);
-            emp.setSitioWeb(aux[7]);
-            agregarUnEmpleado(emp);
-        }
-        
-    } else {
-        cout << "ERROR EL ARCHIVO NO SE PUEDE ABRIR" << endl;
-    }
-    obtenerEmpleados.close();
-}
+
 /*
 void Empresa::obtenerProyecto() {
     string aux[10];
@@ -242,6 +189,100 @@ void Empresa::obtenerEmpleados() {
     }
     obtenerEmpleados.close();
 }
+void Empresa::leerEmpleados() {
+    ifstream archivo;
+    string linea;
+    Empleado emp;
+    archivo.open("empresa/listaEmpleados.txt");
+    char aux;
+    
+    if (archivo.is_open()) {
+        cout << "Se abre el archivo correctamente." << endl;
+
+        // Variables para almacenar los datos
+        string id, nombre, tipo, salario, direccion, correo, telefono, sitioweb;
+
+        // Iterar sobre todas las líneas del archivo
+        while (getline(archivo, linea)) {
+            // Procesar la línea y extraer datos entre paréntesis
+            size_t posInicio = 0;
+            size_t posFin = 0;
+            
+            while ((posInicio = linea.find('(', posFin)) != string::npos) {
+                posFin = linea.find(')', posInicio);
+                if (posFin != string::npos) {
+                    string contenido = linea.substr(posInicio + 1, posFin - posInicio - 1);
+
+                    // Almacenar el contenido en las variables correspondientes
+                    if (id.empty()) {
+                        id = contenido;
+                    } else if (nombre.empty()) {
+                        nombre = contenido;
+                    } else if (tipo.empty()) {
+                        tipo = contenido;
+                    } else if (salario.empty()) {
+                        salario = contenido;
+                    } else if (direccion.empty()) {
+                        direccion = contenido;
+                    } else if (correo.empty()) {
+                        correo = contenido;
+                    } else if (telefono.empty()) {
+                        telefono = contenido;
+                    } else if (sitioweb.empty()) {
+                        sitioweb = contenido;
+                    }
+                }
+            }
+            emp.setId(stoi(id));
+            emp.setNombre(nombre);
+            emp.setTipo(tipo);
+            emp.setSalario(stof(salario));
+            emp.setDireccion(direccion);
+            emp.setCorreo(correo);
+            emp.setTelefono(telefono);
+            emp.setSitioWeb(sitioweb);
+            agregarUnEmpleado(emp);
+            
+            // Limpiar variables para el próximo empleado
+            id.clear();
+            nombre.clear();
+            tipo.clear();
+            salario.clear();
+            direccion.clear();
+            correo.clear();
+            telefono.clear();
+            sitioweb.clear();
+        }
+
+    } else {
+        cout << "ERROR: No se pudo abrir el archivo." << endl;
+    }
+
+    archivo.close();
+}
+
+void Empresa::actualizarListaEmpleados(){
+    ofstream archivo;
+    archivo.open("empresa/listaEmpleados.txt", ios::trunc);
+    archivo.close();
+    
+}
+void Empresa::mostrarEmpleados(){
+    vector<Empleado> lempleados;
+    cout<<"############LISTA DE EMPLEADOS###############"<<endl;
+    for(int i=0; i<listaEmpleados.size(); i++){
+        cout<<i+1<<" ";
+        cout<<listaEmpleados[i].getId()<<" ";
+        cout<<listaEmpleados[i].getNombre()<<" ";
+        cout<<listaEmpleados[i].getTipo()<<" ";
+        cout<<listaEmpleados[i].getSalario()<<" ";
+        cout<<listaEmpleados[i].getDireccion()<<" ";
+        cout<<listaEmpleados[i].getCorreo()<<" ";        
+        cout<<listaEmpleados[i].getTelefono()<<" ";
+        cout<<listaEmpleados[i].getSitioWeb()<<" ";
+        cout<<endl;
+    }
+}
 
 void Empresa::leerEmpresa() {
     ifstream archivo;
@@ -250,6 +291,7 @@ void Empresa::leerEmpresa() {
 
     if (archivo.is_open()) {
         cout << "Se abre el archivo correctamente." << endl;
+<<<<<<< HEAD
         getline(archivo, linea);
         char lineachar[linea.length() + 1];
         strcpy(lineachar, linea.c_str());
@@ -262,6 +304,47 @@ void Empresa::leerEmpresa() {
                 cout<<lineachar[i];
         }
 
+=======
+
+        getline(archivo, linea);
+        
+        // Variables para almacenar los datos
+        string nombre, ruc, descripcion, direccion, correo, telefono, sitioweb;
+
+        // Procesar la línea y extraer datos entre paréntesis
+        size_t posInicio = 0;
+        size_t posFin = 0;
+        while ((posInicio = linea.find('(', posFin)) != string::npos) {
+            posFin = linea.find(')', posInicio);
+            if (posFin != string::npos) {
+                string contenido = linea.substr(posInicio + 1, posFin - posInicio - 1);
+
+                // Almacenar el contenido en las variables correspondientes
+                if (nombre.empty()) {
+                    nombre = contenido;
+                } else if (ruc.empty()) {
+                    ruc = contenido;
+                } else if (descripcion.empty()) {
+                    descripcion = contenido;
+                } else if (direccion.empty()) {
+                    direccion = contenido;
+                } else if (correo.empty()) {
+                    correo = contenido;
+                } else if (telefono.empty()) {
+                    telefono = contenido;
+                } else if (sitioweb.empty()) {
+                    sitioweb = contenido;
+                }
+            }
+        }
+        setNombre(nombre);
+        setRuc(ruc);
+        setDescripcion(descripcion);
+        setDireccion(direccion);
+        setCorreo(correo);
+        setTelefono(telefono);
+        setSitioWeb(sitioweb);
+>>>>>>> 88fd3e83d1b75ab5e0ffb2d4dc574dfbf81c16bf
     } else {
         cout << "ERROR: No se pudo abrir el archivo." << endl;
     }
