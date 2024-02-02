@@ -22,6 +22,10 @@ class Proyecto{
     //---------------------geters y seters-------------------------------------------
         string getNombre();
         void setNombre(string);
+        string getEstado();
+        void setEstado(string);
+        string getDescripcion();
+        void setDescripcion(string);
         string getFechaCreacion();
         void setFechaCreacion(string);
         string getFechaFin();

@@ -24,7 +24,7 @@ Empleado::~Empleado(){
 int Empleado::getId() const{
     return id;
 }
-void Empleado::serId(int nuevoId){
+void Empleado::setId(int nuevoId){
     id=nuevoId;
 }
 string Empleado::getNombre() const{

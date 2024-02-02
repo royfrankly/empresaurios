@@ -20,7 +20,7 @@ class Empleado:public Contacto{
         ~Empleado();
     //-------------------geters y seters---------------------------
         int getId() const;
-        void serId(int);
+        void setId(int);
         string getNombre() const;
         void setNombre(string);
         string getTipo() const;
@@ -39,7 +39,7 @@ class Empleado:public Contacto{
         friend istream& operator>>(istream&, Empleado& );
         void guardarEmpleado();
         void guardarEnArchivoListaEmpleados();
-}; 
+};
 #endif
 
 

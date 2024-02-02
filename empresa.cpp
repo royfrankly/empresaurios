@@ -2,7 +2,9 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-
+#include <string.h>
+#include <string>
+using namespace std;
 //constructores----------------------------------------
 Empresa::Empresa(){
     nombre = "";
@@ -40,6 +42,7 @@ const vector<Empleado>& Empresa::getListaEmpleados(){
 void Empresa::setListaEmpleados(const vector<Empleado>& nuevaLista){
     listaEmpleados = nuevaLista;
 }
+//######################otros################################
 void Empresa::agregarUnEmpleado(Empleado nuevoEmpleado){
     listaEmpleados.push_back(nuevoEmpleado);
 }
@@ -52,6 +55,7 @@ void Empresa::removerUnEmpleado(int indice){
         cout << "Índice de empleado no válido." << endl;
     }
 }
+
 const vector<Proyecto>& Empresa::getListaProyectos(){
     return listaProyectos;
 }
@@ -71,23 +75,234 @@ void Empresa::guardarEmpleado(Empleado empleado) {
     empleado.guardarEnArchivoListaEmpleados();
 }
 void Empresa::leerEmpleados(){
-    ifstream leerEmpleados;
-    char Xd;
-    string nombreArchivo =  "empleados/listaEmpleados.txt";
-    leerEmpleados.open(nombreArchivo);
-    if(leerEmpleados.is_open()){
-        while (!leerEmpleados.eof()){
-            leerEmpleados.get(Xd);
-            if(Xd == '('  || Xd == ')'){
-                Xd=' '; 
+    string aux[10];
+    bool cen = true;
+    int id, i = 0;
+    string nombre, tipo, direccion, correo, telefono, sitioWeb;
+    float salario;
+    ifstream obtenerEmpleados;
+    Empleado emp;
+    obtenerEmpleados.open("proyectos/listaProyectos.txt");
+    if (obtenerEmpleados.is_open()) {
+        cout << "se abre dir" << endl;
+        while (!obtenerEmpleados.eof()) {
+            // Leer una línea del archivo
+            string linea;
+            getline(obtenerEmpleados, linea);
+            cout<<"pasaporcaa"<<endl;
+            // Verificar si la línea no está vacía
+            if (!linea.empty()) {
+                // Utilizar stringstream para dividir la línea en tokens
+                istringstream ss(linea);
+                string token;
+                int index = 0;
+                cout<<"pasa22222"<<endl;
+                // Leer cada token y almacenarlo en el array aux
+                while (ss >> token) {
+                    // Eliminar los paréntesis de cada token
+                    if (token[0] == '(') {
+                        token = token.substr(1, token.size() - 1);
+                    }
+                    for (char &c : token) {
+                        if (c == '(' || c == ')') {
+                            // Crear un nuevo string sin paréntesis
+                            token = token.substr(0, token.size() - 1);
+                        }
+                    }
+                    aux[index++] = token;
+                }
             }
-            cout<<Xd;
+            id=stoi(aux[0]);
+            emp.setId(id);
+            emp.setNombre(aux[1]);
+            emp.setTipo(aux[2]);
+            emp.setSalario(stof(aux[3]));
+            emp.setDireccion(aux[4]);
+            emp.setCorreo(aux[5]);
+            emp.setTelefono(aux[6]);
+            emp.setSitioWeb(aux[7]);
+            agregarUnEmpleado(emp);
         }
-        leerEmpleados.close();
-    }else{
-        cout<<"El archivo no se peude abrir"<<endl;
+        
+    } else {
+        cout << "ERROR EL ARCHIVO NO SE PUEDE ABRIR" << endl;
     }
+    obtenerEmpleados.close();
 }
+/*
+void Empresa::obtenerProyecto() {
+    string aux[10];
+    bool cen = true;
+    int i = 0;
+    string nombre, estado, descripcion, fechaCreacion;
+    Equipo miequipo;
+    
+    ifstream obtenerProyecto;
+    Proyecto proy;
+    obtenerProyecto.open("proyectos/listaProyectos.txt");
+    if (obtenerProyecto.is_open()) {
+        cout << "se abre dir" << endl;
+        while (!obtenerProyecto.eof()) {
+            // Leer una línea del archivo
+            string linea;
+            getline(obtenerProyecto, linea);
+
+            // Verificar si la línea no está vacía
+            if (!linea.empty()) {
+                // Utilizar stringstream para dividir la línea en tokens
+                istringstream ss(linea);
+                string token;
+                int index = 0;
+
+                // Leer cada token y almacenarlo en el array aux
+                while (ss >> token) {
+                    // Eliminar los paréntesis de cada token
+                    if (token[0] == '(') {
+                        token = token.substr(1, token.size() - 1);
+                    }
+                    for (char &c : token) {
+                        if (c == '(' || c == ')') {
+                            // Crear un nuevo string sin paréntesis
+                            token = token.substr(0, token.size() - 1);
+                        }
+                    }
+                    aux[index++] = token;
+                }
+            }
+            Tarea tarea(aux[6]);
+            vector<Tarea> listaTareas;
+            listaTareas.push_back(tarea);
+            
+            proy.setNombre(aux[0]);
+            proy.setEstado(aux[1]);
+            proy.setDescripcion(aux[2]);
+            proy.setFechaCreacion(aux[3]);
+            proy.setFechaFin(aux[4]);
+            proy.setEquipo(aux[5]);
+            proy.setListaTareas(aux[6]);
+            agregarUnProyecto(proy);
+        }
+    } else {
+        cout << "ERROR EL ARCHIVO NO SE PUEDE ABRIR" << endl;
+    }
+    obtenerProyecto.close();
+}
+*/
+void Empresa::obtenerEmpleados() {
+    string aux[10];
+    bool cen = true;
+    int id, i = 0;
+    string nombre, tipo, direccion, correo, telefono, sitioWeb;
+    float salario;
+    ifstream obtenerEmpleados;
+    Empleado emp;
+    obtenerEmpleados.open("empresa/listaEmpleados.txt");
+    if (obtenerEmpleados.is_open()) {
+        cout << "se abre dir" << endl;
+        while (!obtenerEmpleados.eof()) {
+            // Leer una línea del archivo
+            string linea;
+            getline(obtenerEmpleados, linea);
+
+            // Verificar si la línea no está vacía
+            if (!linea.empty()) {
+                // Utilizar stringstream para dividir la línea en tokens
+                istringstream ss(linea);
+                string token;
+                int index = 0;
+
+                // Leer cada token y almacenarlo en el array aux
+                while (ss >> token) {
+                    // Eliminar los paréntesis de cada token
+                    if (token[0] == '(') {
+                        token = token.substr(1, token.size() - 1);
+                    }
+                    for (char &c : token) {
+                        if (c == '(' || c == ')') {
+                            // Crear un nuevo string sin paréntesis
+                            token = token.substr(0, token.size() - 1);
+                        }
+                    }
+                    aux[index++] = token;
+                }
+            }
+            
+            emp.setId(stoi(aux[0]));
+            emp.setNombre(aux[1]);
+            emp.setTipo(aux[2]);
+            emp.setSalario(stof(aux[3]));
+            emp.setDireccion(aux[4]);
+            emp.setCorreo(aux[5]);
+            emp.setTelefono(aux[6]);
+            emp.setSitioWeb(aux[7]);
+            agregarUnEmpleado(emp);
+        }
+    } else {
+        cout << "ERROR EL ARCHIVO NO SE PUEDE ABRIR" << endl;
+    }
+    obtenerEmpleados.close();
+}
+
+void Empresa::leerEmpresa() {
+    ifstream archivo;
+    string linea;
+    archivo.open("empresa/empresa.txt");
+
+    if (archivo.is_open()) {
+        cout << "se abre dir" << endl;
+
+        while (getline(archivo, linea)) {
+            istringstream ss(linea);
+            string token;
+
+            // Leer cada token y almacenarlo en la instancia actual de la clase Empresa
+            while (ss >> token) {
+                if (token[0] == '(') {
+                    token = token.substr(1, token.size() - 1);
+                }
+
+                for (char &c : token) {
+                    if (c == '(' || c == ')') {
+                        token = token.substr(0, token.size() - 1);
+                    }
+                }
+
+                // Establecer los atributos directamente en la instancia actual
+                if (token == "Nombre") {
+                    setNombre(token);
+                } else if (token == "Ruc") {
+                    setRuc(token);
+                } else if (token == "Descripcion") {
+                    setDescripcion(token);
+                } // Añadir el resto de los atributos según sea necesario
+            }
+        }
+    } else {
+        cout << "ERROR EL ARCHIVO NO SE PUEDE ABRIR" << endl;
+    }
+
+    archivo.close();
+}
+void Empresa::mostrarEmpresa() {
+    cout << "Información de la Empresa:" << endl;
+    cout << "Nombre: " << getNombre() << endl;
+    cout << "RUC: " << getRuc() << endl;
+    cout << "Descripción: " << getDescripcion() << endl;
+    mostrarContacto();  // Muestra la información de contacto de la empresa
+
+    // Mostrar la lista de empleados
+    cout << "\nLista de Empleados:" << endl;
+    for (const Empleado& empleado : listaEmpleados) {
+        cout << "ID: " << empleado.getId() << " - Nombre: " << empleado.getNombre() << " - Tipo: " << empleado.getTipo() << endl;
+    }
+
+    // Mostrar la lista de proyectos
+    //cout << "\nLista de Proyectos:" << endl;
+    //for (const Proyecto& proyecto : listaProyectos) {
+    //    cout << "Nombre: " << proyecto.getNombre() << " - Estado: " << proyecto.getEstado() << " - Descripción: " << proyecto.getDescripcion() << endl;
+    //}
+}
+
 /*
 ostream& operator<<(ostream& os, const Empresa& empresa) {
     os<<"("<<empresa.nombre<<")";
@@ -121,13 +336,7 @@ istream& operator>>(istream& is, Empresa& empresa) {
     return is;
 }
 */
-void Empresa::mostrarEmpresa(){
-    cout<<"Datos del empresa:"<<endl;
-    cout<<"Nombre: "<<nombre<<endl;
-    cout<<"Ruc: "<<ruc<<endl;
-    cout<<"Descripcion: "<<descripcion<<endl;
-    mostrarContacto();
-}
+
 /*
 void Empresa::contratarEmpleado(){
     if (numEmpleados<100){

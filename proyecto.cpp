@@ -27,6 +27,18 @@ string Proyecto::getNombre(){
 void Proyecto::setNombre(string nuevoNombre){
     nombre = nuevoNombre;
 }
+string Proyecto::getEstado(){
+    return estado;
+}
+void Proyecto::setEstado(string nuevoEstado){
+    estado = nuevoEstado;
+}
+string Proyecto::getDescripcion(){
+    return descripcion;
+}
+void Proyecto::setDescripcion(string nuevaDescripcion){
+    descripcion = nuevaDescripcion;
+}
 string Proyecto::getFechaCreacion(){
     return fechaCreacion;
 }

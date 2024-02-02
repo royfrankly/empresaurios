@@ -37,13 +37,13 @@ class Empresa:public Contacto{
         friend ostream& operator<<(ostream& os, const Empresa& );
         friend istream& operator>>(istream& is, Empleado& );
         void mostrarEmpresa();
-        void contratarEmpleado();
-        void despedirEmpleado();
-        void crearProyecto();
-        void agregarProyecto();
         void guardarEmpleado(Empleado);
         //cuando se inicie el programa cargara los empelados
         void cargarEmpleados();
         void leerEmpleados();
+        void leerEmpresa();
+        void obtenerEmpleados();
+        void obtenerProyecto();
+
 };
 #endif

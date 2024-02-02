@@ -1,0 +1,5 @@
+(1) (Juan) (Desarrollador) (50000) (Direccion1) (Correo1) (987456123) (SitioWeb1) 
+(2) (Maria) (Diseniador) (45000) (Direccion2) (Correo2) (945124456) (SitioWeb2) 
+(3) (Pedro) (Tester) (48000) (Direccion3) (Correo3) (951623847) (SitioWeb3) 
+(4) (Ana) (Gerente) (60000) (Direccion4) (Correo4) (984621541) (SitioWeb4) 
+(5) (Carlos) (Analista) (55000) (Direccion5) (Correo5) (915268473) (SitioWeb5) 
