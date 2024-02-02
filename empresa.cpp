@@ -249,36 +249,21 @@ void Empresa::leerEmpresa() {
     archivo.open("empresa/empresa.txt");
 
     if (archivo.is_open()) {
-        cout << "se abre dir" << endl;
-
-        while (getline(archivo, linea)) {
-            istringstream ss(linea);
-            string token;
-
-            // Leer cada token y almacenarlo en la instancia actual de la clase Empresa
-            while (ss >> token) {
-                if (token[0] == '(') {
-                    token = token.substr(1, token.size() - 1);
-                }
-
-                for (char &c : token) {
-                    if (c == '(' || c == ')') {
-                        token = token.substr(0, token.size() - 1);
-                    }
-                }
-
-                // Establecer los atributos directamente en la instancia actual
-                if (token == "Nombre") {
-                    setNombre(token);
-                } else if (token == "Ruc") {
-                    setRuc(token);
-                } else if (token == "Descripcion") {
-                    setDescripcion(token);
-                } // Añadir el resto de los atributos según sea necesario
+        cout << "Se abre el archivo correctamente." << endl;
+        getline(archivo, linea);
+        char lineachar[linea.length() + 1];
+        strcpy(lineachar, linea.c_str());
+        for(int i=0;i<linea.length()+1;i++){
+            if(lineachar[i]=='('||lineachar[i]==')'){
+                lineachar[i]=' ';
             }
         }
+        for(int i=0;i<linea.length()+1;i++){
+                cout<<lineachar[i];
+        }
+
     } else {
-        cout << "ERROR EL ARCHIVO NO SE PUEDE ABRIR" << endl;
+        cout << "ERROR: No se pudo abrir el archivo." << endl;
     }
 
     archivo.close();
