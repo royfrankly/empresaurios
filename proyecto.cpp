@@ -101,12 +101,13 @@ istream& operator>>(istream& is, Proyecto& proyecto) {
     getline(is, proyecto.fechaFin);
     return is;
 }
+
 ostream& operator<<(ostream& os, const Proyecto& proyecto) {
-    os << "Nombre: " << proyecto.nombre << "\n";
-    os << "Estado: " << proyecto.estado << "\n";
-    os << "Descripción: " << proyecto.descripcion << "\n";
-    os << "Fecha de Creación: " << proyecto.fechaCreacion << "\n";
-    os << "Fecha de Finalización: " << proyecto.fechaFin << "\n";
+    os << "(" << proyecto.nombre << ") ";
+    os << "(" << proyecto.estado << ") ";
+    os << "(" << proyecto.descripcion << ") ";
+    os << "(" << proyecto.fechaCreacion << ") ";
+    os << "(" << proyecto.fechaFin << ") ";
     return os;
 }
 void Proyecto::guardarEnArchivoListaProyectos() {

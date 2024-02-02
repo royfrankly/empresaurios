@@ -1,60 +1,31 @@
-Nombre: Proyecto1
-Estado: pendiente
-Descripción: Desarrollo de una aplicación móvil
-Fecha de Creación: 2022-01-15
-Fecha de Finalización: 2022-05-30
-
-Nombre: Proyecto2
-Estado: terminado
-Descripción: Diseño de interfaz de usuario
-Fecha de Creación: 2022-02-01
-Fecha de Finalización: 2022-04-15
-
-Nombre: Proyecto3
-Estado: pendiente
-Descripción: Implementación de sistema de gestión
-Fecha de Creación: 2022-03-10
-Fecha de Finalización: 2022-06-20
-
-Nombre: Proyecto4
-Estado: Pendiente
-Descripción: Investigación de nuevas tecnologías
-Fecha de Creación: 2022-04-05
-Fecha de Finalización: 2022-07-10
-
-Nombre: Proyecto5
-Estado: terminado
-Descripción: Desarrollo de módulo de seguridad
-Fecha de Creación: 2022-02-20
-Fecha de Finalización: 2022-06-01
-
-Nombre: Proyecto6
-Estado: pendiente
-Descripción: Optimización de base de datos
-Fecha de Creación: 2022-03-25
-Fecha de Finalización: 2022-08-15
-
-Nombre: Proyecto7
-Estado: Pendiente
-Descripción: Pruebas de rendimiento del sistema
-Fecha de Creación: 2022-05-12
-Fecha de Finalización: 2022-09-30
-
-Nombre: Proyecto8
-Estado: terminado
-Descripción: Desarrollo de plataforma web
-Fecha de Creación: 2022-01-30
-Fecha de Finalización: 2022-07-05
-
-Nombre: Proyecto9
-Estado: pendiente
-Descripción: Despliegue de sistema en la nube
-Fecha de Creación: 2022-04-18
-Fecha de Finalización: 2022-10-10
-
-Nombre: Proyecto10
-Estado: Pendiente
-Descripción: Evaluación de impacto ambiental
-Fecha de Creación: 2022-06-05
-Fecha de Finalización: 2022-11-20
-
+(205) (Ana López) (Analista) (55000) (Av. Principal) 
+(112) (Laura Pérez) (Diseñadora) (48000) (Av. Creativa) 
+(415) (Carlos González) (Ingeniero) (70000) (Calle Innovación) 
+(517) (María Rodríguez) (Analista) (56000) (Paseo de Datos) 
+(219) (Miguel Martínez) (Desarrollador) (62000) (Calle Código) 
+(624) (Isabel Fernández) (Tester) (50000) (Av. Pruebas) 
+(326) (José López) (Diseñador) (49000) (Calle Creatividad) 
+(728) (Laura Gómez) (Analista) (58000) (Paseo de Ideas) 
+(431) (Pedro Ramírez) (Programador) (61000) (Av. Programación) 
+(834) (Sofía Torres) (Ingeniera) (72000) (Calle Innovación) 
+(537) (Alejandro Díaz) (Desarrollador) (63000) (Calle Código) 
+(239) (Lucía Rodríguez) (Tester) (51000) (Av. Pruebas) 
+(942) (Juan Martínez) (Diseñador) (50000) (Calle Creatividad) 
+(644) (Ana García) (Analista) (59000) (Paseo de Ideas) 
+(345) (Roberto Ramírez) (Programador) (60000) (Av. Programación) 
+(547) (Laura Díaz) (Ingeniera) (71000) (Calle Innovación) 
+(249) (Carlos Sánchez) (Desarrollador) (64000) (Calle Código) 
+(750) (María Gómez) (Tester) (52000) (Av. Pruebas) 
+(453) (Miguel Torres) (Diseñador) (51000) (Calle Creatividad) 
+(855) (Isabel Ramírez) (Analista) (60000) (Paseo de Ideas) 
+(558) (José Gómez) (Programador) (62000) (Av. Programación) 
+(161) (Laura Sánchez) (Ingeniera) (73000) (Calle Innovación) 
+(964) (Alejandro Ramírez) (Desarrollador) (65000) (Calle Código) 
+(666) (Sofía Díaz) (Tester) (53000) (Av. Pruebas) 
+(369) (Juan Torres) (Diseñador) (52000) (Calle Creatividad) 
+(872) (Ana Martínez) (Analista) (61000) (Paseo de Ideas) 
+(475) (Roberto Díaz) (Programador) (63000) (Av. Programación) 
+(178) (Laura Gómez) (Ingeniera) (74000) (Calle Innovación) 
+(981) (Carlos Ramírez) (Desarrollador) (66000) (Calle Código) 
+() () () () () 
+() (0) (0) (2) (0) 
