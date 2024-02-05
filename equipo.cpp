@@ -49,3 +49,12 @@ void Equipo::removerUnMiembro(int indice){
         listaMiembros.erase(listaMiembros.begin() + indice);
     }
 }
+//-------------------------sobrecarga----------------------
+istream& operator>>(istream& is,Equipo& nuevoEquipo){
+    cout <<"Id del Equipo: "<<endl;
+    is>> nuevoEquipo.id;
+    cout <<"Nombre del Equipo: "<<endl;
+    is>> nuevoEquipo.nombre;
+    return is;
+}
+

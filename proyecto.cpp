@@ -66,6 +66,76 @@ const vector<Tarea>& Proyecto::getListaTareas(){
 void Proyecto::setListaTareas(const vector<Tarea>& nuevaLista){
     listaTareas = nuevaLista;
 }
+//------------------------Empleados---------------------------------------
+Empleado Proyecto::leerEmpleado(int posicion) {
+    ifstream archivo;
+    string linea;
+    Empleado emp;
+    archivo.open("empresa/listaEmpleados.txt");
+    char aux;
+    int cont = 1;
+    if (archivo.is_open()) {
+        cout << "Se abre el archivo correctamente." << endl;
+
+        // Variables para almacenar los datos
+        string id, nombre, tipo, salario, direccion, correo, telefono, sitioweb;
+
+        // Iterar sobre todas las líneas del archivo
+        while (getline(archivo, linea) ) {
+            if(cont == posicion){
+                // Procesar la línea y extraer datos entre paréntesis
+                size_t posInicio = 0;
+                size_t posFin = 0;
+                
+                while ((posInicio = linea.find('(', posFin)) != string::npos) {
+                    posFin = linea.find(')', posInicio);
+                    if (posFin != string::npos) {
+                        string contenido = linea.substr(posInicio + 1, posFin - posInicio - 1);
+
+                        // Almacenar el contenido en las variables correspondientes
+                        if (id.empty()) {
+                            id = contenido;
+                        } else if (nombre.empty()) {
+                            nombre = contenido;
+                        } else if (tipo.empty()) {
+                            tipo = contenido;
+                        } else if (salario.empty()) {
+                            salario = contenido;
+                        } else if (direccion.empty()) {
+                            direccion = contenido;
+                        } else if (correo.empty()) {
+                            correo = contenido;
+                        } else if (telefono.empty()) {
+                            telefono = contenido;
+                        } else if (sitioweb.empty()) {
+                            sitioweb = contenido;
+                        }
+                    }
+                }
+                emp.setId(stoi(id));
+                emp.setNombre(nombre);
+                emp.setTipo(tipo);
+                emp.setSalario(stof(salario));
+                emp.setDireccion(direccion);
+                emp.setCorreo(correo);
+                emp.setTelefono(telefono);
+                emp.setSitioWeb(sitioweb);
+                
+                
+            }
+            cont++;
+        }
+
+    } else {
+        cout << "ERROR: No se pudo abrir el archivo." << endl;
+    }
+    
+    archivo.close();
+    emp.mostrarEmpleado();
+    return emp;
+}
+
+
 //--------------------sobrecargas y otros--------------------------------------------
 void Proyecto::agregarUnaTarea(Tarea nuevaTarea){
     listaTareas.push_back(nuevaTarea);

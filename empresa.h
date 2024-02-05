@@ -42,6 +42,7 @@ class Empresa:public Contacto{
         //cuando se inicie el programa cargara los empelados
         void cargarEmpleados();
         void leerEmpleados();
+        
         void leerEmpresa();
         void obtenerEmpleados();
         void obtenerProyecto();

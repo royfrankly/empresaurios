@@ -13,3 +13,4 @@
 (Mejora de Experiencia de Usuario) (pendiente) (Optimizacion de interfaz y navegacion) (2023-08-20) (2024-02-25) 
 (Implementacion de Chatbot) (terminado) (Desarrollo de asistente virtual) (2023-09-25) (2024-03-30) 
 (compilacion de IA paralela) (pendiente) (usar c++ con framework en su implementacion) (2024-02-05) (2024-04-05) 
+(proyecto creado1) (pendiente) (descripcioin1) (hoy) (hoy) 

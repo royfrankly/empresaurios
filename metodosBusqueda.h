@@ -1,7 +1,9 @@
+//#include <vector>
 template <class T>
 class MetodosBusqueda {
 public:
     int busquedaBinaria(const T *A, int n, const T& elementoBuscado);
+    int busquedaBinaria(vector<T>& A, int n, T& elementoBuscado);
     int busquedaRapida(const T *A, int n, const T& elementoBuscado);
     void quicksort(T *A, int izquierda, int derecha);
 private:
@@ -10,8 +12,8 @@ private:
         A[i] = A[j];
         A[j] = temp;
     }
-    template <class T>
-    int MetodosBusqueda<T>::particion(T *A, int izquierda, int derecha) {
+    //template <class U>
+    int particion(T *A, int izquierda, int derecha) {
         T pivote = A[derecha];
         int i = izquierda - 1;
 
@@ -44,6 +46,24 @@ int MetodosBusqueda<T>::busquedaBinaria(const T *A, int n, const T& elementoBusc
 
     return -1;  // Elemento no encontrado
 }
+template <class T>
+int busquedaBinaria(vector<T>& A, int n, T& elementoBuscado){
+    int izquierda = 0;
+    int derecha = n - 1;
+
+    while (izquierda <= derecha) {
+        int medio = izquierda + (derecha - izquierda) / 2;
+        if (A[medio] == elementoBuscado) {
+            return medio;  // Elemento encontrado
+        } else if (A[medio] < elementoBuscado) {
+            izquierda = medio + 1;
+        } else {
+            derecha = medio - 1;
+        }
+    }
+
+    return -1;
+}
 //es una busqueda lineal del array
 template <class T>
 int MetodosBusqueda<T>::busquedaRapida(const T *A, int n, const T& elementoBuscado) {
@@ -64,4 +84,4 @@ void MetodosBusqueda<T>::quicksort(T *A, int izquierda, int derecha) {
     }
 }
 
-
+;

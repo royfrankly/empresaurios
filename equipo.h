@@ -27,6 +27,6 @@ class Equipo{
         void setListaMiembros(const vector<Empleado>& nuevaLista);
         void agregarUnMiembro(Empleado);
         void removerUnMiembro(int);
-        
+        friend istream& operator>>(istream& ,Equipo& );
 };
 #endif

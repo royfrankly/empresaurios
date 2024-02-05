@@ -34,6 +34,8 @@ class Proyecto{
         void setEquipo(Equipo);
         const vector<Tarea>& getListaTareas();
         void setListaTareas(const vector<Tarea>& nuevaLista);
+        //-----------------------------Empleados-----------------------------------------
+        Empleado leerEmpleado(int);
     //--------------------sobrecargas y otros--------------------------------------------
         void mostrarProyecto();
         void agregarUnaTarea(Tarea);
