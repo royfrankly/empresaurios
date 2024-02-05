@@ -25,4 +25,12 @@ class Tarea{
         void guardarEnArchivoTareas(string );
         void leerElArchivo(string );
 };
+
+//se deben poner 3 formas de guardar archivos y mantenerlos actualizados constantemente
+// lo mas recomendable seria que una solo funcion se encarge de que actualice constantemente
+//tiene que eliminar los archivos txt y 
+//por proyecto
+//por empleados
+//
+//
 #endif

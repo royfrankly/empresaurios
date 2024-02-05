@@ -204,3 +204,5 @@ void Proyecto::mostrarProyecto(){
 //void Proyecto::crearTarea(){
 
 //}                                                       
+// la actualizacion debe estar implementa en empresa para que }los cambios y eliminaciones sean globales 
+//lo mas recomendable seria poner una 
