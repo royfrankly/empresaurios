@@ -35,7 +35,7 @@ class Proyecto{
         const vector<Tarea>& getListaTareas();
         void setListaTareas(const vector<Tarea>& nuevaLista);
     //--------------------sobrecargas y otros--------------------------------------------
-    
+        void mostrarProyecto();
         void agregarUnaTarea(Tarea);
         void removerUnaTarea(int);
         bool operator<(const Proyecto&) const;

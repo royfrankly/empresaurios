@@ -5,8 +5,9 @@
 #include <sstream>
 #include <string.h>
 #include <iomanip>
+#include <stdlib.h>
 using namespace std;
-
+#include <locale.h>
 #include "empleado.h"
 #include "equipo.h"
 #include "tarea.h"
@@ -14,9 +15,11 @@ using namespace std;
 #include "contacto.h"
 #include "empresa.h"
 #include "metodosOrdenacion.h"
+//#include "metodosBusqueda.h"
 #include "menu.h"
 int main(){
-    menu miMenu,menuEmpleados,menuProyectos;
+    setlocale(LC_CTYPE,"UTF-8");
+    menu miMenu,menuEmpleados,menuProyectos, menuDetallesProyectos;
     miMenu.agregar("Ver datos de la empresa", '1');
     miMenu.agregar("Ver lista de empleados", '2');
     miMenu.agregar("Ver lista de proyectos", '3');
@@ -26,13 +29,23 @@ int main(){
     menuEmpleados.agregar("Salir", '0');
     menuProyectos.agregar("Crear proyectos", '1');
     menuProyectos.agregar("Eliminar proyectos", '2');
-    menuProyectos.agregar("Salir", '0'); 
-    int indice, cen=0,cen1=0;
+    menuProyectos.agregar("Ver detalles de un proyecto", '3');
+    menuProyectos.agregar("Salir", '0');
+    menuDetallesProyectos.agregar("Crear tarea", '1');
+    menuDetallesProyectos.agregar("modificar tarea", '2');
+    menuDetallesProyectos.agregar("Eliminar tarea", '3');
+    menuDetallesProyectos.agregar("Agregar miembros al equipo", '4');
+    menuDetallesProyectos.agregar("Eliminar miembros del quipo", '5');
+    menuDetallesProyectos.agregar("Salir", '0');
+    int indice, cen=0,cen1=0,id,n;
     char opcionElegida;
     Empresa miempresa;
-    Proyecto nuevoProyecto;
+    Proyecto nuevoProyecto, verProyecto;
     Empleado nuevoEmpleado;
+    Equipo miequipo;
     vector<Empleado> lempleados;
+    Tarea mitarea;
+    int lIdEmpleados[100];
     miempresa.leerEmpleados();
     miempresa.leerProyectos();
     miempresa.leerEmpresa();
@@ -63,7 +76,7 @@ int main(){
                     {
                         case '1':
                             
-                            cout << "Has seleccionado la opcion despedir empleados." << endl;
+                            cout << "Has seleccionado la opcion despedir empleado." << endl;
                             cout<<"Digite la posicion del empleado a despedir: "<<endl;
                             cin>>indice;
                             miempresa.removerUnEmpleado(indice);
@@ -72,7 +85,7 @@ int main(){
                             
                             break;
                         case '2':
-                            cout << "Has seleccionado la opcion contratar empleados." << endl;
+                            cout << "Has seleccionado la opcion contratar empleado." << endl;
                             cin>>nuevoEmpleado;
                             miempresa.agregarUnEmpleado(nuevoEmpleado);
                             nuevoEmpleado.guardarEnArchivoListaEmpleados();
@@ -84,7 +97,7 @@ int main(){
                 }while(opcE != '0');
                 break;
             case '3':
-                cout << "Has seleccionado la opcion ver lista de proyectos." << endl;
+                cout << "Has seleccionado la opcion ver lista de proyecto." << endl;
                 
                     miempresa.actualizarListaProyectos();
                     miempresa.mostrarProyectos();
@@ -95,8 +108,10 @@ int main(){
                     switch (opcP)
                     {
                         case '1':
-                            cout << "Has seleccionado la opcion crear proyectos." << endl;
+                            cout << "Has seleccionado la opcion crear proyecto." << endl;
                             cin>>nuevoProyecto;
+                            system("CLS");
+                            miempresa.mostrarEmpleados();
                             miempresa.agregarUnProyecto(nuevoProyecto);
                             nuevoProyecto.guardarEnArchivoListaProyectos();
                             //miempresa.actualizarListaEmpleados();
@@ -105,12 +120,56 @@ int main(){
                             
                             break;
                         case '2':
-                            cout << "Has seleccionado la opcion eliminar proyectos." << endl;
+                            cout << "Has seleccionado la opcion eliminar proyecto." << endl;
                             cout<<"Digite pocision del proyecto a eliminar: "<<endl;
                             cin>>indice;
                             miempresa.removerUnProyecto(indice);
                             miempresa.actualizarListaProyectos();
                             miempresa.mostrarProyectos();
+                            break;
+                        case '3':
+                            cout << "Has seleccionado la opcion ver detalladamente un proyecto."<< endl;
+                            cout << "Digite la posicion del proyecto a ver: "<<endl;
+                            cin>>indice;
+                            verProyecto= miempresa.getUnoDeLaListaProyecto(indice);
+                            verProyecto.mostrarProyecto();
+                            
+                            char opcP3;
+                            
+                            do{
+                                menuDetallesProyectos.ver();
+                                opcP3 = menuDetallesProyectos.capturar();
+                                switch(opcP3)
+                                {
+                                    case '1':
+                                        cout << "Has seleccionado la opcion crear tarea"<< endl;
+                                        cin>>mitarea;
+                                        verProyecto.agregarUnaTarea(mitarea);
+
+                                        break;
+                                    case '2':
+                                        cout << "Has seleccionado la opcion modificar tarea"<< endl;
+
+
+                                        break;
+                                    case '3':
+                                        cout << "Has seleccionado la opcion eliminar tarea"<< endl;
+
+
+                                        break;
+                                    case '4':
+                                        cout << "Has seleccionado la opcion agregar miembros al equipo"<< endl;
+
+
+                                        break;
+                                    case '5':
+                                        cout << "Has seleccionado la opcion eliminar miembros del equipo"<< endl;
+
+
+                                        break;
+                                        
+                                }
+                            }while(opcP3!='0');
                             break;
                         
                     }

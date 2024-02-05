@@ -1,4 +1,0 @@
-(Proyecto 1) (terminado) (Descripcion del proyecto 1) (2024-01-10) (2024-02-28) (equipoA) (listaTareasA)
-(Proyecto 2) (pendiente) (Descripcion del proyecto 2) (2024-02-15) (2024-04-01) (equipoB) (listaTareasB)
-(Proyecto 3) (terminado) (Descripcion del proyecto 3) (2024-03-20) (2024-05-10) (equipoC) (listaTareasC)
-(Proyecto 4) (pendiente) (Descripcion del proyecto 4) (2024-04-05) (2024-06-30) (equipoD) (listaTareasD)

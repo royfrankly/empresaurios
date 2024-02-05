@@ -121,6 +121,16 @@ void Proyecto::guardarEnArchivoListaProyectos() {
         cout << "No se pudo abrir el archivo para escritura." << endl;
     }
 }
+void Proyecto::mostrarProyecto(){
+    cout<<"\t\t\tEL PROYECTO "<<nombre<<endl<<endl;
+    cout<<"Estado del proyecto:\t\t\t"<<estado<<endl;
+    cout<<"Descripcion del proyecto:\t\t"<<descripcion<<endl;
+    cout<<"Fecha de creacion del proyecto:\t\t"<<fechaCreacion<<endl;
+    cout<<"Feca de finalizacion del proyecto:\t"<<fechaFin<<endl;
+    //cout<<"Equipo del proyecto:\t"<<estado<<endl;
+    //cout<<"Lista de tareas del proyecto:\t"<<estado<<endl;
+    
+}
 //void Proyecto::crearTarea(){
 
 //}                                                       

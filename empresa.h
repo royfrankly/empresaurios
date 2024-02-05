@@ -49,5 +49,7 @@ class Empresa:public Contacto{
         void leerProyectos();
         void actualizarListaProyectos();
         void mostrarProyectos();
+
+        Proyecto getUnoDeLaListaProyecto(int);
 };
 #endif

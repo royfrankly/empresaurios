@@ -15,7 +15,7 @@ struct menu{ //Definir una opcion del menu, indicando la tecla
 	private:
 		//campos
 		int totopciones;
-		opcion opciones[10];
+		opcion opciones[20];
 	public:
 		//Prototipos de metodos
 		menu();  //constructor

@@ -5,6 +5,7 @@
 #include <string.h>
 #include <string>
 #include <cstring>
+#include <iomanip>
 using namespace std;
 //constructores----------------------------------------
 Empresa::Empresa(){
@@ -37,11 +38,16 @@ string Empresa::getDescripcion(){
 void Empresa::setDescripcion(string nuevaDescripcion){
     descripcion = nuevaDescripcion;
 }
+//#############################EMPLEADOS################################################
 const vector<Empleado>& Empresa::getListaEmpleados(){
     return listaEmpleados;
 }
 void Empresa::setListaEmpleados(const vector<Empleado>& nuevaLista){
     listaEmpleados = nuevaLista;
+}
+//############################PROYECTOS##################################################
+Proyecto Empresa::getUnoDeLaListaProyecto(int indice){
+    return listaProyectos[indice-1];
 }
 //######################otros################################
 void Empresa::agregarUnEmpleado(Empleado nuevoEmpleado){
@@ -161,20 +167,30 @@ void Empresa::actualizarListaEmpleados(){
 void Empresa::mostrarEmpleados(){
     vector<Empleado> lempleados;
     cout<<"############LISTA DE EMPLEADOS###############"<<endl;
+    cout<<setw(3)<<"POS";
+    cout<<setw(2)<<""<<left<<setw(4)<<"ID";
+    cout<<setw(14)<<""<<left<<setw(21)<<"NOMBRE";
+    cout<<setw(8)<<""<<left<<setw(12)<<"TIPO";
+    cout<<setw(1)<<""<<right<<setw(7)<<"SALARIO";
+    cout<<setw(10)<<""<<left<<setw(20)<<"DIRECCION";
+    cout<<setw(12)<<""<<left<<setw(18)<<"CORREO";        
+    cout<<setw(2)<<""<<right<<setw(13)<<"TELEFONO";
+    cout<<setw(10)<<""<<left<<setw(20)<<"SITIO WEB";
+    cout<<endl;
     for(int i=0; i<listaEmpleados.size(); i++){
-        cout<<i+1<<" ";
-        cout<<listaEmpleados[i].getId()<<" ";
-        cout<<listaEmpleados[i].getNombre()<<" ";
-        cout<<listaEmpleados[i].getTipo()<<" ";
-        cout<<listaEmpleados[i].getSalario()<<" ";
-        cout<<listaEmpleados[i].getDireccion()<<" ";
-        cout<<listaEmpleados[i].getCorreo()<<" ";        
-        cout<<listaEmpleados[i].getTelefono()<<" ";
-        cout<<listaEmpleados[i].getSitioWeb()<<" ";
+        cout<<left<<setw(3)<<i+1<<" ";
+        cout<<setw(6)<<listaEmpleados[i].getId()<<" ";
+        cout<<left<<setw(25)<<listaEmpleados[i].getNombre()<<" ";
+        cout<<left<<setw(30)<<listaEmpleados[i].getTipo()<<" ";
+        cout<<left<<setw(8)<<listaEmpleados[i].getSalario()<<" ";
+        cout<<left<<setw(30)<<listaEmpleados[i].getDireccion()<<" ";
+        cout<<left<<setw(30)<<listaEmpleados[i].getCorreo()<<" ";        
+        cout<<left<<setw(10)<<listaEmpleados[i].getTelefono()<<" ";
+        cout<<left<<setw(30)<<listaEmpleados[i].getSitioWeb()<<" ";
         cout<<endl;
     }
-}
-
+}  
+    
 void Empresa::leerEmpresa() {
     ifstream archivo;
     string linea;
@@ -321,15 +337,21 @@ void Empresa::actualizarListaProyectos(){
 }
 void Empresa::mostrarProyectos(){
     vector<Empleado> lempleados;
-    cout<<"############LISTA DE PROYECTOS###############"<<endl;
+    cout<<"################################LISTA DE PROYECTOS#############################"<<endl;
+    cout<<left<<setw(5)<<"ID";
+    cout<<left<<setw(11)<<"ESTADO";
+    cout<<left<<setw(13)<<"F.CREACION";
+    cout<<left<<setw(9)<<"F. FIN";  
+    cout<<left<<setw(41)<<"NOMBRE DEL PROYECTO";
+    cout<<left<<"DESCRIPCION DEL PROYECTO";   
+    cout<<endl;
     for(int i=0; i<listaProyectos.size(); i++){
-        cout<<i+1<<" ";
-
-        cout<<listaProyectos[i].getNombre()<<" ";
-        cout<<listaProyectos[i].getEstado()<<" ";
-        cout<<listaProyectos[i].getDescripcion()<<" ";
-        cout<<listaProyectos[i].getFechaCreacion()<<" ";
-        cout<<listaProyectos[i].getFechaFin()<<" ";        
+        cout<<setw(4)<<i+1<<" ";
+        cout<<left<<setw(10)<<listaProyectos[i].getEstado()<<" ";
+        cout<<left<<setw(10)<<listaProyectos[i].getFechaCreacion()<<" ";
+        cout<<left<<setw(10)<<listaProyectos[i].getFechaFin()<<" ";  
+        cout<<left<<setw(40)<<listaProyectos[i].getNombre()<<" ";
+        cout<<left<<listaProyectos[i].getDescripcion()<<" ";   
         cout<<endl;
     }
 }
