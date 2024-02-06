@@ -33,8 +33,8 @@ int main(){
     menuProyectos.agregar("Salir", '0');
     menuDetallesProyectos.agregar("agregar miembros al equipo", '1');
     menuDetallesProyectos.agregar("eliminar miembros del equipo", '2');
-    menuDetallesProyectos.agregar("Crear tarea", '3');
-    menuDetallesProyectos.agregar("Eliminar tarea", '4');
+    //menuDetallesProyectos.agregar("Crear tarea", '3');
+    //menuDetallesProyectos.agregar("Eliminar tarea", '4');
     menuDetallesProyectos.agregar("Salir", '0');
     int indice, cen=0,cen1=0,id,n;
     int identificador;
@@ -119,6 +119,7 @@ int main(){
                         case '1':
 
                             cout << "Has seleccionado la opcion crear proyecto." << endl;
+                            cin.ignore();
                             cin>>nuevoProyecto;
                             //miequipo.agregarUnMiembro();
                             miempresa.agregarUnProyecto(nuevoProyecto);
@@ -154,25 +155,24 @@ int main(){
                                         
                                         if(miequipo.getId()==0 && miequipo.getNombre()==""){
                                             cin>>miequipo;    
-                                            
                                             miempresa.mostrarEmpleadosParaEquipo();
                                             cout<<"Ingrese la posicion de la lista del empleado que sera lider: "<<endl;
                                             cin>>identificador;
                                             cout<<"Ingrese la representacion(totem) del equipo:(S)"<<endl;
                                             cin>>totem;
-                                            nuevoEmpleado = miempresa.leerEmpleado(identificador);
-                                            //miempresa.agregarEquipoVistaParalela(nuevoEmpleado.getId(),miequipo.getId()); //
-                                            //miempresa.agregarEquipoVistaParalela(nuevoEmpleado.getId(),totem); //
+                                            //nuevoEmpleado = miempresa.leerEmpleado(identificador);
+                                            miempresa.agregarEquipoVistaParalela(identificador,miequipo.getId()); //
+                                            miempresa.agregarTotemVistaParalela(identificador,totem);
+                                            //miempresa.mostrarVistaParalela(identificador); //
                                             lempleados=miempresa.getListaEmpleados();
                                             //miempresa.mostrarVistasParalelas();
-                                            //system("pause");
+                                            system("pause");
                                             miequipo.setLider(nuevoEmpleado);
                                         }
                                         
                                         do{
                                             system("cls");
                                             miempresa.mostrarEmpleadosParaEquipo();
-
                                             cout<<"Digite la posicion del los empleados que perteneceran al grupo (0 para salir): "<<endl;
                                             cin>>identificador;
                                             nuevoEmpleado = verProyecto.leerEmpleado(identificador);

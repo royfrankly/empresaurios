@@ -23,6 +23,12 @@ struct emplipos{
     void setIdEmpleado(int nuevoIdEmpleado){
         idem = nuevoIdEmpleado;
     }
+    void setIdEquipo(int nuevoEquipo){
+        ideq = nuevoEquipo;
+    }
+    void setTotem(char nuevoTotem){
+        totem = nuevoTotem;
+    }
 };
 
 class Empresa:public Contacto{
@@ -54,6 +60,7 @@ class Empresa:public Contacto{
         vector<emplipos>& getVistaParalela();
         void setVistaParalela(vector<emplipos>& nuevaVistaParalela);
         void crearVistasParalelas();
+        void mostrarVistaParalela(int);
         void mostrarVistasParalelas();
         void actualizarVistaParalela();
         void guardarVistaParalela();
@@ -61,6 +68,9 @@ class Empresa:public Contacto{
         void agregarTotemVistaParalela(int,char);
         friend ostream& operator<<(ostream& , const emplipos& );
         void guardarEnArchivoVistaParalela();
+        void guardarEnArchivoTotems();
+        void guardarEnArchivoTotems(int );
+
     //-------------------otros y sobrecargas---------------------------        
         void agregarUnProyecto(Proyecto);
         void removerUnProyecto(int);

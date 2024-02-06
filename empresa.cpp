@@ -52,6 +52,11 @@ void Empresa::crearVistasParalelas(){
     }
     
 }
+void Empresa::mostrarVistaParalela(int indice){
+    cout<<"id empleado: "<<vistaParalela[indice-1].idem<<endl;
+    cout<<"id equipo: "<<vistaParalela[indice-1].ideq<<endl;
+    cout<<"totem: "<<vistaParalela[indice-1].totem<<endl;
+}
 void Empresa::mostrarVistasParalelas(){
     for(int i=0; i<listaEmpleados.size(); i++){
         cout<<"id empleado: "<<vistaParalela[i].idem<<endl;
@@ -67,23 +72,64 @@ void Empresa::actualizarVistaParalela(){
         vistaParalela[i].setIdEmpleado(listaEmpleados[i].getId());
     }
 }
-void Empresa::agregarEquipoVistaParalela(int idEmpleado,int idEquipo){
-    for(int i=0;i<vistaParalela.size();i++){
-        if(idEmpleado == vistaParalela[i].idem ){ 
-            vistaParalela[i].ideq= idEquipo;
-        }else{
-            cout<<"No se encuentra a ningun empleado con ese id"<<endl;
-        }
-    }
+void Empresa::agregarEquipoVistaParalela(int indice,int idEquipo){    
+            vistaParalela[indice-1].setIdEquipo(idEquipo);
 }
-void Empresa::agregarTotemVistaParalela(int idEmpleado,char nuevoTotem){
-    for(int i=0;i<vistaParalela.size();i++){
-        if(idEmpleado == vistaParalela[i].idem ){ 
-            vistaParalela[i].ideq= nuevoTotem;
-        }else{
-            cout<<"No se encuentra a ningun empleado con ese id"<<endl;
+void Empresa::agregarTotemVistaParalela(int indice,char nuevoTotem){
+    vistaParalela[indice-1].setTotem(nuevoTotem);
+}
+
+void Empresa::guardarEnArchivoTotems(int indice){
+    ifstream archivo;
+    string linea;
+    archivo.open("empresa/totems.txt");
+
+    if (archivo.is_open()) {
+        cout << "Se abre el archivo correctamente." << endl;
+
+        archivo.get();
+        
+        // Variables para almacenar los datos
+        string nombre, ruc, descripcion, direccion, correo, telefono, sitioweb;
+
+        // Procesar la línea y extraer datos entre paréntesis
+        size_t posInicio = 0;
+        size_t posFin = 0;
+        while ((posInicio = linea.find('(', posFin)) != string::npos) {
+            posFin = linea.find(')', posInicio);
+            if (posFin != string::npos) {
+                string contenido = linea.substr(posInicio + 1, posFin - posInicio - 1);
+
+                // Almacenar el contenido en las variables correspondientes
+                if (nombre.empty()) {
+                    nombre = contenido;
+                } else if (ruc.empty()) {
+                    ruc = contenido;
+                } else if (descripcion.empty()) {
+                    descripcion = contenido;
+                } else if (direccion.empty()) {
+                    direccion = contenido;
+                } else if (correo.empty()) {
+                    correo = contenido;
+                } else if (telefono.empty()) {
+                    telefono = contenido;
+                } else if (sitioweb.empty()) {
+                    sitioweb = contenido;
+                }
+            }
         }
+        setNombre(nombre);
+        setRuc(ruc);
+        setDescripcion(descripcion);
+        setDireccion(direccion);
+        setCorreo(correo);
+        setTelefono(telefono);
+        setSitioWeb(sitioweb);
+    } else {
+        cout << "ERROR: No se pudo abrir el archivo." << endl;
     }
+
+    archivo.close();
 }
 void Empresa::guardarVistaParalela(){
 
@@ -344,12 +390,10 @@ void Empresa::mostrarEmpleadosParaEquipo(){
         cout<<left<<setw(4)<<i+1<<" ";
         if(vistaParalela[i].ideq==0 && vistaParalela[i].totem==' '){
             cout<<left<<setw(4)<<"NO ";
-            cout<<left<<setw(5)<<vistaParalela[i].totem<<" ";
         }else{
-            cout<<left<<setw(4)<<"SI ";
-            cout<<left<<setw(5)<<vistaParalela[i].totem<<" ";
+            cout<<left<<setw(4)<<"SI ";      
         }
-
+        cout<<left<<setw(5)<<vistaParalela[i].totem<<" ";
         cout<<setw(6)<<listaEmpleados[i].getId()<<" ";
         cout<<left<<setw(25)<<listaEmpleados[i].getNombre()<<" ";
         cout<<left<<setw(30)<<listaEmpleados[i].getTipo()<<" ";

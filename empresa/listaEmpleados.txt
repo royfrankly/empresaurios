@@ -26,5 +26,5 @@
 (119013) (Marina Lopez) (Desarrolladora Mobile) (65000) (Av. Mobile) (marina.l@email.com) (967890123) (marina-mobile.com) 
 (119025) (Ana Sanchez) (Ingeniera de Ciberseguridad) (75000) (Av. Ciberseguridad) (ana.s@email.com) (987012345) (ana-ciberseguridad.com) 
 (119003) (Eva Rodriguez) (Analista de Datos) (55000) (Av. Analytics) (eva.r@email.com) (967801234) (eva-analista.com) 
-(119020) (Sergio Martinez) (Diseñador Grafico) (50000) (Calle Grafica) (sergio.m@email.com) (945678120) (sergio-grafico.com) 
-(119001) (Luisa Martinez Gomez) (Desarrolladora) (60000) (Av. Progreso) (luisa.m@email.com) (953210876) () 
+(119001) (Luisa Martinez Gomez) (Desarrolladora) (60000) (Av. Progreso) (luisa.m@email.com) (953210876) (luisa-martinez.com) 
+(119012) (juan el galan) (tester de ciberceguridad) (50000) (av. incognito) (juan-tester@hotmail.com) (987654321) (juan-dev.com) 
