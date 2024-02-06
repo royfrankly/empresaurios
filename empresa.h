@@ -6,6 +6,24 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+struct emplipos{
+    int ideq;
+    int idem;
+    char totem;
+    emplipos(){
+        idem = 0;
+        ideq = 0;
+        totem = ' ';
+    }
+    emplipos(int _ideq, int _idem, char _totem){
+        idem = _idem;
+        ideq = _ideq;
+        totem = _totem;
+    }
+    void setIdEmpleado(int nuevoIdEmpleado){
+        idem = nuevoIdEmpleado;
+    }
+};
 
 class Empresa:public Contacto{
     private:
@@ -14,6 +32,7 @@ class Empresa:public Contacto{
         string descripcion;
         vector<Empleado> listaEmpleados;
         vector<Proyecto> listaProyectos;
+        vector<emplipos> vistaParalela;
     public:
     //-------------------constructores---------------------------
         Empresa();
@@ -31,18 +50,31 @@ class Empresa:public Contacto{
         void removerUnEmpleado(int);
         const vector<Proyecto>& getListaProyectos();
         void setListaProyectos(const vector<Proyecto>& nuevaLista);
+    //-------------------Vision paralela---------------------------        
+        vector<emplipos>& getVistaParalela();
+        void setVistaParalela(vector<emplipos>& nuevaVistaParalela);
+        void crearVistasParalelas();
+        void mostrarVistasParalelas();
+        void actualizarVistaParalela();
+        void guardarVistaParalela();
+        void agregarEquipoVistaParalela(int,int);
+        void agregarTotemVistaParalela(int,char);
+        friend ostream& operator<<(ostream& , const emplipos& );
+        void guardarEnArchivoVistaParalela();
     //-------------------otros y sobrecargas---------------------------        
         void agregarUnProyecto(Proyecto);
         void removerUnProyecto(int);
         friend ostream& operator<<(ostream& os, const Empresa& );
         friend istream& operator>>(istream& is, Empleado& );
+        Empleado leerEmpleado(int );
         void mostrarEmpleados();
+        void mostrarEmpleadosParaEquipo();
         void mostrarEmpresa();
         void guardarEmpleado(Empleado);
         //cuando se inicie el programa cargara los empelados
         void cargarEmpleados();
         void leerEmpleados();
-        
+        int sacarIdDeLaLista();
         void leerEmpresa();
         void obtenerEmpleados();
         void obtenerProyecto();
@@ -50,6 +82,7 @@ class Empresa:public Contacto{
         void leerProyectos();
         void actualizarListaProyectos();
         void mostrarProyectos();
+        
 
         Proyecto getUnoDeLaListaProyecto(int);
 };

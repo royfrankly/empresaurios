@@ -31,6 +31,7 @@ class Proyecto{
         string getFechaFin();
         void setFechaFin(string);
         Equipo getEquipo();
+        int getIdEquipo();
         void setEquipo(Equipo);
         const vector<Tarea>& getListaTareas();
         void setListaTareas(const vector<Tarea>& nuevaLista);

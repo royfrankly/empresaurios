@@ -57,6 +57,9 @@ void Proyecto::setFechaFin(string nuevaFechaFin ){
 Equipo Proyecto::getEquipo(){
     return miEquipo;
 }
+int Proyecto::getIdEquipo(){
+    return miEquipo.getId();
+}
 void Proyecto::setEquipo(Equipo nuevoEquipo){
     miEquipo = nuevoEquipo;
 }
